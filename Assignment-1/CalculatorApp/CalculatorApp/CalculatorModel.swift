@@ -8,10 +8,13 @@
 import Foundation
 
 enum Operations {
+    case equals
+    case clear
+    case all_clear
+    case separator
     case const(Double)
     case unaryOperation((Double) -> Double)
     case binaryOperation((Double, Double) -> Double)
-    case equals
 }
 
 struct Calculator {
@@ -33,7 +36,12 @@ struct Calculator {
             "-" : Operations.binaryOperation({$0-$1}),
             "x" : Operations.binaryOperation({$0*$1}),
             "/" : Operations.binaryOperation({$0/$1}),
-            "=" : Operations.equals
+            "%" : Operations.unaryOperation({$0 / 100}),
+            "+/-": Operations.unaryOperation({(-1) * $0}),
+            "=" : Operations.equals,
+            "AC": Operations.all_clear,
+            "C" : Operations.clear,
+            ".": Operations.separator
         ]
     
     mutating func setOperand(_ operand: Double) {
@@ -53,7 +61,7 @@ struct Calculator {
         }
     }
     
-    func getResult()-> Double {
+    func getResult() -> Double {
         return global_value!
     }
 }
