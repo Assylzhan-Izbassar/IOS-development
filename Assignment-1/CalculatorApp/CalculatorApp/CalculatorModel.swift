@@ -9,9 +9,6 @@ import Foundation
 
 enum Operations {
     
-    case zero(Double)
-    case nonZeroDigit(Double)
-    case separator
     // MathOp
     case unaryOperation((Double) -> Double)
     case binaryOperation((Double, Double) -> Double)
@@ -35,7 +32,6 @@ struct Calculator {
         var final_val: Double? // result value
         var unaryOperation: ((Double) -> Double)?
         var operation: ((Double, Double) -> Double)?
-        var operationSign: String?
         
 //        Constructors
         init(init_val x: Double){
@@ -64,71 +60,127 @@ struct Calculator {
             "+/-": Operations.unaryOperation({$0 * (-1)}),
             "=" : Operations.equals,
             "AC": Operations.clear,
-            ".": Operations.separator
     ]
     var typing: Bool = false
     var isZeroState: Bool = true
+    var isEqualState: Bool = false
+    var fromResult: Bool = false
+    var prevOperation : String?
+    var fromBinaryOperation: Bool = false
+    var tempForEqual: Double?
+    var seperatePressed: Bool = false
+    var fromOperation: Bool = false
+    var fromZeroToDot: Bool = false
     
 //  Methods
     mutating func setOperand(_ operand: String) {
         temp_val = Double(operand)!
+        if(isZeroState){
+            saving.final_val = temp_val
+        }
     }
     
     mutating func accumulateDigit(_ number: String, _ digit: String) -> String {
         var result : String = number
+        if fromOperation {
+            if digit == "0" {
+                result = digit
+                seperatePressed = false
+            }
+            fromOperation = false
+        }
+        if digit == "." && seperatePressed == false {
+            if(fromResult){
+                result = "0."
+                isZeroState = true
+                fromResult = false
+            }else{
+                result.append(digit)
+            }
+            typing = true
+            seperatePressed = true
+        }
         if typing {
-            result.append(digit)
+            if(digit != "." || !seperatePressed){
+                result.append(digit)
+            }
         }else{
             if(digit != "0"){
                 result = digit
                 typing = true
+            }else{
+                if(fromResult){
+                    result = digit
+                    compute("AC")
+                    fromResult = false
+                }
             }
         }
+        
         return result
     }
     
     var isOperationChanged: Bool = false
     
     mutating func compute(_ operation: String) {
-        let symbol = operations[operation]!
         typing = false
-        if(saving.operationSign != nil && saving.operationSign != operation){
-            isOperationChanged = true
-        }
+        seperatePressed = false
+        let symbol = operations[operation]!
 
         switch symbol {
             case .clear:
-                calcState = CalcState.zero
                 setOperand("0")
                 saving.final_val = 0
+                isZeroState = true
+                saving.operation = nil
+                fromResult = false
                 
             case .unaryOperation(let function):
+                if (operation == "%") {
+                    if prevOperation == "+" || prevOperation == "-"{
+                        saving.final_val! *= (temp_val/100)
+                    }
+                }
                 saving.unaryOperation = function
-                temp_val = saving.performUnaryOperation()
+                saving.final_val = temp_val
+                saving.final_val = saving.performUnaryOperation()
                 
             case .binaryOperation(let function):
-                saving.operation = function
-                if(isZeroState){
-                    saving.final_val = temp_val
+                fromBinaryOperation = true
+                if isZeroState {
+                    saving.operation = function
                     isZeroState = false
                 }else{
                     saving.final_val = saving.performOperationWith(op2: temp_val)
-                    temp_val = saving.final_val!
                 }
+                saving.operation = function
+                fromOperation = true
                 
             case .equals:
-                temp_val = saving.performOperationWith(op2: temp_val)
-            
-            case .separator:
-                break
-                
-            default:
-                break;
+                if(fromBinaryOperation == true){
+                    tempForEqual = temp_val
+                    fromBinaryOperation = false
+                }
+                isEqualState = true
+                fromResult = true
+                saving.final_val = saving.performOperationWith(op2: tempForEqual!)
         }
+        prevOperation = operation
     }
     
-    func getResult() -> String {
-        return String(temp_val)
+    mutating func getResult() -> String {
+        var value = String(saving.final_val!)
+        if(value.last! == "0"){
+            let len = value.count-2
+            value = String(value.prefix(len))
+        }
+        if(isEqualState){
+            //compute("AC") ??
+            saving.operation = nil
+            isZeroState = true
+            isEqualState = false
+        }
+        return value
     }
     
     func result_val(x result_val: Double) -> String {

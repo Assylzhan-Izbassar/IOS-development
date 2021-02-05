@@ -28,23 +28,11 @@ class ViewController: UIViewController {
     
     @IBAction func pressedDigit(_ sender: UIButton) {
         displayValue = model.accumulateDigit(myDisplay.text!, sender.currentTitle!)
-        model.setOperand(displayValue)
     }
-    
-    var initial: Bool = true
-    var prevOperationSign : String?
     
     @IBAction func pressedOperation(_ sender: UIButton) {
         model.setOperand(displayValue)
-        if(initial){
-            model.compute(sender.currentTitle!)
-            prevOperationSign = sender.currentTitle!
-            initial = false
-        }else{
-            if(prevOperationSign == sender.currentTitle!){
-                model.compute(sender.currentTitle!)
-            }
-        }
+        model.compute(sender.currentTitle!)
         displayValue = model.getResult()
         
     }
