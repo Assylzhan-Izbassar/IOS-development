@@ -11,6 +11,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet weak var myTable: UITableView!
     private var model = ContactModel()
+    @IBOutlet weak var myNav: UINavigationItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         myTable.dataSource = self
         // Connecting TableView with ViewController
         self.myTable.rowHeight = 64.0
+        // Making cell height equal to 64
+        myNav.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(tapButton))
+        // Adding insert button in navigation bar
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,6 +38,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.contactImage.image = model.contacts![indexPath.row].image
         
         return cell
+    }
+    
+    @objc func tapButton(){
+        print("I am here!")
     }
 }
 

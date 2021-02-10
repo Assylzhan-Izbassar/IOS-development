@@ -16,9 +16,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fIU-fn-iFs">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E11-Sp-OBY">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Contacts" id="hHH-Tf-6rI"/>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fIU-fn-iFs">
+                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
                                 <prototypes>
@@ -36,7 +41,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hRk-RQ-waK">
-                                                    <rect key="frame" x="98" y="11" width="124" height="41"/>
+                                                    <rect key="frame" x="171" y="11" width="124" height="41"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="RZM-th-LOT">
                                                             <rect key="frame" x="0.0" y="0.0" width="124" height="21.5"/>
@@ -65,12 +70,12 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="hRk-RQ-waK" firstAttribute="leading" secondItem="Xg8-C4-Bwn" secondAttribute="trailing" constant="90" id="2gN-Ay-pwN"/>
+                                                <constraint firstItem="hRk-RQ-waK" firstAttribute="top" secondItem="CDV-Sf-eJG" secondAttribute="topMargin" id="YJi-tC-F8N"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="hRk-RQ-waK" secondAttribute="bottom" constant="1" id="YhG-KH-Rux"/>
                                                 <constraint firstItem="Xg8-C4-Bwn" firstAttribute="leading" secondItem="CDV-Sf-eJG" secondAttribute="leading" constant="24" id="cgc-AT-wrC"/>
                                                 <constraint firstItem="Xg8-C4-Bwn" firstAttribute="top" secondItem="CDV-Sf-eJG" secondAttribute="top" constant="4" id="chZ-IE-xg2"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="hRk-RQ-waK" secondAttribute="trailing" constant="90" id="mDd-Q4-MYf"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="hRk-RQ-waK" secondAttribute="bottom" constant="1" id="nPW-6a-v1S"/>
                                                 <constraint firstAttribute="bottom" secondItem="Xg8-C4-Bwn" secondAttribute="bottom" constant="5" id="nfj-tR-RQs"/>
-                                                <constraint firstItem="hRk-RQ-waK" firstAttribute="top" secondItem="CDV-Sf-eJG" secondAttribute="topMargin" id="qaM-fM-W1z"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
@@ -86,8 +91,18 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="E11-Sp-OBY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="8Gm-9s-V0F"/>
+                            <constraint firstItem="E11-Sp-OBY" firstAttribute="leading" secondItem="fIU-fn-iFs" secondAttribute="leading" id="A2M-Eq-Dfb"/>
+                            <constraint firstItem="fIU-fn-iFs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CZa-Hn-5E8"/>
+                            <constraint firstItem="E11-Sp-OBY" firstAttribute="trailing" secondItem="fIU-fn-iFs" secondAttribute="trailing" id="Jio-RR-gmg"/>
+                            <constraint firstItem="fIU-fn-iFs" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="X9i-oz-ox5"/>
+                            <constraint firstItem="fIU-fn-iFs" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ncf-EU-jxY"/>
+                            <constraint firstItem="fIU-fn-iFs" firstAttribute="top" secondItem="E11-Sp-OBY" secondAttribute="bottom" id="y73-f8-MXj"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="myNav" destination="hHH-Tf-6rI" id="kVD-FT-E6Q"/>
                         <outlet property="myTable" destination="fIU-fn-iFs" id="LNa-gk-7w4"/>
                     </connections>
                 </viewController>
