@@ -12,12 +12,12 @@ class Contact{
     var name : String
     var surname : String
     var phoneNumber : String
-//    private var image : UIImage
+    var image : UIImage
     
-    init(_ name: String, _ surname: String, _ phoneNumber: String){//, _ image : UIImage){
+    init(_ name: String, _ surname: String, _ phoneNumber: String, _ image : UIImage){
         self.name = name
         self.surname = surname
         self.phoneNumber = phoneNumber
-        //self.image = image
+        self.image = image
     }
 }

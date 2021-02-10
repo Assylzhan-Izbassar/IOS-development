@@ -17,6 +17,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Do any additional setup after loading the view.
         myTable.delegate = self
         myTable.dataSource = self
+        // Connecting TableView with ViewController
+        self.myTable.rowHeight = 64.0
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -24,10 +26,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell")
-        cell?.textLabel?.text = model.contacts![indexPath.row].name
-        cell?.detailTextLabel?.text = model.contacts![indexPath.row].surname
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as! CustomTableViewCell
+        // Filling the view labels and image
+        cell.contactName.text = model.contacts![indexPath.row].name
+        cell.contactSurName.text = model.contacts![indexPath.row].surname
+        cell.contactPhoneNumber.text = model.contacts![indexPath.row].phoneNumber
+        cell.contactImage.image = model.contacts![indexPath.row].image
+        
+        return cell
     }
 }
 

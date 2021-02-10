@@ -15,6 +15,7 @@
 		FAEE2BF225D3E39600E57046 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAEE2BF025D3E39600E57046 /* LaunchScreen.storyboard */; };
 		FAEE2BFB25D3ED8400E57046 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE2BFA25D3ED8400E57046 /* Contact.swift */; };
 		FAEE2BFE25D3F3AA00E57046 /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE2BFD25D3F3AA00E57046 /* ContactModel.swift */; };
+		FAEE2C0225D461B500E57046 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE2C0125D461B500E57046 /* CustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		FAEE2BF325D3E39600E57046 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAEE2BFA25D3ED8400E57046 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		FAEE2BFD25D3F3AA00E57046 /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
+		FAEE2C0125D461B500E57046 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				FAEE2BE525D3E39500E57046 /* AppDelegate.swift */,
 				FAEE2BE725D3E39500E57046 /* SceneDelegate.swift */,
 				FAEE2BE925D3E39500E57046 /* ViewController.swift */,
+				FAEE2C0125D461B500E57046 /* CustomTableViewCell.swift */,
 				FAEE2BFD25D3F3AA00E57046 /* ContactModel.swift */,
 				FAEE2BFA25D3ED8400E57046 /* Contact.swift */,
 				FAEE2BEB25D3E39500E57046 /* Main.storyboard */,
@@ -143,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAEE2C0225D461B500E57046 /* CustomTableViewCell.swift in Sources */,
 				FAEE2BFB25D3ED8400E57046 /* Contact.swift in Sources */,
 				FAEE2BEA25D3E39500E57046 /* ViewController.swift in Sources */,
 				FAEE2BE625D3E39500E57046 /* AppDelegate.swift in Sources */,
