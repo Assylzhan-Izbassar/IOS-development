@@ -22,6 +22,13 @@ struct ContactModel {
         }
     }
     
+    mutating func deleteContact(_ indexPath: IndexPath) {
+        contacts?.remove(at: indexPath.row)
+    }
+    mutating func deleteContact(byId id: Int) {
+        contacts?.remove(at: id)
+    }
+    
     mutating func createTestData(){
         contacts?.append(Contact("Assyl", "Izbassar", "+7 776 874 93 03", UIImage.init(named: "male")!))
         contacts?.append(Contact("Yuliya", "Ivanova", "+1 432 324 23 32", UIImage.init(named: "female")!))

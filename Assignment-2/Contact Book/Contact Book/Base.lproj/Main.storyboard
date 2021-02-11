@@ -79,7 +79,7 @@
                                             <outlet property="contactName" destination="sCm-xs-Tqo" id="nPw-C0-HdW"/>
                                             <outlet property="contactPhoneNumber" destination="tcw-6L-lmt" id="JYq-of-zfK"/>
                                             <outlet property="contactSurName" destination="tv5-TD-XQN" id="mVa-NF-Lo4"/>
-                                            <segue destination="VZL-Z0-BcW" kind="show" id="i27-0X-eLM"/>
+                                            <segue destination="VZL-Z0-BcW" kind="show" id="vpJ-jR-4UK"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -167,7 +167,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
-                                    <action selector="fetchNewContact:" destination="XPn-f5-xCL" eventType="touchUpInside" id="vXW-qm-Cs6"/>
+                                    <segue destination="Rxs-rZ-oRE" kind="unwind" unwindAction="unwindToContactList:" id="13l-2y-f5k"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -192,13 +192,14 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9XY-r8-4SS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Rxs-rZ-oRE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2057" y="544"/>
         </scene>
         <!--Contact info-->
         <scene sceneID="aLq-3E-OgO">
             <objects>
-                <viewController id="VZL-Z0-BcW" customClass="ContactInfoViewController" customModule="Contact_Book" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContactInfoViewController" id="VZL-Z0-BcW" customClass="ContactInfoViewController" customModule="Contact_Book" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0b8-9y-DaI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -214,6 +215,9 @@
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Call"/>
+                                <connections>
+                                    <action selector="callToNumber:" destination="VZL-Z0-BcW" eventType="touchUpInside" id="Dh4-gc-uV7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgE-rU-hHB">
                                 <rect key="frame" x="16" y="500" width="288" height="48"/>
@@ -223,6 +227,9 @@
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Delete"/>
+                                <connections>
+                                    <segue destination="2Xb-8J-vNc" kind="unwind" unwindAction="unwindToContactList:" id="p0I-Ru-ksW"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LFO-mq-WIx">
                                 <rect key="frame" x="103" y="225" width="114" height="49"/>
@@ -230,13 +237,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wtR-Ro-zF0">
                                         <rect key="frame" x="0.0" y="0.0" width="114" height="20.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fO8-14-2hy">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fO8-14-2hy">
                                                 <rect key="frame" x="0.0" y="0.0" width="42.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="surname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gfx-cP-263">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="surname" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gfx-cP-263">
                                                 <rect key="frame" x="47.5" y="0.0" width="66.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -275,8 +282,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Contact info" id="mvN-7P-uWY"/>
+                    <connections>
+                        <outlet property="image" destination="SNp-84-fDt" id="lyl-8v-XKj"/>
+                        <outlet property="name" destination="fO8-14-2hy" id="bRB-r1-uFT"/>
+                        <outlet property="phoneNum" destination="Q4v-Zt-Sn2" id="4DB-lW-CCv"/>
+                        <outlet property="surName" destination="Gfx-cP-263" id="sbX-A6-pCj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8wl-9a-MF5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="2Xb-8J-vNc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2056.875" y="-283.0985915492958"/>
         </scene>

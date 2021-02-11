@@ -15,7 +15,6 @@ class NewContactViewController: UIViewController, UIPickerViewDataSource, UIPick
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var myPicker: UIPickerView!
     var pickedData: [String] = [String]()
-    var model = ContactModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,8 +48,10 @@ class NewContactViewController: UIViewController, UIPickerViewDataSource, UIPick
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickedData[row]
     }
-
-    @IBAction func fetchNewContact(_ sender: UIButton) {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! ViewController
+        
         let selectedVal = pickedData[myPicker.selectedRow(inComponent: 0)]
         let gender: String?
         if selectedVal == "Male" {
@@ -64,20 +65,10 @@ class NewContactViewController: UIViewController, UIPickerViewDataSource, UIPick
         let _image = UIImage.init(named: gender!)
         let newContact = Contact(_newName!, _newSurName!, _newPhoneNumber!, _image!)
         
-        model.addContact(newContact)
+        destination.model.addContact(newContact)
         
-        self.performSegue(withIdentifier: "contact", sender: self)
+        destination.myTable.reloadData()
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension UIViewController {

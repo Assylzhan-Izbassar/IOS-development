@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var myTable: UITableView!
-    private var model = ContactModel()
+    var model = ContactModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +33,35 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.contactSurName.text = model.contacts![indexPath.row].surname
         cell.contactPhoneNumber.text = model.contacts![indexPath.row].phoneNumber
         cell.contactImage.image = model.contacts![indexPath.row].image
-        
         return cell
+    }
+    
+    @IBAction func unwindToContactList(_ sender: UIStoryboardSegue) {
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destVC = segue.destination as? ContactInfoViewController
+        
+        destVC?._name =  model.contacts![myTable.indexPathForSelectedRow!.row].name
+        destVC?._surName =  model.contacts![myTable.indexPathForSelectedRow!.row].surname
+        destVC?._phoneNum =  model.contacts![myTable.indexPathForSelectedRow!.row].phoneNumber
+        destVC?._image =  model.contacts![myTable.indexPathForSelectedRow!.row].image
+        destVC?.setId(myTable.indexPathForSelectedRow!.row)
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let selectedIndexPath = myTable.indexPathForSelectedRow {
+            myTable.deselectRow(at: selectedIndexPath, animated: animated)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        guard editingStyle == .delete else { return }
+        model.deleteContact(indexPath)
+        
+        myTable.deleteRows(at: [indexPath], with: .automatic)
     }
 }
 
