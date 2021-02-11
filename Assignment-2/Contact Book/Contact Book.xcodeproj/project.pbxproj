@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FAD7E39C25D58E7B00A63CCC /* NewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD7E39B25D58E7B00A63CCC /* NewContactViewController.swift */; };
+		FAD7E3A025D594C500A63CCC /* ContactInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD7E39F25D594C500A63CCC /* ContactInfoViewController.swift */; };
 		FAEE2BE625D3E39500E57046 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE2BE525D3E39500E57046 /* AppDelegate.swift */; };
 		FAEE2BE825D3E39500E57046 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE2BE725D3E39500E57046 /* SceneDelegate.swift */; };
 		FAEE2BEA25D3E39500E57046 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE2BE925D3E39500E57046 /* ViewController.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FAD7E39B25D58E7B00A63CCC /* NewContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactViewController.swift; sourceTree = "<group>"; };
+		FAD7E39F25D594C500A63CCC /* ContactInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoViewController.swift; sourceTree = "<group>"; };
 		FAEE2BE225D3E39500E57046 /* Contact Book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Contact Book.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAEE2BE525D3E39500E57046 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAEE2BE725D3E39500E57046 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,7 +69,9 @@
 				FAEE2BE525D3E39500E57046 /* AppDelegate.swift */,
 				FAEE2BE725D3E39500E57046 /* SceneDelegate.swift */,
 				FAEE2BE925D3E39500E57046 /* ViewController.swift */,
+				FAD7E39B25D58E7B00A63CCC /* NewContactViewController.swift */,
 				FAEE2C0125D461B500E57046 /* CustomTableViewCell.swift */,
+				FAD7E39F25D594C500A63CCC /* ContactInfoViewController.swift */,
 				FAEE2BFD25D3F3AA00E57046 /* ContactModel.swift */,
 				FAEE2BFA25D3ED8400E57046 /* Contact.swift */,
 				FAEE2BEB25D3E39500E57046 /* Main.storyboard */,
@@ -147,10 +153,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAEE2C0225D461B500E57046 /* CustomTableViewCell.swift in Sources */,
+				FAD7E3A025D594C500A63CCC /* ContactInfoViewController.swift in Sources */,
 				FAEE2BFB25D3ED8400E57046 /* Contact.swift in Sources */,
 				FAEE2BEA25D3E39500E57046 /* ViewController.swift in Sources */,
 				FAEE2BE625D3E39500E57046 /* AppDelegate.swift in Sources */,
 				FAEE2BFE25D3F3AA00E57046 /* ContactModel.swift in Sources */,
+				FAD7E39C25D58E7B00A63CCC /* NewContactViewController.swift in Sources */,
 				FAEE2BE825D3E39500E57046 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
