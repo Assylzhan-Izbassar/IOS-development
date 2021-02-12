@@ -60,6 +60,9 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="tv5-TD-XQN" firstAttribute="leading" secondItem="sCm-xs-Tqo" secondAttribute="trailing" constant="6" id="tPz-5x-2Pb"/>
+                                                            </constraints>
                                                         </stackView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="phoneNumber" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcw-6L-lmt">
                                                             <rect key="frame" x="0.0" y="21.5" width="124" height="19.5"/>
@@ -68,6 +71,9 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="RZM-th-LOT" firstAttribute="leading" secondItem="hRk-RQ-waK" secondAttribute="leading" id="cgx-eA-H4K"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
