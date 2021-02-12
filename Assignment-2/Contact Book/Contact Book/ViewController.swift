@@ -11,6 +11,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet weak var myTable: UITableView!
     var model = ContactModel()
+    @IBOutlet weak var myLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,16 +24,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model.contacts!.count
+        let size = ContactModel.contacts!.count
+        if size != 0 {
+            myLabel.isHidden = true
+            myLabel.frame.size.height = 0
+        }else{
+            myLabel.isHidden = false
+            myLabel.frame.size.height = 21
+            myLabel.text = "No contacts yet"
+        }
+        return size
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as! CustomTableViewCell
         // Filling the view labels and image
-        cell.contactName.text = model.contacts![indexPath.row].name
-        cell.contactSurName.text = model.contacts![indexPath.row].surname
-        cell.contactPhoneNumber.text = model.contacts![indexPath.row].phoneNumber
-        cell.contactImage.image = model.contacts![indexPath.row].image
+        cell.contactName.text = ContactModel.contacts![indexPath.row].name
+        cell.contactSurName.text = ContactModel.contacts![indexPath.row].surname
+        cell.contactPhoneNumber.text = ContactModel.contacts![indexPath.row].phoneNumber
+        cell.contactImage.image = ContactModel.contacts![indexPath.row].image
         return cell
     }
     
@@ -42,10 +52,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destVC = segue.destination as? ContactInfoViewController
         
-        destVC?._name =  model.contacts![myTable.indexPathForSelectedRow!.row].name
-        destVC?._surName =  model.contacts![myTable.indexPathForSelectedRow!.row].surname
-        destVC?._phoneNum =  model.contacts![myTable.indexPathForSelectedRow!.row].phoneNumber
-        destVC?._image =  model.contacts![myTable.indexPathForSelectedRow!.row].image
+        destVC?._name =  ContactModel.contacts![myTable.indexPathForSelectedRow!.row].name
+        destVC?._surName =  ContactModel.contacts![myTable.indexPathForSelectedRow!.row].surname
+        destVC?._phoneNum =  ContactModel.contacts![myTable.indexPathForSelectedRow!.row].phoneNumber
+        destVC?._image =  ContactModel.contacts![myTable.indexPathForSelectedRow!.row].image
         destVC?.setId(myTable.indexPathForSelectedRow!.row)
     }
     
@@ -55,6 +65,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if let selectedIndexPath = myTable.indexPathForSelectedRow {
             myTable.deselectRow(at: selectedIndexPath, animated: animated)
         }
+        myTable.reloadData()
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

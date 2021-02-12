@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FAAE85D725D661B7007A01A7 /* ContactEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE85D625D661B7007A01A7 /* ContactEditViewController.swift */; };
 		FAD7E39C25D58E7B00A63CCC /* NewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD7E39B25D58E7B00A63CCC /* NewContactViewController.swift */; };
 		FAD7E3A025D594C500A63CCC /* ContactInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD7E39F25D594C500A63CCC /* ContactInfoViewController.swift */; };
 		FAEE2BE625D3E39500E57046 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE2BE525D3E39500E57046 /* AppDelegate.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FAAE85D625D661B7007A01A7 /* ContactEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactEditViewController.swift; sourceTree = "<group>"; };
 		FAD7E39B25D58E7B00A63CCC /* NewContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactViewController.swift; sourceTree = "<group>"; };
 		FAD7E39F25D594C500A63CCC /* ContactInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoViewController.swift; sourceTree = "<group>"; };
 		FAEE2BE225D3E39500E57046 /* Contact Book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Contact Book.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +74,7 @@
 				FAD7E39B25D58E7B00A63CCC /* NewContactViewController.swift */,
 				FAEE2C0125D461B500E57046 /* CustomTableViewCell.swift */,
 				FAD7E39F25D594C500A63CCC /* ContactInfoViewController.swift */,
+				FAAE85D625D661B7007A01A7 /* ContactEditViewController.swift */,
 				FAEE2BFD25D3F3AA00E57046 /* ContactModel.swift */,
 				FAEE2BFA25D3ED8400E57046 /* Contact.swift */,
 				FAEE2BEB25D3E39500E57046 /* Main.storyboard */,
@@ -160,6 +163,7 @@
 				FAEE2BFE25D3F3AA00E57046 /* ContactModel.swift in Sources */,
 				FAD7E39C25D58E7B00A63CCC /* NewContactViewController.swift in Sources */,
 				FAEE2BE825D3E39500E57046 /* SceneDelegate.swift in Sources */,
+				FAAE85D725D661B7007A01A7 /* ContactEditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

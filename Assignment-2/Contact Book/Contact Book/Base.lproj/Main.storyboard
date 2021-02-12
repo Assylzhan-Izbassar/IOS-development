@@ -11,7 +11,6 @@
         <!--Contacts-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="Contacts" id="BYZ-38-t0r" customClass="ViewController" customModule="Contact_Book" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -21,9 +20,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
+                                <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0Bx-h9-Kbp">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="20.5"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myCell" rowHeight="64" id="V86-VQ-4yu" customClass="CustomTableViewCell" customModule="Contact_Book" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="64"/>
+                                        <rect key="frame" x="0.0" y="48.5" width="320" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V86-VQ-4yu" id="CDV-Sf-eJG">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
@@ -36,7 +42,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hRk-RQ-waK">
-                                                    <rect key="frame" x="171" y="11" width="124" height="41"/>
+                                                    <rect key="frame" x="128" y="11" width="124" height="41"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="RZM-th-LOT">
                                                             <rect key="frame" x="0.0" y="0.0" width="124" height="21.5"/>
@@ -65,11 +71,11 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="hRk-RQ-waK" firstAttribute="leading" secondItem="Xg8-C4-Bwn" secondAttribute="trailing" constant="90" id="2gN-Ay-pwN"/>
-                                                <constraint firstItem="hRk-RQ-waK" firstAttribute="top" secondItem="CDV-Sf-eJG" secondAttribute="topMargin" id="YJi-tC-F8N"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="hRk-RQ-waK" secondAttribute="bottom" constant="1" id="YhG-KH-Rux"/>
+                                                <constraint firstItem="hRk-RQ-waK" firstAttribute="centerY" secondItem="Xg8-C4-Bwn" secondAttribute="centerY" id="1uo-au-JRK"/>
                                                 <constraint firstItem="Xg8-C4-Bwn" firstAttribute="leading" secondItem="CDV-Sf-eJG" secondAttribute="leading" constant="24" id="cgc-AT-wrC"/>
                                                 <constraint firstItem="Xg8-C4-Bwn" firstAttribute="top" secondItem="CDV-Sf-eJG" secondAttribute="top" constant="4" id="chZ-IE-xg2"/>
+                                                <constraint firstItem="hRk-RQ-waK" firstAttribute="leading" secondItem="Xg8-C4-Bwn" secondAttribute="trailing" constant="47" id="egP-cG-7wG"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="hRk-RQ-waK" secondAttribute="trailing" constant="60" id="fzR-XN-IQS"/>
                                                 <constraint firstAttribute="bottom" secondItem="Xg8-C4-Bwn" secondAttribute="bottom" constant="5" id="nfj-tR-RQs"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -102,9 +108,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="myLabel" destination="0Bx-h9-Kbp" id="Xo1-HZ-h8D"/>
                         <outlet property="myTable" destination="fIU-fn-iFs" id="YjQ-tj-lqK"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1012.5" y="88.732394366197184"/>
         </scene>
@@ -281,7 +289,13 @@
                             <constraint firstItem="t86-Ks-qpB" firstAttribute="bottom" secondItem="zgE-rU-hHB" secondAttribute="bottom" constant="20" id="vlb-m0-Qft"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Contact info" id="mvN-7P-uWY"/>
+                    <navigationItem key="navigationItem" title="Contact info" id="mvN-7P-uWY">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="qqd-T9-P7W">
+                            <connections>
+                                <segue destination="JGV-V7-PR6" kind="show" id="9QN-Q0-tPH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="image" destination="SNp-84-fDt" id="lyl-8v-XKj"/>
                         <outlet property="name" destination="fO8-14-2hy" id="bRB-r1-uFT"/>
@@ -293,6 +307,60 @@
                 <exit id="2Xb-8J-vNc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2056.875" y="-283.0985915492958"/>
+        </scene>
+        <!--Contact Edit View Controller-->
+        <scene sceneID="NBo-eF-6Tb">
+            <objects>
+                <viewController id="JGV-V7-PR6" customClass="ContactEditViewController" customModule="Contact_Book" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H7y-0e-fc6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cph-dU-2bv">
+                                <rect key="frame" x="100" y="74" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pBF-Uo-vu2">
+                                <rect key="frame" x="65" y="226" width="191" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FU1-u1-ZN1">
+                                <rect key="frame" x="65" y="268" width="191" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Azf-ue-gMY">
+                                <rect key="frame" x="65" y="310" width="191" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hka-nT-TdO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fgo-BW-OYL">
+                        <barButtonItem key="backBarButtonItem" title="Cancel" id="T4e-T1-af4"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="pfw-zZ-Jjx">
+                            <connections>
+                                <segue destination="40b-Vw-j9p" kind="unwind" unwindAction="unwindToContactInfo:" id="5Qg-8W-fDb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="contactImage" destination="cph-dU-2bv" id="ymy-S6-IUX"/>
+                        <outlet property="name" destination="pBF-Uo-vu2" id="r4f-h1-eA7"/>
+                        <outlet property="phoneNumber" destination="Azf-ue-gMY" id="g5D-cl-m1n"/>
+                        <outlet property="surName" destination="FU1-u1-ZN1" id="c8M-QE-yKd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Cc-ND-1yG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="40b-Vw-j9p" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3065.625" y="-283.0985915492958"/>
         </scene>
     </scenes>
     <resources>

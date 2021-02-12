@@ -19,7 +19,7 @@ class ContactInfoViewController: UIViewController {
     var _phoneNum = ""
     var _image = UIImage()
     private var id: Int?
-    private var model = ContactModel()
+    var model = ContactModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,25 +57,27 @@ class ContactInfoViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination as! ViewController
+        let destination = segue.destination as? ViewController
+        let editDestination = segue.destination as? ContactEditViewController
+        
+        editDestination?._name = self._name
+        editDestination?._surname = self._surName
+        editDestination?._phoneNumber = self._phoneNum
+        editDestination?._image = self._image
+        editDestination?.id = self.id
         
         if let x = id {
-            destination.model.deleteContact(byId: x)
+            destination?.model.deleteContact(byId: x)
         }
-        destination.myTable.reloadData()
+        
+        destination?.myTable.reloadData()
     }
+    
+    @IBAction func unwindToContactInfo(_ sender: UIStoryboardSegue) {
+    }
+    
     
     func setId(_ id: Int){
         self.id = id
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
