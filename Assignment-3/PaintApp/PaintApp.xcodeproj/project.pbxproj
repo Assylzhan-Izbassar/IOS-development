@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA3627AC25DF8F8800D77FBE /* Pen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3627AB25DF8F8800D77FBE /* Pen.swift */; };
 		FA81DB9F25DD03D20094D819 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA81DB9E25DD03D20094D819 /* Circle.swift */; };
 		FA81DBA625DD13F50094D819 /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA81DBA525DD13F50094D819 /* Rectangle.swift */; };
 		FA81DBA925DD1BA10094D819 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA81DBA825DD1BA10094D819 /* Triangle.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA3627AB25DF8F8800D77FBE /* Pen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pen.swift; sourceTree = "<group>"; };
 		FA81DB9E25DD03D20094D819 /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
 		FA81DBA525DD13F50094D819 /* Rectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rectangle.swift; sourceTree = "<group>"; };
 		FA81DBA825DD1BA10094D819 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				FA81DBAE25DD1E300094D819 /* Drawable.swift */,
 				FA81DBB125DD1F5D0094D819 /* Shape.swift */,
 				FA8E1C8125DEC56D006A6609 /* Line.swift */,
+				FA3627AB25DF8F8800D77FBE /* Pen.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 				FA81DBAC25DD1E0A0094D819 /* PaintModel.swift in Sources */,
 				FA81DB9F25DD03D20094D819 /* Circle.swift in Sources */,
 				FAC7ED5425DC4161002C97BE /* ViewController.swift in Sources */,
+				FA3627AC25DF8F8800D77FBE /* Pen.swift in Sources */,
 				FAC7ED6625DC4275002C97BE /* Canvas.swift in Sources */,
 				FA81DBA625DD13F50094D819 /* Rectangle.swift in Sources */,
 				FA81DBB225DD1F5D0094D819 /* Shape.swift in Sources */,

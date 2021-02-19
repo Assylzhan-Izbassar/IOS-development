@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-enum formState: String {
+enum formState : String{
     
     case circle
     case rectangle
@@ -20,25 +20,29 @@ enum formState: String {
 struct PaintModel {
     
     var figures: [Drawable]? = []
-    private var form: formState? = formState.circle
+    private(set) var form: formState? = formState.circle
     
-    mutating func addFigure(_ p1: CGPoint, _ point2: CGPoint, _ isFilled: Bool) {
+    mutating func addFigure(_ p1: CGPoint?, _ point2: CGPoint?, _ isFilled: Bool, _ color: UIColor) {
         var fig: Drawable? = nil
         switch form {
             case .circle:
-                fig = Circle(CGFloat(abs(p1.x-point2.x)/2), CGPoint(x: abs(point2.x+p1.x)/2, y: abs(point2.y+p1.y)/2), .blue, 3, isFilled)
+                fig = Circle(CGFloat(abs(p1!.x-point2!.x)/2), CGPoint(x: abs(point2!.x+p1!.x)/2, y: abs(point2!.y+p1!.y)/2), color, 3, isFilled)
             case .rectangle:
-                fig = Rectangle(p1, point2, .red, 3, isFilled)
+                fig = Rectangle(p1!, point2!, color, 3, isFilled)
             case .line:
-                fig = Line(p1, point2, .yellow, 3, false)
+                fig = Line(p1!, point2!, color, 3, false)
             case .triangle:
-                fig = Triangle(p1, point2, .brown, 3, isFilled)
+                fig = Triangle(p1!, point2!, color, 3, isFilled)
             case .pen:
-                break
+                fig = Pen(color, 3, false)
             case .none:
                 break
         }
         figures?.append(fig!)
+    }
+    
+    mutating func addFigure(_ color: UIColor) {
+        addFigure(nil, nil, false, color)
     }
     
     func drawAll() {

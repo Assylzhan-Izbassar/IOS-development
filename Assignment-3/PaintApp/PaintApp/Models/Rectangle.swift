@@ -26,7 +26,7 @@ class Rectangle : Shape, Drawable{
     }
     
     func drawPath() {
-        let path = UIBezierPath(rect: CGRect(x: upperPoint.x, y: upperPoint.y, width: CGFloat(abs(upperPoint.x-lowerPoint.x)), height: CGFloat(abs(upperPoint.y-lowerPoint.y))))
+        let path = UIBezierPath(rect: CGRect(x: upperPoint.x, y: upperPoint.y, width: CGFloat(lowerPoint.x-upperPoint.x), height: CGFloat(lowerPoint.y-upperPoint.y)))
         color.set()
         path.lineWidth = lineWeight
         isFilled ? path.fill() : path.stroke()
