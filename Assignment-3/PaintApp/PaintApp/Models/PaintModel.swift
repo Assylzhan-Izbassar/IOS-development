@@ -34,11 +34,13 @@ struct PaintModel {
             case .triangle:
                 fig = Triangle(p1!, point2!, color, 3, isFilled)
             case .pen:
-                fig = Pen(color, 3, false)
+                break
             case .none:
                 break
         }
-        figures?.append(fig!)
+        if let f = fig {
+            figures?.append(f)
+        }
     }
     
     mutating func addFigure(_ color: UIColor) {

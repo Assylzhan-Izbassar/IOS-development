@@ -30,5 +30,6 @@ class Rectangle : Shape, Drawable{
         color.set()
         path.lineWidth = lineWeight
         isFilled ? path.fill() : path.stroke()
+        path.close()
     }
 }
