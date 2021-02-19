@@ -12,7 +12,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PaintApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="Canvas" customModule="PaintApp" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -23,35 +23,35 @@
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
                                         <connections>
-                                            <action selector="setRed:" destination="8bC-Xf-vdC" eventType="touchUpInside" id="Vv7-ZS-eMU"/>
+                                            <action selector="setRed:" destination="VBY-bS-aZp" eventType="touchUpInside" id="wRb-17-h3E"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJE-Bp-IJt" userLabel="orrange">
                                         <rect key="frame" x="30" y="0.0" width="30" height="30"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                         <connections>
-                                            <action selector="setOrange:" destination="8bC-Xf-vdC" eventType="touchUpInside" id="itc-hF-r84"/>
+                                            <action selector="setOrange:" destination="VBY-bS-aZp" eventType="touchUpInside" id="sZ3-Wv-zSH"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eG0-ZN-Z83" userLabel="yellow">
                                         <rect key="frame" x="60" y="0.0" width="30" height="30"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <connections>
-                                            <action selector="setYellow:" destination="8bC-Xf-vdC" eventType="touchUpInside" id="28s-hM-N6u"/>
+                                            <action selector="setYellow:" destination="VBY-bS-aZp" eventType="touchUpInside" id="qdc-cw-M51"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5P5-t9-Nwh" userLabel="green">
                                         <rect key="frame" x="90" y="0.0" width="30" height="30"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <connections>
-                                            <action selector="setGreen:" destination="8bC-Xf-vdC" eventType="touchUpInside" id="9ae-fG-4Rn"/>
+                                            <action selector="setGreen:" destination="VBY-bS-aZp" eventType="touchUpInside" id="BNC-8v-Wsu"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TeG-TY-twj" userLabel="teal">
                                         <rect key="frame" x="120" y="0.0" width="30" height="30"/>
                                         <color key="backgroundColor" systemColor="systemTealColor"/>
                                         <connections>
-                                            <action selector="setLightBlue:" destination="8bC-Xf-vdC" eventType="touchUpInside" id="a4P-7R-Z1C"/>
+                                            <action selector="setLightBlue:" destination="VBY-bS-aZp" eventType="touchUpInside" id="lOl-l1-MDA"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgx-nx-4k4" userLabel="blue">
@@ -59,14 +59,14 @@
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                                         <color key="tintColor" systemColor="systemBlueColor"/>
                                         <connections>
-                                            <action selector="setBlue:" destination="8bC-Xf-vdC" eventType="touchUpInside" id="ufc-Ob-Ke6"/>
+                                            <action selector="setBlue:" destination="VBY-bS-aZp" eventType="touchUpInside" id="kb2-KP-vQM"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBS-ih-eSr" userLabel="indigo">
                                         <rect key="frame" x="180" y="0.0" width="30" height="30"/>
                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                         <connections>
-                                            <action selector="setIndigo:" destination="8bC-Xf-vdC" eventType="touchUpInside" id="FOZ-sj-4Rd"/>
+                                            <action selector="setIndigo:" destination="VBY-bS-aZp" eventType="touchUpInside" id="Puf-SK-NKq"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -78,11 +78,14 @@
                                     <constraint firstAttribute="width" constant="50" id="PSs-WT-6Eq"/>
                                 </constraints>
                                 <state key="normal" image="undo"/>
+                                <connections>
+                                    <action selector="undo:" destination="VBY-bS-aZp" eventType="touchUpInside" id="FOa-24-k7x"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FDp-16-7MW">
                                 <rect key="frame" x="508" y="40" width="78" height="31"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fiil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFz-86-vkr">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFz-86-vkr">
                                         <rect key="frame" x="0.0" y="0.0" width="21" height="31"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -112,7 +115,7 @@
                                         </constraints>
                                         <state key="normal" image="circle"/>
                                         <connections>
-                                            <action selector="setCircle:" destination="8bC-Xf-vdC" eventType="touchUpInside" id="hDF-EP-B6m"/>
+                                            <action selector="setCircle:" destination="VBY-bS-aZp" eventType="touchUpInside" id="Qco-FN-zHX"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSK-bS-q18" userLabel="rectangle">
@@ -123,7 +126,7 @@
                                         </constraints>
                                         <state key="normal" image="rectangle"/>
                                         <connections>
-                                            <action selector="setRectangle:" destination="8bC-Xf-vdC" eventType="touchUpInside" id="TTv-fy-rFG"/>
+                                            <action selector="setRectangle:" destination="VBY-bS-aZp" eventType="touchUpInside" id="tng-g5-ygw"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsB-KK-D7I" userLabel="line">
@@ -134,7 +137,7 @@
                                         </constraints>
                                         <state key="normal" image="line"/>
                                         <connections>
-                                            <action selector="setLine:" destination="8bC-Xf-vdC" eventType="touchUpInside" id="rD0-aU-TLq"/>
+                                            <action selector="setLine:" destination="VBY-bS-aZp" eventType="touchUpInside" id="a26-cq-LO2"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8m9-SJ-b9C" userLabel="triangle">
@@ -145,7 +148,7 @@
                                         </constraints>
                                         <state key="normal" image="triangle"/>
                                         <connections>
-                                            <action selector="setTriangle:" destination="8bC-Xf-vdC" eventType="touchUpInside" id="Nzi-hr-9u9"/>
+                                            <action selector="setTriangle:" destination="VBY-bS-aZp" eventType="touchUpInside" id="Bcb-kA-I0G"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pit-qs-Mzu" userLabel="pen">
@@ -156,7 +159,7 @@
                                         </constraints>
                                         <state key="normal" image="pen"/>
                                         <connections>
-                                            <action selector="setPen:" destination="8bC-Xf-vdC" eventType="touchUpInside" id="S2L-PV-l6N"/>
+                                            <action selector="setPen:" destination="VBY-bS-aZp" eventType="touchUpInside" id="VAm-iJ-CnJ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -165,22 +168,40 @@
                                 <rect key="frame" x="0.0" y="253" width="1024" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VBY-bS-aZp" customClass="Canvas" customModule="PaintApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="125" width="984" height="576"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="isFilled" destination="FMw-Ex-DbY" id="3Rx-vF-bfe"/>
+                                    <outlet property="undoBtn" destination="Tyh-Gi-imJ" id="ty9-zv-DC2"/>
+                                </connections>
+                            </view>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="3" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ikf-76-Jlc">
+                                <rect key="frame" x="716" y="78" width="212" height="31"/>
+                                <connections>
+                                    <action selector="changeLineWidthWithSender:" destination="VBY-bS-aZp" eventType="valueChanged" id="4qn-rb-YWh"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                         <constraints>
                             <constraint firstItem="Tyh-Gi-imJ" firstAttribute="top" secondItem="niq-v0-ZaN" secondAttribute="top" id="26a-3A-x1K"/>
                             <constraint firstItem="gf6-s1-MBA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="2yu-LQ-VvY"/>
+                            <constraint firstItem="VBY-bS-aZp" firstAttribute="top" secondItem="Ikf-76-Jlc" secondAttribute="bottom" constant="17" id="AI1-Ot-jlb"/>
+                            <constraint firstItem="Ikf-76-Jlc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="718" id="BIn-c8-at0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ikf-76-Jlc" secondAttribute="trailing" constant="98" id="OX6-g8-gbq"/>
                             <constraint firstItem="niq-v0-ZaN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="T4z-fi-DO2"/>
                             <constraint firstItem="niq-v0-ZaN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ZPQ-en-slS"/>
                             <constraint firstItem="FDp-16-7MW" firstAttribute="leading" secondItem="niq-v0-ZaN" secondAttribute="trailing" constant="118" id="inx-XN-5On"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VBY-bS-aZp" secondAttribute="trailing" constant="20" id="kHU-se-qUB"/>
                             <constraint firstItem="FDp-16-7MW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="kXZ-EH-sTd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VBY-bS-aZp" secondAttribute="bottom" constant="17" id="m1q-YO-SQl"/>
                             <constraint firstItem="gf6-s1-MBA" firstAttribute="leading" secondItem="FDp-16-7MW" secondAttribute="trailing" constant="130" id="o8n-UB-hJJ"/>
+                            <constraint firstItem="VBY-bS-aZp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="qlv-G7-YYY"/>
                             <constraint firstItem="Tyh-Gi-imJ" firstAttribute="leading" secondItem="gf6-s1-MBA" secondAttribute="trailing" constant="28" id="t6T-5s-fMb"/>
+                            <constraint firstItem="Ikf-76-Jlc" firstAttribute="top" secondItem="gf6-s1-MBA" secondAttribute="bottom" constant="8" symbolic="YES" id="utg-0b-QGP"/>
                         </constraints>
-                        <connections>
-                            <outlet property="isFilled" destination="FMw-Ex-DbY" id="xpu-RJ-LYg"/>
-                        </connections>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="A9k-Zp-vDB"/>
@@ -198,6 +219,9 @@
         <image name="rectangle" width="100" height="100"/>
         <image name="triangle" width="100" height="100"/>
         <image name="undo" width="128" height="128"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
