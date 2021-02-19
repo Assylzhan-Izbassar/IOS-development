@@ -7,21 +7,10 @@
 
 import UIKit
 
-enum formState: String {
-    
-    case circle
-    case rectangle
-    case line
-    case triangle
-    case pen
-}
-
 class Canvas: UIView {
     
     @IBOutlet weak var isFilled: UISwitch!
-    private var form: formState? = formState.circle
-    
-    var figures: [Drawable]? = []
+    var model = PaintModel()
     
     var point1: CGPoint?
     var point2: CGPoint!
@@ -29,27 +18,8 @@ class Canvas: UIView {
     override func draw(_ rect: CGRect) {
         // Drawing code
         if let p1 = point1 {
-            var fig: Drawable? = nil
-            
-            switch form {
-                case .circle:
-                    fig = Circle(CGFloat(abs(p1.x-point2.x)/2), CGPoint(x: abs(point2.x+p1.x)/2, y: abs(point2.y+p1.y)/2), .blue, 3, isFilled.isOn)
-                case .rectangle:
-                    fig = Rectangle(p1, point2, .red, 3, isFilled.isOn)
-                case .line:
-                    break
-                case .triangle:
-                    break
-                case .pen:
-                    break
-                case .none:
-                    break
-            }
-            figures?.append(fig!)
-            
-            for figure in figures! {
-                figure.drawPath()
-            }
+            model.addFigure(p1, point2, isFilled.isOn)
+            model.drawAll()
         }
     }
     
@@ -63,18 +33,18 @@ class Canvas: UIView {
     }
     
     @IBAction func setCircle(_ sender: UIButton) {
-        form = formState.circle
+        model.setState(formState.circle)
     }
     @IBAction func setRectangle(_ sender: UIButton) {
-        form = formState.rectangle
+        model.setState(formState.rectangle)
     }
     @IBAction func setLine(_ sender: UIButton) {
-        form = formState.line
+        model.setState(formState.line)
     }
     @IBAction func setTriangle(_ sender: UIButton) {
-        form = formState.triangle
+        model.setState(formState.triangle)
     }
     @IBAction func setPen(_ sender: UIButton) {
-        form = formState.pen
+        model.setState(formState.pen)
     }
 }

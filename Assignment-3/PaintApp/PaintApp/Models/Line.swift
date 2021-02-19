@@ -8,7 +8,16 @@
 import Foundation
 import UIKit
 
-struct Line {
-    let color: UIColor
-    let points: [Drawable]
+class Line: Rectangle {
+
+    override func drawPath() {
+        let path = UIBezierPath()
+        path.move(to: upperPoint)
+        path.addLine(to: lowerPoint)
+        
+        path.close()
+        color.set()
+        path.lineWidth = lineWeight
+        path.stroke()
+    }
 }
