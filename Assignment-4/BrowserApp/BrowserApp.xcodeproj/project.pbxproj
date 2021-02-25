@@ -7,19 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FAD3391925E7D60A00F3532F /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3391825E7D60A00F3532F /* MasterViewController.swift */; };
+		FAD3392325E7D8E100F3532F /* WebPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3392225E7D8E100F3532F /* WebPage.swift */; };
+		FAD3392A25E7DC2C00F3532F /* WebPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3392925E7DC2C00F3532F /* WebPageModel.swift */; };
+		FAD3393025E823A200F3532F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3392E25E823A200F3532F /* DetailViewController.swift */; };
+		FAD3393125E823A200F3532F /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD3392F25E823A200F3532F /* DetailViewController.xib */; };
 		FAFAC13825E38BC4009C960C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFAC13725E38BC4009C960C /* AppDelegate.swift */; };
 		FAFAC13A25E38BC4009C960C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFAC13925E38BC4009C960C /* SceneDelegate.swift */; };
-		FAFAC13C25E38BC4009C960C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFAC13B25E38BC4009C960C /* ViewController.swift */; };
 		FAFAC13F25E38BC4009C960C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAFAC13D25E38BC4009C960C /* Main.storyboard */; };
 		FAFAC14125E38BC8009C960C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAFAC14025E38BC8009C960C /* Assets.xcassets */; };
 		FAFAC14425E38BC8009C960C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAFAC14225E38BC8009C960C /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FAD3391825E7D60A00F3532F /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		FAD3392225E7D8E100F3532F /* WebPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPage.swift; sourceTree = "<group>"; };
+		FAD3392925E7DC2C00F3532F /* WebPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPageModel.swift; sourceTree = "<group>"; };
+		FAD3392E25E823A200F3532F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		FAD3392F25E823A200F3532F /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		FAFAC13425E38BC4009C960C /* BrowserApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrowserApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAFAC13725E38BC4009C960C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAFAC13925E38BC4009C960C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FAFAC13B25E38BC4009C960C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FAFAC13E25E38BC4009C960C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAFAC14025E38BC8009C960C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAFAC14325E38BC8009C960C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +45,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FAD3391F25E7D86A00F3532F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FAD3391825E7D60A00F3532F /* MasterViewController.swift */,
+				FAD3392E25E823A200F3532F /* DetailViewController.swift */,
+				FAD3392F25E823A200F3532F /* DetailViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FAD3392125E7D88B00F3532F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FAD3392225E7D8E100F3532F /* WebPage.swift */,
+				FAD3392925E7DC2C00F3532F /* WebPageModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		FAFAC12B25E38BC4009C960C = {
 			isa = PBXGroup;
 			children = (
@@ -56,9 +83,10 @@
 		FAFAC13625E38BC4009C960C /* BrowserApp */ = {
 			isa = PBXGroup;
 			children = (
+				FAD3392125E7D88B00F3532F /* Models */,
+				FAD3391F25E7D86A00F3532F /* Controllers */,
 				FAFAC13725E38BC4009C960C /* AppDelegate.swift */,
 				FAFAC13925E38BC4009C960C /* SceneDelegate.swift */,
-				FAFAC13B25E38BC4009C960C /* ViewController.swift */,
 				FAFAC13D25E38BC4009C960C /* Main.storyboard */,
 				FAFAC14025E38BC8009C960C /* Assets.xcassets */,
 				FAFAC14225E38BC8009C960C /* LaunchScreen.storyboard */,
@@ -127,6 +155,7 @@
 				FAFAC14425E38BC8009C960C /* LaunchScreen.storyboard in Resources */,
 				FAFAC14125E38BC8009C960C /* Assets.xcassets in Resources */,
 				FAFAC13F25E38BC4009C960C /* Main.storyboard in Resources */,
+				FAD3393125E823A200F3532F /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,9 +166,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAFAC13C25E38BC4009C960C /* ViewController.swift in Sources */,
 				FAFAC13825E38BC4009C960C /* AppDelegate.swift in Sources */,
 				FAFAC13A25E38BC4009C960C /* SceneDelegate.swift in Sources */,
+				FAD3392325E7D8E100F3532F /* WebPage.swift in Sources */,
+				FAD3393025E823A200F3532F /* DetailViewController.swift in Sources */,
+				FAD3391925E7D60A00F3532F /* MasterViewController.swift in Sources */,
+				FAD3392A25E7DC2C00F3532F /* WebPageModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +321,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B3N9W5S87Y;
 				INFOPLIST_FILE = BrowserApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,6 +341,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B3N9W5S87Y;
 				INFOPLIST_FILE = BrowserApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
