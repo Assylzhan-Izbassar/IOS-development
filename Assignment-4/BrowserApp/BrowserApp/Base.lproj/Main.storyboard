@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="syz-Lc-tRC">
-    <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -15,30 +15,19 @@
                     <view key="view" contentMode="scaleToFill" id="dDq-aC-9q6">
                         <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Afe-wC-mPH">
-                                <rect key="frame" x="-0.5" y="50" width="704" height="718"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="P27-uu-Bh3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="gEC-dm-ULi"/>
                     <connections>
-                        <outlet property="webView" destination="Afe-wC-mPH" id="TBE-Zz-2yc"/>
+                        <outlet property="detailNav" destination="gEC-dm-ULi" id="4nC-CN-w1U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x3O-D2-RZe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-144.140625" y="1443.75"/>
         </scene>
-        <!--Websites-->
+        <!--Master View Controller-->
         <scene sceneID="Hma-z5-pKi">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="xaR-zj-e54" customClass="MasterViewController" customModule="BrowserApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -46,9 +35,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="420" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="mcf-vZ-3NM">
+                            <rect key="frame" x="0.0" y="0.0" width="420" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="List" width="259"/>
+                                <segment title="Favourite" width="196"/>
+                            </segments>
+                            <connections>
+                                <action selector="switchSegment:" destination="xaR-zj-e54" eventType="valueChanged" id="9Qp-sA-5uB"/>
+                            </connections>
+                        </segmentedControl>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="XYq-yF-Rdy" style="IBUITableViewCellStyleDefault" id="0Zn-xg-3yj">
-                                <rect key="frame" x="0.0" y="28" width="420" height="43.5"/>
+                                <rect key="frame" x="0.0" y="60" width="420" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Zn-xg-3yj" id="2Go-Of-JNS">
                                     <rect key="frame" x="100" y="0.0" width="320" height="43.5"/>
@@ -70,7 +70,17 @@
                             <outlet property="delegate" destination="xaR-zj-e54" id="Jc9-7x-tKa"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Websites" id="oVq-v8-0QM"/>
+                    <navigationItem key="navigationItem" id="oVq-v8-0QM">
+                        <nil key="title"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="lLJ-Ol-ajR">
+                            <connections>
+                                <action selector="addButton:" destination="xaR-zj-e54" id="54x-z2-y2N"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="myTable" destination="1jU-lt-Fos" id="B0B-4P-raz"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QSl-mQ-jb9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

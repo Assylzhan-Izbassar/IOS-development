@@ -15,36 +15,55 @@ extension DetailViewController: WebSelectionDelegate {
     }
 }
 
-class DetailViewController: UINavigationController, WKUIDelegate {
+class DetailViewController: UINavigationController, WKNavigationDelegate {
     
-    @IBOutlet var webView: WKWebView!
+
+//    @IBOutlet var webView: WKWebView!
+//    @IBOutlet weak var activity: UIActivityIndicatorView!
+    
+    @IBOutlet weak var detailNav: UINavigationItem!
     var url: String?
     var page: WebPage? {
         didSet {
             refreshUI()
         }
     }
+    var pageId: Int?
     
-    override func loadView() {
-        let webConfiguration = WKWebViewConfiguration()
-        webView = WKWebView(frame: .zero, configuration: webConfiguration)
-        webView.uiDelegate = self
-        view = webView
-    }
-
+    var touchCount: Int = 0
+    
+//    override func loadView() {
+//        webView = WKWebView()
+//        webView.navigationDelegate = self
+//        view = webView
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+//        if let path = url {
+//            let request = URLRequest(url: URL(string: path)!)
+//            webView.load(request)
+//        }
     }
     
     private func refreshUI() {
         loadViewIfNeeded()
-        
         url = page?.getUrl()
-        let request = URLRequest(url: URL(string: url!)!)
-        print(webView.load(request)!)
+        pageId = page?.getId()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        touchCount += 1
+        if touchCount == 3 {
+            if WebPageModel.getFavor(pageId!) == false {
+                WebPageModel.addFavorite(pageId!)
+            } else {
+                WebPageModel.deleteFavor(pageId!)
+            }
+            touchCount = 0
+        }
+    }
     /*
     // MARK: - Navigation
 
