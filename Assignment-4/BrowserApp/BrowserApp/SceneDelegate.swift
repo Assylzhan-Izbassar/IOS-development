@@ -19,18 +19,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard
             let splitViewController = window?.rootViewController as? UISplitViewController,
+            let leftNav = splitViewController.viewControllers.first as? UINavigationController,
+            let masterView = leftNav.viewControllers.first as? MasterViewController,
 
-            let leftNavController = splitViewController.viewControllers.first
-                as? UINavigationController,
-            let masterViewController = leftNavController.viewControllers.first
-                as? MasterViewController,
-            let detailViewController = splitViewController.viewControllers.last
-        else { fatalError() }
-        
-        let firstPage = masterViewController.model.getPages().first
-        (detailViewController as? DetailViewController)?.page = firstPage
-        
-        masterViewController.delegate = detailViewController as? WebSelectionDelegate
+            let detailView = splitViewController.viewControllers.last as? DetailViewController
+            
+        else {
+            return
+        }
+    
+        let page = masterView.model.getPages().first
+        detailView.page = page
+
+        masterView.delegate = detailView
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

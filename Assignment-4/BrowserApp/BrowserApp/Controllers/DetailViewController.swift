@@ -11,38 +11,40 @@ import WebKit
 
 extension DetailViewController: WebSelectionDelegate {
     func webSelected(_ newPage: WebPage) {
-        page = newPage
+        self.page = newPage
     }
 }
 
-class DetailViewController: UIViewController {
+class DetailViewController: UINavigationController, WKUIDelegate {
     
     @IBOutlet var webView: WKWebView!
-    var page: WebPage?
-    {
+    var url: String?
+    var page: WebPage? {
         didSet {
             refreshUI()
         }
     }
-    var url: String?
     
-    var model = WebPageModel()
+    override func loadView() {
+        let webConfiguration = WKWebViewConfiguration()
+        webView = WKWebView(frame: .zero, configuration: webConfiguration)
+        webView.uiDelegate = self
+        view = webView
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        page = model.getPages().first!
-        url = page?.getUrl()
-        let request = URLRequest(url: URL(string: url!)!)
-        webView.load(request)
     }
     
     private func refreshUI() {
-      loadViewIfNeeded()
-        print(page?.getTitle() ?? "")
+        loadViewIfNeeded()
+        
+        url = page?.getUrl()
+        let request = URLRequest(url: URL(string: url!)!)
+        print(webView.load(request)!)
     }
-
-
+    
     /*
     // MARK: - Navigation
 

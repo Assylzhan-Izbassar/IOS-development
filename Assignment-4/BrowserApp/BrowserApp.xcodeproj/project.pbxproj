@@ -11,7 +11,6 @@
 		FAD3392325E7D8E100F3532F /* WebPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3392225E7D8E100F3532F /* WebPage.swift */; };
 		FAD3392A25E7DC2C00F3532F /* WebPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3392925E7DC2C00F3532F /* WebPageModel.swift */; };
 		FAD3393025E823A200F3532F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3392E25E823A200F3532F /* DetailViewController.swift */; };
-		FAD3393125E823A200F3532F /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD3392F25E823A200F3532F /* DetailViewController.xib */; };
 		FAFAC13825E38BC4009C960C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFAC13725E38BC4009C960C /* AppDelegate.swift */; };
 		FAFAC13A25E38BC4009C960C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFAC13925E38BC4009C960C /* SceneDelegate.swift */; };
 		FAFAC13F25E38BC4009C960C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAFAC13D25E38BC4009C960C /* Main.storyboard */; };
@@ -24,7 +23,6 @@
 		FAD3392225E7D8E100F3532F /* WebPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPage.swift; sourceTree = "<group>"; };
 		FAD3392925E7DC2C00F3532F /* WebPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPageModel.swift; sourceTree = "<group>"; };
 		FAD3392E25E823A200F3532F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		FAD3392F25E823A200F3532F /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		FAFAC13425E38BC4009C960C /* BrowserApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrowserApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAFAC13725E38BC4009C960C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAFAC13925E38BC4009C960C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,7 +48,6 @@
 			children = (
 				FAD3391825E7D60A00F3532F /* MasterViewController.swift */,
 				FAD3392E25E823A200F3532F /* DetailViewController.swift */,
-				FAD3392F25E823A200F3532F /* DetailViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -155,7 +152,6 @@
 				FAFAC14425E38BC8009C960C /* LaunchScreen.storyboard in Resources */,
 				FAFAC14125E38BC8009C960C /* Assets.xcassets in Resources */,
 				FAFAC13F25E38BC4009C960C /* Main.storyboard in Resources */,
-				FAD3393125E823A200F3532F /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

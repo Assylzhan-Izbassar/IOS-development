@@ -20,9 +20,9 @@ struct WebPageModel {
     }
     
     mutating func testData() {
-        pages?.append(WebPage("Google", "https://google.com"))
-        pages?.append(WebPage("Apple", "https://apple.com"))
-        pages?.append(WebPage("Facebook", "https://facebook.com"))
+        pages?.append(WebPage("Google", "https://www.google.com"))
+        pages?.append(WebPage("Apple", "https://www.apple.com"))
+        pages?.append(WebPage("Facebook", "https://www.facebook.com"))
     }
 }
 
