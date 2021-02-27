@@ -15,54 +15,67 @@ extension DetailViewController: WebSelectionDelegate {
     }
 }
 
-class DetailViewController: UINavigationController, WKNavigationDelegate {
-    
+protocol TableRefreshDelegate: class {
+    func tableRefresh()
+}
 
-//    @IBOutlet var webView: WKWebView!
-//    @IBOutlet weak var activity: UIActivityIndicatorView!
+class DetailViewController: UIViewController, WKNavigationDelegate {
     
-    @IBOutlet weak var detailNav: UINavigationItem!
-    var url: String?
+    @IBOutlet var webView: WKWebView!
+    @IBOutlet weak var activeLogo: UIActivityIndicatorView!
+    
     var page: WebPage? {
         didSet {
             refreshUI()
         }
     }
-    var pageId: Int?
-    
-    var touchCount: Int = 0
-    
-//    override func loadView() {
-//        webView = WKWebView()
-//        webView.navigationDelegate = self
-//        view = webView
-//    }
+    weak var refresh: TableRefreshDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-//        if let path = url {
-//            let request = URLRequest(url: URL(string: path)!)
-//            webView.load(request)
-//        }
+        /**
+         Block for recognize 3 taps
+         */
+        let tap = UITapGestureRecognizer(target: self, action: #selector(taps))
+        tap.numberOfTapsRequired = 3
+        webView.addGestureRecognizer(tap)
     }
-    
+
     private func refreshUI() {
+
         loadViewIfNeeded()
-        url = page?.getUrl()
-        pageId = page?.getId()
+        let request = URLRequest(url: URL(string: (page?.getUrl())!)!)
+        webView.load(request)
+        
+        webView.addSubview(activeLogo)
+        activeLogo.startAnimating()
+        webView.navigationDelegate = self
+        activeLogo.hidesWhenStopped = true
+        
+        self.title = page?.getTitle()
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        touchCount += 1
-        if touchCount == 3 {
-            if WebPageModel.getFavor(pageId!) == false {
-                WebPageModel.addFavorite(pageId!)
-            } else {
-                WebPageModel.deleteFavor(pageId!)
-            }
-            touchCount = 0
+    @objc func taps() {
+        if WebPageModel.getFavor((page?.getId())!) == false {
+            WebPageModel.addFavorite((page?.getId())!)
+        } else {
+            WebPageModel.deleteFavor((page?.getId())!)
         }
+        if page?.getFavorite() == true {
+            navigationController?.navigationBar.barTintColor = .yellow
+            navigationController?.navigationBar.backgroundColor = .yellow
+        } else {
+            navigationController?.navigationBar.barTintColor = .white
+        }
+        refresh?.tableRefresh()
+    }
+   
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        activeLogo.stopAnimating()
+    }
+    
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        activeLogo.stopAnimating()
     }
     /*
     // MARK: - Navigation

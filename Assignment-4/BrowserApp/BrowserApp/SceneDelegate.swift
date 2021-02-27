@@ -21,17 +21,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let splitViewController = window?.rootViewController as? UISplitViewController,
             let leftNav = splitViewController.viewControllers.first as? UINavigationController,
             let masterView = leftNav.viewControllers.first as? MasterViewController,
-
-            let detailView = splitViewController.viewControllers.last as? DetailViewController
-            
+            let rightNav = splitViewController.viewControllers.last as? UINavigationController,
+            let detailView = rightNav.viewControllers.last as? DetailViewController
         else {
             return
         }
-    
+        
         let page = masterView.model.getPages().first
         detailView.page = page
 
         masterView.delegate = detailView
+        detailView.refresh = masterView
+        
+        detailView.navigationItem.leftItemsSupplementBackButton = true
+        detailView.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

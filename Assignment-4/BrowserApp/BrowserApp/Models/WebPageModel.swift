@@ -37,14 +37,32 @@ struct WebPageModel {
     
     static func addFavorite(_ id: Int) {
         WebPageModel.favorites?.append(pages![id])
-        segmentArray[1] = WebPageModel.favorites!
         pages![id].setFavorite(true)
+        updateSegmentArray()
     }
     
     static func deleteFavor(_ id: Int) {
-        WebPageModel.favorites?.remove(at: id)
-        segmentArray[1] = WebPageModel.favorites!
+        let title = pages?[id].getTitle()
+        var fav_id: Int?
+        
+        for (i, e) in favorites!.enumerated() {
+            if e.getTitle() == title {
+                fav_id = i
+                break
+            }
+        }
+        
+        if let temp = fav_id {
+            favorites?.remove(at: temp)
+        }
+        
         pages![id].setFavorite(false)
+        updateSegmentArray()
+    }
+    
+    private static func updateSegmentArray() {
+        segmentArray[0] = WebPageModel.pages!
+        segmentArray[1] = WebPageModel.favorites!
     }
     
     func getFavorites() -> Array<WebPage> {

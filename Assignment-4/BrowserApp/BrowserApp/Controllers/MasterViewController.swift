@@ -11,6 +11,12 @@ protocol WebSelectionDelegate: class {
   func webSelected(_ newPage: WebPage)
 }
 
+extension MasterViewController: TableRefreshDelegate {
+    func tableRefresh() {
+        self.myTable.reloadData()
+    }
+}
+
 class MasterViewController: UITableViewController {
     
     @IBOutlet var myTable: UITableView!
@@ -20,12 +26,6 @@ class MasterViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -59,7 +59,13 @@ class MasterViewController: UITableViewController {
     override func tableView(
         _ tableView: UITableView,
         didSelectRowAt indexPath: IndexPath) {
-        let selectedPage = model.getPages()[indexPath.row]
+        if
+          let detailViewController = delegate as? DetailViewController,
+          let detailNavigationController = detailViewController.navigationController {
+            splitViewController?
+              .showDetailViewController(detailNavigationController, sender: nil)
+        }
+        let selectedPage = model.getSegment()[selectedSegment][indexPath.row]
         delegate?.webSelected(selectedPage)
     }
 
@@ -71,13 +77,16 @@ class MasterViewController: UITableViewController {
         alert.addTextField {
             (url) in url.placeholder = "Enter a url"
         }
+        var http = "https://"
         let action = UIAlertAction(title: "Add", style: .default) { [self]
             (_) in
             guard
                 let title = alert.textFields?.first?.text,
                 let url = alert.textFields?.last?.text
             else { return }
-            model.addPage(title, url)
+            
+            http += url
+            model.addPage(title, http)
             myTable.reloadData()
         }
         alert.addAction(action)
