@@ -7,6 +7,13 @@
 
 import UIKit
 
+enum UIUserInterfaceIdiom : Int {
+    case unspecified
+    
+    case phone // iPhone and iPod touch style UI
+    case pad   // iPad style UI (also includes macOS Catalyst)
+}
+
 protocol WebSelectionDelegate: class {
   func webSelected(_ newPage: WebPage)
 }
@@ -14,6 +21,30 @@ protocol WebSelectionDelegate: class {
 extension MasterViewController: TableRefreshDelegate {
     func tableRefresh() {
         self.myTable.reloadData()
+    }
+    
+    func changeColor(_ status: Bool) {
+        
+        switch UIDevice.current.userInterfaceIdiom {
+        case .phone:
+            if status == true{
+                navigationController?.navigationBar.barTintColor = .yellow
+            }else{
+                navigationController?.navigationBar.barTintColor = .white
+            }
+        case .pad:
+            break
+        case .unspecified:
+            break
+        case .tv:
+            break
+        case .carPlay:
+            break
+        case .mac:
+            break
+        @unknown default:
+            break
+        }
     }
 }
 
@@ -26,6 +57,7 @@ class MasterViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.barTintColor = .white
     }
 
     // MARK: - Table view data source
@@ -92,7 +124,9 @@ class MasterViewController: UITableViewController {
         alert.addAction(action)
         present(alert, animated: true)
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        navigationController?.navigationBar.barTintColor = .white
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

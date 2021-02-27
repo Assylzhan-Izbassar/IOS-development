@@ -17,6 +17,7 @@ extension DetailViewController: WebSelectionDelegate {
 
 protocol TableRefreshDelegate: class {
     func tableRefresh()
+    func changeColor(_ status: Bool)
 }
 
 class DetailViewController: UIViewController, WKNavigationDelegate {
@@ -52,6 +53,14 @@ class DetailViewController: UIViewController, WKNavigationDelegate {
         webView.navigationDelegate = self
         activeLogo.hidesWhenStopped = true
         
+        if page?.getFavorite() == true {
+            navigationController?.navigationBar.barTintColor = .yellow
+            refresh?.changeColor(true)
+        } else {
+            navigationController?.navigationBar.barTintColor = .white
+            refresh?.changeColor(false)
+        }
+        
         self.title = page?.getTitle()
     }
     
@@ -63,9 +72,10 @@ class DetailViewController: UIViewController, WKNavigationDelegate {
         }
         if page?.getFavorite() == true {
             navigationController?.navigationBar.barTintColor = .yellow
-            navigationController?.navigationBar.backgroundColor = .yellow
+            refresh?.changeColor(true)
         } else {
             navigationController?.navigationBar.barTintColor = .white
+            refresh?.changeColor(false)
         }
         refresh?.tableRefresh()
     }
@@ -76,6 +86,10 @@ class DetailViewController: UIViewController, WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         activeLogo.stopAnimating()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        refresh?.changeColor(false)
     }
     /*
     // MARK: - Navigation

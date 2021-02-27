@@ -71,7 +71,7 @@
             <objects>
                 <navigationController id="Ibi-G7-zyC" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="IMt-os-UTR"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="V7t-8s-YDo">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="V7t-8s-YDo">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
