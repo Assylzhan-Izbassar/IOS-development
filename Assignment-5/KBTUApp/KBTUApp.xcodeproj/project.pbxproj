@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA109EFE25F7E7AC0062EBD1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA109EFD25F7E7AC0062EBD1 /* MainViewController.swift */; };
-		FA109F0225F7E7CE0062EBD1 /* SideMenuTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA109F0125F7E7CE0062EBD1 /* SideMenuTableTableViewController.swift */; };
+		FA109F0225F7E7CE0062EBD1 /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA109F0125F7E7CE0062EBD1 /* SideMenuTableViewController.swift */; };
+		FA4958A725FA0C0E0077334E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4958A625FA0C0E0077334E /* MainViewController.swift */; };
+		FA4958AA25FA0F570077334E /* SideTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4958A925FA0F570077334E /* SideTransition.swift */; };
+		FA4958B225FA37010077334E /* NewsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4958B125FA37010077334E /* NewsContainerView.swift */; };
+		FA4958B625FA60260077334E /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4958B525FA60260077334E /* ContainerViewController.swift */; };
+		FA4958BA25FA7A500077334E /* EventsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4958B925FA7A500077334E /* EventsContainerView.swift */; };
 		FAC1F1AB25F3D08A009AE9A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1F1AA25F3D08A009AE9A4 /* AppDelegate.swift */; };
 		FAC1F1AD25F3D08A009AE9A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1F1AC25F3D08A009AE9A4 /* SceneDelegate.swift */; };
 		FAC1F1B225F3D08A009AE9A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC1F1B025F3D08A009AE9A4 /* Main.storyboard */; };
@@ -17,8 +21,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FA109EFD25F7E7AC0062EBD1 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ../../../../../../../../../.Trash/MainViewController.swift; sourceTree = "<group>"; };
-		FA109F0125F7E7CE0062EBD1 /* SideMenuTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableTableViewController.swift; sourceTree = "<group>"; };
+		FA109F0125F7E7CE0062EBD1 /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
+		FA4958A625FA0C0E0077334E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FA4958A925FA0F570077334E /* SideTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideTransition.swift; sourceTree = "<group>"; };
+		FA4958B125FA37010077334E /* NewsContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsContainerView.swift; sourceTree = "<group>"; };
+		FA4958B525FA60260077334E /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		FA4958B925FA7A500077334E /* EventsContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsContainerView.swift; sourceTree = "<group>"; };
 		FAC1F1A725F3D08A009AE9A4 /* KBTUApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KBTUApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC1F1AA25F3D08A009AE9A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAC1F1AC25F3D08A009AE9A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,13 +47,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FABA853D25F5FDDD00FFA516 /* ViewControllers */ = {
+		FA4958AE25FA2E5D0077334E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				FA109EFD25F7E7AC0062EBD1 /* MainViewController.swift */,
-				FA109F0125F7E7CE0062EBD1 /* SideMenuTableTableViewController.swift */,
+				FA4958B825FA77F60077334E /* ChildViewControllers */,
+				FA4958A625FA0C0E0077334E /* MainViewController.swift */,
+				FA109F0125F7E7CE0062EBD1 /* SideMenuTableViewController.swift */,
+				FA4958B525FA60260077334E /* ContainerViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FA4958B825FA77F60077334E /* ChildViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA4958B125FA37010077334E /* NewsContainerView.swift */,
+				FA4958B925FA7A500077334E /* EventsContainerView.swift */,
+			);
+			path = ChildViewControllers;
 			sourceTree = "<group>";
 		};
 		FAC1F19E25F3D08A009AE9A4 = {
@@ -67,13 +86,14 @@
 		FAC1F1A925F3D08A009AE9A4 /* KBTUApp */ = {
 			isa = PBXGroup;
 			children = (
-				FABA853D25F5FDDD00FFA516 /* ViewControllers */,
+				FA4958AE25FA2E5D0077334E /* ViewControllers */,
 				FAC1F1AA25F3D08A009AE9A4 /* AppDelegate.swift */,
 				FAC1F1AC25F3D08A009AE9A4 /* SceneDelegate.swift */,
 				FAC1F1B025F3D08A009AE9A4 /* Main.storyboard */,
 				FAC1F1B325F3D08B009AE9A4 /* Assets.xcassets */,
 				FAC1F1B525F3D08B009AE9A4 /* LaunchScreen.storyboard */,
 				FAC1F1B825F3D08B009AE9A4 /* Info.plist */,
+				FA4958A925FA0F570077334E /* SideTransition.swift */,
 			);
 			path = KBTUApp;
 			sourceTree = "<group>";
@@ -148,10 +168,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA4958AA25FA0F570077334E /* SideTransition.swift in Sources */,
 				FAC1F1AB25F3D08A009AE9A4 /* AppDelegate.swift in Sources */,
+				FA4958B625FA60260077334E /* ContainerViewController.swift in Sources */,
 				FAC1F1AD25F3D08A009AE9A4 /* SceneDelegate.swift in Sources */,
-				FA109F0225F7E7CE0062EBD1 /* SideMenuTableTableViewController.swift in Sources */,
-				FA109EFE25F7E7AC0062EBD1 /* MainViewController.swift in Sources */,
+				FA109F0225F7E7CE0062EBD1 /* SideMenuTableViewController.swift in Sources */,
+				FA4958BA25FA7A500077334E /* EventsContainerView.swift in Sources */,
+				FA4958A725FA0C0E0077334E /* MainViewController.swift in Sources */,
+				FA4958B225FA37010077334E /* NewsContainerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
