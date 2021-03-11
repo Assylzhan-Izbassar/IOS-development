@@ -16,9 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RfT-go-E0A">
+                            <containerView opaque="NO" tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RfT-go-E0A">
                                 <rect key="frame" x="0.0" y="91" width="320" height="477"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="6iE-dd-okX" kind="embed" id="Ud2-Ql-e2v"/>
                                 </connections>
@@ -26,6 +25,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oCH-qY-84t"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RfT-go-E0A" firstAttribute="centerX" secondItem="wHC-hr-VUA" secondAttribute="centerX" id="L5V-CN-XFd"/>
+                            <constraint firstItem="RfT-go-E0A" firstAttribute="bottom" secondItem="oCH-qY-84t" secondAttribute="bottom" id="PEp-bm-109"/>
+                            <constraint firstItem="RfT-go-E0A" firstAttribute="leading" secondItem="oCH-qY-84t" secondAttribute="leading" id="q9A-Q3-Rwj"/>
+                            <constraint firstItem="RfT-go-E0A" firstAttribute="top" secondItem="oCH-qY-84t" secondAttribute="top" id="raJ-fB-jVD"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="KBTU" id="V8w-kD-2ws">
                         <barButtonItem key="leftBarButtonItem" title="Menu" image="sidebar.left" catalog="system" id="Mme-8m-Avt">
@@ -209,6 +214,7 @@
                     <view key="view" contentMode="scaleToFill" id="kCa-6Y-V4I">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="477"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="PHh-9I-MFw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>

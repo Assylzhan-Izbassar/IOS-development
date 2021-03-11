@@ -19,10 +19,17 @@ extension MainViewController: UIViewControllerTransitioningDelegate {
     }
 }
 
+protocol ViewRefreshDelegate: class {
+    func viewRefresh(with menuType: MenuType)
+}
+
 class MainViewController: UIViewController {
     
     private let transition = SideTransition()
     private var topView: UIView?
+    
+    // Delegate between mainViewController
+    weak static var refresh: ViewRefreshDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,22 +53,6 @@ class MainViewController: UIViewController {
         let title = String(describing: menuType).capitalized
         self.title = title
         
-        switch menuType {
-        case <#pattern#>:
-            <#code#>
-        default:
-            <#code#>
-        }
+        MainViewController.refresh?.viewRefresh(with: menuType)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

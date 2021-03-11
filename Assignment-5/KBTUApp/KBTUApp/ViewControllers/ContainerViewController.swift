@@ -7,31 +7,67 @@
 
 import UIKit
 
+extension ContainerViewController: ViewRefreshDelegate {
+    
+    func viewRefresh(with menuType: MenuType) {
+        print(menuType)
+        self.updateView(with: menuType)
+        
+//        switch menuType {
+//        case .home:
+//            break
+//        case .covid:
+//            break
+//        case .news:
+//            break
+//        case .events:
+//            break
+//        case .aboutUs:
+//            break
+//        }
+    }
+}
+
 class ContainerViewController: UIViewController {
+    
+    // MARK: - View Pages
     
     lazy var newsContainerView: NewsContainerView = {
         var viewController = storyboard?.instantiateViewController(withIdentifier: "NewsContainerView") as! NewsContainerView
-        self.addViewControllerAsChildViewController(childVC: viewController)
+        self.addVCAsChildVC(childVC: viewController)
         
         return viewController
     }()
     
     lazy var eventsContainerView: EventsContainerView = {
-        var viewController = storyboard?.instantiateViewController(withIdentifier: "EventsContainerView") as? EventsContainerView
-        self.addViewControllerAsChildViewController(childVC: viewController)
+        var viewController = storyboard?.instantiateViewController(withIdentifier: "EventsContainerView") as! EventsContainerView
+        self.addVCAsChildVC(childVC: viewController)
         
         return viewController
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        MainViewController.refresh = self
+        
+        setupView()
+    }
+    
+    // MARK: - View Methods
+    
+    private func setupView() {
+        updateView(with: MenuType.news)
+    }
+    
+    private func updateView(with menuType: MenuType) {
+        newsContainerView.view.isHidden = (menuType == .news)
+        eventsContainerView.view.isHidden = (menuType == .events)
     }
     
     // MARK: - Helper Methods
     
-    private func addViewControllerAsChildViewController(childVC: UIViewController) {
+    private func addVCAsChildVC(childVC: UIViewController) {
         addChild(childVC)
         
         view.addSubview(childVC.view)
@@ -41,15 +77,11 @@ class ContainerViewController: UIViewController {
         childVC.didMove(toParent: self)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func removeVCAsChildVC(childVC: UIViewController) {
+        childVC.willMove(toParent: nil)
+        
+        childVC.view.removeFromSuperview()
+        
+        childVC.removeFromParent()
     }
-    */
-
 }
