@@ -16,8 +16,4 @@ class EventsContainerView: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
-    
-    deinit {
-        print("I am out!")
-    }
 }

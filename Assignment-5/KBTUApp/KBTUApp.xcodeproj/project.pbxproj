@@ -13,6 +13,9 @@
 		FA4958B225FA37010077334E /* NewsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4958B125FA37010077334E /* NewsContainerView.swift */; };
 		FA4958B625FA60260077334E /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4958B525FA60260077334E /* ContainerViewController.swift */; };
 		FA4958BA25FA7A500077334E /* EventsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4958B925FA7A500077334E /* EventsContainerView.swift */; };
+		FA4958BE25FAA3BE0077334E /* AboutContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4958BD25FAA3BE0077334E /* AboutContainerView.swift */; };
+		FA4958C125FAA4120077334E /* CovidContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4958C025FAA4120077334E /* CovidContainerView.swift */; };
+		FA4958C425FAA49D0077334E /* HomeContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4958C325FAA49D0077334E /* HomeContainerView.swift */; };
 		FAC1F1AB25F3D08A009AE9A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1F1AA25F3D08A009AE9A4 /* AppDelegate.swift */; };
 		FAC1F1AD25F3D08A009AE9A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1F1AC25F3D08A009AE9A4 /* SceneDelegate.swift */; };
 		FAC1F1B225F3D08A009AE9A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC1F1B025F3D08A009AE9A4 /* Main.storyboard */; };
@@ -27,6 +30,9 @@
 		FA4958B125FA37010077334E /* NewsContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsContainerView.swift; sourceTree = "<group>"; };
 		FA4958B525FA60260077334E /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		FA4958B925FA7A500077334E /* EventsContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsContainerView.swift; sourceTree = "<group>"; };
+		FA4958BD25FAA3BE0077334E /* AboutContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutContainerView.swift; sourceTree = "<group>"; };
+		FA4958C025FAA4120077334E /* CovidContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidContainerView.swift; sourceTree = "<group>"; };
+		FA4958C325FAA49D0077334E /* HomeContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerView.swift; sourceTree = "<group>"; };
 		FAC1F1A725F3D08A009AE9A4 /* KBTUApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KBTUApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC1F1AA25F3D08A009AE9A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAC1F1AC25F3D08A009AE9A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +69,9 @@
 			children = (
 				FA4958B125FA37010077334E /* NewsContainerView.swift */,
 				FA4958B925FA7A500077334E /* EventsContainerView.swift */,
+				FA4958BD25FAA3BE0077334E /* AboutContainerView.swift */,
+				FA4958C025FAA4120077334E /* CovidContainerView.swift */,
+				FA4958C325FAA49D0077334E /* HomeContainerView.swift */,
 			);
 			path = ChildViewControllers;
 			sourceTree = "<group>";
@@ -168,11 +177,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA4958BE25FAA3BE0077334E /* AboutContainerView.swift in Sources */,
 				FA4958AA25FA0F570077334E /* SideTransition.swift in Sources */,
 				FAC1F1AB25F3D08A009AE9A4 /* AppDelegate.swift in Sources */,
+				FA4958C425FAA49D0077334E /* HomeContainerView.swift in Sources */,
 				FA4958B625FA60260077334E /* ContainerViewController.swift in Sources */,
 				FAC1F1AD25F3D08A009AE9A4 /* SceneDelegate.swift in Sources */,
 				FA109F0225F7E7CE0062EBD1 /* SideMenuTableViewController.swift in Sources */,
+				FA4958C125FAA4120077334E /* CovidContainerView.swift in Sources */,
 				FA4958BA25FA7A500077334E /* EventsContainerView.swift in Sources */,
 				FA4958A725FA0C0E0077334E /* MainViewController.swift in Sources */,
 				FA4958B225FA37010077334E /* NewsContainerView.swift in Sources */,

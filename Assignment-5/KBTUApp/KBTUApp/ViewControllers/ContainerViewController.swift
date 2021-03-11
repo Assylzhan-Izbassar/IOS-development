@@ -10,27 +10,28 @@ import UIKit
 extension ContainerViewController: ViewRefreshDelegate {
     
     func viewRefresh(with menuType: MenuType) {
-        print(menuType)
         self.updateView(with: menuType)
-        
-//        switch menuType {
-//        case .home:
-//            break
-//        case .covid:
-//            break
-//        case .news:
-//            break
-//        case .events:
-//            break
-//        case .aboutUs:
-//            break
-//        }
     }
 }
 
 class ContainerViewController: UIViewController {
     
     // MARK: - View Pages
+    
+    lazy var homeContainerView: HomeContainerView = {
+        var viewController = storyboard?.instantiateViewController(withIdentifier: "HomeContainerView") as! HomeContainerView
+        self.addVCAsChildVC(childVC: viewController)
+        
+        return viewController
+    }()
+    
+    lazy var covidContainerView: CovidContainerView = {
+        var viewController = storyboard?.instantiateViewController(withIdentifier: "CovidContainerView") as! CovidContainerView
+        self.addVCAsChildVC(childVC: viewController)
+        
+        return viewController
+    }()
+
     
     lazy var newsContainerView: NewsContainerView = {
         var viewController = storyboard?.instantiateViewController(withIdentifier: "NewsContainerView") as! NewsContainerView
@@ -45,6 +46,15 @@ class ContainerViewController: UIViewController {
         
         return viewController
     }()
+    
+    lazy var aboutContainerView: AboutContainerView = {
+        var viewController = storyboard?.instantiateViewController(withIdentifier: "AboutContainerView") as! AboutContainerView
+        self.addVCAsChildVC(childVC: viewController)
+        
+        return viewController
+    }()
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,12 +67,15 @@ class ContainerViewController: UIViewController {
     // MARK: - View Methods
     
     private func setupView() {
-        updateView(with: MenuType.news)
+        updateView(with: MenuType.home)
     }
     
     private func updateView(with menuType: MenuType) {
-        newsContainerView.view.isHidden = (menuType == .news)
-        eventsContainerView.view.isHidden = (menuType == .events)
+        homeContainerView.view.isHidden = !(menuType == .home)
+        covidContainerView.view.isHidden = !(menuType == .covid)
+        newsContainerView.view.isHidden = !(menuType == .news)
+        eventsContainerView.view.isHidden = !(menuType == .events)
+        aboutContainerView.view.isHidden = !(menuType == .aboutUs)
     }
     
     // MARK: - Helper Methods

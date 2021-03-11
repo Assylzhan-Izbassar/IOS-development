@@ -50,9 +50,22 @@ class MainViewController: UIViewController {
     }
     
     private func transitionToNew(view menuType: MenuType) {
-        let title = String(describing: menuType).capitalized
-        self.title = title
+        var title = ""
         
+        switch menuType {
+        case .home:
+            title = "KBTU"
+        case .covid:
+            title = "COVID-19"
+        case .news:
+            title = "News"
+        case .events:
+            title = "Events"
+        case .aboutUs:
+            title = "About Us"
+        }
+        self.title = title
+    
         MainViewController.refresh?.viewRefresh(with: menuType)
     }
 }

@@ -220,11 +220,46 @@
                     <connections>
                         <segue destination="ysZ-Kp-phG" kind="show" identifier="newsSegue" id="TWa-vi-PxR"/>
                         <segue destination="cFE-Ne-aDN" kind="show" identifier="eventsSegue" id="vFD-SY-MXZ"/>
+                        <segue destination="b5n-f3-m2G" kind="show" identifier="aboutUsSegue" id="edq-JT-V2e"/>
+                        <segue destination="l6r-Mn-sIO" kind="show" identifier="covidSegue" id="raB-Nm-q8t"/>
+                        <segue destination="BoJ-v5-wV6" kind="show" identifier="homeSegue" id="kG2-tX-N82"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E95-WV-Ul4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2169" y="-48"/>
+        </scene>
+        <!--Home Container View-->
+        <scene sceneID="ede-wq-mgr">
+            <objects>
+                <viewController storyboardIdentifier="HomeContainerView" id="BoJ-v5-wV6" customClass="HomeContainerView" customModule="KBTUApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jd3-15-qt4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="477"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="BAj-qD-Uaq"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="noX-Y1-fvt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ld7-hV-pqc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2970" y="-967"/>
+        </scene>
+        <!--Covid Container View-->
+        <scene sceneID="LEc-ce-uhu">
+            <objects>
+                <viewController storyboardIdentifier="CovidContainerView" id="l6r-Mn-sIO" customClass="CovidContainerView" customModule="KBTUApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vGQ-MQ-tXw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="477"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ZXH-0t-x8N"/>
+                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jNv-tj-nnQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oid-Qy-eTq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3681" y="-586"/>
         </scene>
         <!--News Container View-->
         <scene sceneID="yaU-ZD-H3f">
@@ -240,7 +275,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hYW-Va-IFN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2985" y="-366"/>
+            <point key="canvasLocation" x="4423" y="-48"/>
         </scene>
         <!--Events Container View-->
         <scene sceneID="q5t-Ku-coD">
@@ -256,7 +291,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="agZ-um-7Wo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2987" y="269"/>
+            <point key="canvasLocation" x="3681" y="646"/>
+        </scene>
+        <!--About Container View-->
+        <scene sceneID="WKA-iB-I0B">
+            <objects>
+                <viewController storyboardIdentifier="AboutContainerView" id="b5n-f3-m2G" customClass="AboutContainerView" customModule="KBTUApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sdI-9t-hl3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="477"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="58Q-Hu-M2r"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WiZ-kp-gd3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aFl-ZZ-oPN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2168" y="811"/>
         </scene>
     </scenes>
     <resources>
@@ -264,8 +315,14 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

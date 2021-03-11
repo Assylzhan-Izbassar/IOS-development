@@ -56,7 +56,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "B75B5F5F-E6C4-4358-99FD-C934074714CE"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KBTUApp/ViewControllers/ChildViewControllers/EventsContainerView.swift"
@@ -72,7 +72,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "6B5EA09C-B13C-4699-AB67-CC55F1A9362D"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KBTUApp/ViewControllers/ChildViewControllers/NewsContainerView.swift"
@@ -87,22 +87,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0B6329A5-2913-4D77-A8BE-A30630607E22"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KBTUApp/ViewControllers/ChildViewControllers/EventsContainerView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "deinit"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "209E8EF4-F66B-4CF8-B561-4BB4D92ED8FB"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -110,8 +94,8 @@
             filePath = "KBTUApp/ViewControllers/ContainerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "updateView(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -126,8 +110,8 @@
             filePath = "KBTUApp/ViewControllers/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "transitionToNew(view:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -142,25 +126,9 @@
             filePath = "KBTUApp/ViewControllers/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "transitionToNew(view:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "61D11DAE-DF2D-4A79-9A1A-D5A1D4BBEEC3"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KBTUApp/ViewControllers/ContainerViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "viewRefresh(with:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -174,8 +142,8 @@
             filePath = "KBTUApp/ViewControllers/ContainerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
             landmarkName = "viewRefresh(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -190,9 +158,25 @@
             filePath = "KBTUApp/ViewControllers/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "transitionToNew(view:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0E4D26A1-CD16-4E88-871F-8106DA6B4326"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KBTUApp/ViewControllers/ContainerViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "addVCAsChildVC(childVC:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
