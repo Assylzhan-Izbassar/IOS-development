@@ -3,6 +3,7 @@
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -51,11 +52,11 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="kcg-nx-MaQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBlueColor"/>
                         <sections>
                             <tableViewSection id="6Gz-vx-OJL">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="NXD-by-2pq">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" rowHeight="80" id="NXD-by-2pq">
                                         <rect key="frame" x="0.0" y="18" width="320" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NXD-by-2pq" id="MIo-nn-hjk">
@@ -78,6 +79,7 @@
                                                 <constraint firstItem="tN7-BO-LLY" firstAttribute="centerY" secondItem="MIo-nn-hjk" secondAttribute="centerY" id="w73-AC-mgx"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="AccentColor"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="bFP-2w-Fhb">
                                         <rect key="frame" x="0.0" y="98" width="320" height="80"/>
@@ -102,6 +104,7 @@
                                                 <constraint firstItem="ll8-PM-DYX" firstAttribute="top" secondItem="7Tm-cA-YMh" secondAttribute="topMargin" constant="18" id="HvT-jJ-ymq"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="AccentColor"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="ICE-es-ur2">
                                         <rect key="frame" x="0.0" y="178" width="320" height="80"/>
@@ -126,6 +129,7 @@
                                                 <constraint firstItem="evK-9V-lfE" firstAttribute="centerX" secondItem="MyH-bG-x0O" secondAttribute="centerX" id="Vs8-1L-cPp"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="AccentColor"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="2ho-AZ-JNE">
                                         <rect key="frame" x="0.0" y="258" width="320" height="80"/>
@@ -150,6 +154,7 @@
                                                 <constraint firstItem="UMz-hC-Nmn" firstAttribute="top" secondItem="lEQ-tG-sep" secondAttribute="topMargin" constant="18" id="z15-8B-NYe"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="AccentColor"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="1hL-61-8jM">
                                         <rect key="frame" x="0.0" y="338" width="320" height="80"/>
@@ -174,6 +179,7 @@
                                                 <constraint firstItem="KDF-O0-G96" firstAttribute="centerY" secondItem="mdS-ID-b5g" secondAttribute="centerY" id="wTg-Fk-wvM"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="AccentColor"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -197,6 +203,17 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="eAe-m0-1EN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.07505934685" green="0.20339858529999999" blue="0.47061222790000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.1751637459" green="0.28256428239999998" blue="0.53727912899999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" red="0.1751637459" green="0.28256428239999998" blue="0.53727912899999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" red="0.1751637459" green="0.28256428239999998" blue="0.53727912899999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -236,14 +253,60 @@
                     <view key="view" contentMode="scaleToFill" id="Jd3-15-qt4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="477"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CD1-9s-b7N">
+                                <rect key="frame" x="35" y="136" width="250" height="39"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The best technical university in Kazakhstan" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gH2-1E-2KC">
+                                        <rect key="frame" x="16" y="0.0" width="218" height="39"/>
+                                        <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="17"/>
+                                        <color key="textColor" red="0.1751637459" green="0.28256428239999998" blue="0.53727912899999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="highlightedColor" red="0.1751637459" green="0.28256428239999998" blue="0.53727912899999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6k-FM-47z">
+                                <rect key="frame" x="16" y="223" width="288" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Poy-Gp-7UQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
+                                <color key="tintColor" red="0.1751637459" green="0.28256428239999998" blue="0.53727912899999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAY-kQ-tDG">
+                                <rect key="frame" x="16" y="282" width="288" height="40"/>
+                                <color key="backgroundColor" red="0.1751637459" green="0.28256428239999998" blue="0.53727912899999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="L8p-PQ-sZz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="BAj-qD-Uaq"/>
-                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BAj-qD-Uaq" firstAttribute="trailing" secondItem="SAY-kQ-tDG" secondAttribute="trailing" constant="16" id="0js-AS-NYN"/>
+                            <constraint firstItem="SAY-kQ-tDG" firstAttribute="top" secondItem="g6k-FM-47z" secondAttribute="bottom" constant="19" id="9EN-B1-ReO"/>
+                            <constraint firstItem="BAj-qD-Uaq" firstAttribute="trailing" secondItem="CD1-9s-b7N" secondAttribute="trailing" constant="35" id="S6b-Oc-L4m"/>
+                            <constraint firstItem="SAY-kQ-tDG" firstAttribute="top" secondItem="g6k-FM-47z" secondAttribute="bottom" constant="19" id="We7-Yp-KTR"/>
+                            <constraint firstItem="g6k-FM-47z" firstAttribute="top" secondItem="CD1-9s-b7N" secondAttribute="bottom" constant="48" id="axM-PC-Vo8"/>
+                            <constraint firstItem="BAj-qD-Uaq" firstAttribute="trailing" secondItem="g6k-FM-47z" secondAttribute="trailing" constant="16" id="ev7-i2-eI6"/>
+                            <constraint firstItem="BAj-qD-Uaq" firstAttribute="bottom" secondItem="SAY-kQ-tDG" secondAttribute="bottom" constant="155" id="f37-sc-ju5"/>
+                            <constraint firstItem="CD1-9s-b7N" firstAttribute="leading" secondItem="BAj-qD-Uaq" secondAttribute="leading" constant="35" id="q1S-xN-ErZ"/>
+                            <constraint firstItem="SAY-kQ-tDG" firstAttribute="leading" secondItem="BAj-qD-Uaq" secondAttribute="leading" constant="16" id="qMz-3V-DrU"/>
+                            <constraint firstItem="g6k-FM-47z" firstAttribute="leading" secondItem="BAj-qD-Uaq" secondAttribute="leading" constant="16" id="yIc-7s-pri"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="noX-Y1-fvt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ld7-hV-pqc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2970" y="-967"/>
+            <point key="canvasLocation" x="2970" y="-967.07746478873241"/>
         </scene>
         <!--Covid Container View-->
         <scene sceneID="LEc-ce-uhu">
@@ -252,14 +315,94 @@
                     <view key="view" contentMode="scaleToFill" id="vGQ-MQ-tXw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="477"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1406 - 24/7 coronavirus call center" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZf-iN-fbU">
+                                <rect key="frame" x="16" y="147" width="288" height="45"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="pev-pi-YbH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qnf-cS-M9N">
+                                <rect key="frame" x="16" y="216" width="288" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="62z-m5-zfu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
+                                <state key="normal" title="FOR STUDENTS">
+                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jT-ev-iOL">
+                                <rect key="frame" x="16" y="269" width="288" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="vBD-Ib-HSu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
+                                <state key="normal" title="FOR ACADEMIC STAFF">
+                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GcA-V2-lMD">
+                                <rect key="frame" x="16" y="322" width="288" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="AOW-BQ-Qiy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
+                                <state key="normal" title="FAQ">
+                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ChE-9D-i7M">
+                                <rect key="frame" x="16" y="375" width="288" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="UFl-kB-hcw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
+                                <state key="normal" title="ABOUT COVID">
+                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kbtu_covid_banner-1" translatesAutoresizingMaskIntoConstraints="NO" id="yyU-x5-tun">
+                                <rect key="frame" x="16" y="20" width="288" height="112"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ZXH-0t-x8N"/>
-                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZXH-0t-x8N" firstAttribute="trailing" secondItem="dZf-iN-fbU" secondAttribute="trailing" constant="16" id="0T2-O6-ZUh"/>
+                            <constraint firstItem="ZXH-0t-x8N" firstAttribute="trailing" secondItem="ChE-9D-i7M" secondAttribute="trailing" constant="16" id="2Br-e1-opg"/>
+                            <constraint firstItem="9jT-ev-iOL" firstAttribute="top" secondItem="qnf-cS-M9N" secondAttribute="bottom" constant="8" symbolic="YES" id="BZ9-xR-49H"/>
+                            <constraint firstItem="ChE-9D-i7M" firstAttribute="top" secondItem="GcA-V2-lMD" secondAttribute="bottom" constant="8" symbolic="YES" id="GHt-GX-Rnx"/>
+                            <constraint firstItem="GcA-V2-lMD" firstAttribute="leading" secondItem="ZXH-0t-x8N" secondAttribute="leading" constant="16" id="O87-LQ-PVG"/>
+                            <constraint firstItem="ZXH-0t-x8N" firstAttribute="trailing" secondItem="yyU-x5-tun" secondAttribute="trailing" constant="16" id="RKi-8n-QXR"/>
+                            <constraint firstItem="dZf-iN-fbU" firstAttribute="leading" secondItem="ZXH-0t-x8N" secondAttribute="leading" constant="16" id="TqP-iW-9u3"/>
+                            <constraint firstItem="ZXH-0t-x8N" firstAttribute="bottom" secondItem="ChE-9D-i7M" secondAttribute="bottom" constant="57" id="Uix-32-joj"/>
+                            <constraint firstItem="ChE-9D-i7M" firstAttribute="leading" secondItem="ZXH-0t-x8N" secondAttribute="leading" constant="16" id="XUq-Ax-6br"/>
+                            <constraint firstItem="qnf-cS-M9N" firstAttribute="leading" secondItem="ZXH-0t-x8N" secondAttribute="leading" constant="16" id="Xvu-qp-gKu"/>
+                            <constraint firstItem="qnf-cS-M9N" firstAttribute="top" secondItem="dZf-iN-fbU" secondAttribute="bottom" constant="24" id="bG5-nh-O2X"/>
+                            <constraint firstItem="yyU-x5-tun" firstAttribute="top" secondItem="ZXH-0t-x8N" secondAttribute="top" constant="20" id="gcw-HV-wAf"/>
+                            <constraint firstItem="9jT-ev-iOL" firstAttribute="leading" secondItem="ZXH-0t-x8N" secondAttribute="leading" constant="16" id="lMq-K7-Ybk"/>
+                            <constraint firstItem="ZXH-0t-x8N" firstAttribute="trailing" secondItem="9jT-ev-iOL" secondAttribute="trailing" constant="16" id="p6e-n8-EBV"/>
+                            <constraint firstItem="ZXH-0t-x8N" firstAttribute="trailing" secondItem="GcA-V2-lMD" secondAttribute="trailing" constant="16" id="rbL-pI-FQY"/>
+                            <constraint firstItem="dZf-iN-fbU" firstAttribute="top" secondItem="yyU-x5-tun" secondAttribute="bottom" constant="15" id="rfl-ty-vo7"/>
+                            <constraint firstItem="GcA-V2-lMD" firstAttribute="top" secondItem="9jT-ev-iOL" secondAttribute="bottom" constant="8" symbolic="YES" id="uq1-u7-aHC"/>
+                            <constraint firstItem="yyU-x5-tun" firstAttribute="leading" secondItem="ZXH-0t-x8N" secondAttribute="leading" constant="16" id="vsJ-V9-lfh"/>
+                            <constraint firstItem="ZXH-0t-x8N" firstAttribute="trailing" secondItem="qnf-cS-M9N" secondAttribute="trailing" constant="16" id="yh6-1K-lFU"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jNv-tj-nnQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oid-Qy-eTq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3681" y="-586"/>
+            <point key="canvasLocation" x="3680.625" y="-586.79577464788736"/>
         </scene>
         <!--News Container View-->
         <scene sceneID="yaU-ZD-H3f">
@@ -291,7 +434,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="agZ-um-7Wo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3681" y="646"/>
+            <point key="canvasLocation" x="3681" y="507"/>
         </scene>
         <!--About Container View-->
         <scene sceneID="WKA-iB-I0B">
@@ -307,16 +450,20 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aFl-ZZ-oPN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2168" y="811"/>
+            <point key="canvasLocation" x="2970" y="915"/>
         </scene>
     </scenes>
     <resources>
+        <image name="kbtu_covid_banner-1" width="4792" height="1667"/>
         <image name="sidebar.left" catalog="system" width="128" height="93"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGroupedBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
