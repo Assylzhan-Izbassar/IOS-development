@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GJI-Nq-Of4">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Alarms-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AlarmApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pSD-HE-oqm">
+                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="95" id="RoV-KF-hsZ" customClass="CustomTableViewCell" customModule="AlarmApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="95"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RoV-KF-hsZ" id="ZfX-99-WvT">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="95"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Long text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TG0-SS-96h">
+                                                    <rect key="frame" x="16" y="11" width="140" height="38.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFn-sX-0MM">
+                                                    <rect key="frame" x="16" y="63.5" width="140" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" title="First" translatesAutoresizingMaskIntoConstraints="NO" id="8Dr-K7-K2d">
+                                                    <rect key="frame" x="255" y="32" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="switched:" destination="BYZ-38-t0r" eventType="valueChanged" id="al8-Qh-pLr"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="8Dr-K7-K2d" firstAttribute="top" secondItem="ZfX-99-WvT" secondAttribute="topMargin" constant="21" id="3GK-3E-jbI"/>
+                                                <constraint firstItem="TG0-SS-96h" firstAttribute="leading" secondItem="jFn-sX-0MM" secondAttribute="leading" id="3yD-gy-NEO"/>
+                                                <constraint firstItem="TG0-SS-96h" firstAttribute="trailing" secondItem="jFn-sX-0MM" secondAttribute="trailing" id="9NQ-Pp-prn"/>
+                                                <constraint firstItem="8Dr-K7-K2d" firstAttribute="trailing" secondItem="ZfX-99-WvT" secondAttribute="trailingMargin" id="D2f-qj-EHs"/>
+                                                <constraint firstItem="TG0-SS-96h" firstAttribute="top" secondItem="ZfX-99-WvT" secondAttribute="topMargin" id="EGl-MA-Xsb"/>
+                                                <constraint firstItem="TG0-SS-96h" firstAttribute="leading" secondItem="ZfX-99-WvT" secondAttribute="leadingMargin" id="JfO-rE-uAY"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="8Dr-K7-K2d" secondAttribute="bottom" constant="21" id="YpE-ev-FJc"/>
+                                                <constraint firstItem="jFn-sX-0MM" firstAttribute="bottom" secondItem="ZfX-99-WvT" secondAttribute="bottomMargin" id="mmK-Gb-FrU"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cellNote" destination="jFn-sX-0MM" id="gW1-pb-wVn"/>
+                                            <outlet property="cellSwitcher" destination="8Dr-K7-K2d" id="4tg-bK-aBW"/>
+                                            <outlet property="cellTime" destination="TG0-SS-96h" id="Tga-d0-oHh"/>
+                                            <segue destination="dwy-vJ-Moi" kind="show" id="eJi-qX-tKn"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Alarms" id="TTN-25-Vbp">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Rbe-vK-evC">
+                            <connections>
+                                <segue destination="8B3-gR-ZsO" kind="presentation" id="wc0-mV-KLh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="myTable" destination="pSD-HE-oqm" id="4Sm-gq-2nq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1207.5" y="88.732394366197184"/>
+        </scene>
+        <!--Change Alarm-->
+        <scene sceneID="H3V-Lh-iKT">
+            <objects>
+                <viewController id="dwy-vJ-Moi" customClass="ChangeAlarmViewController" customModule="AlarmApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JhV-Rj-cS2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sHj-OO-nEI">
+                                <rect key="frame" x="16" y="512" width="288" height="36"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="Heq-kq-F9S"/>
+                                </constraints>
+                                <state key="normal" title="Change">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeAlarm:" destination="dwy-vJ-Moi" eventType="touchUpInside" id="KzS-d0-Bnu"/>
+                                    <segue destination="eUB-ev-eZj" kind="unwind" unwindAction="unwindToMain:" id="YTb-WM-XJF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0SD-7x-8Tn">
+                                <rect key="frame" x="16" y="468" width="288" height="36"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="MeJ-wm-ZVN"/>
+                                </constraints>
+                                <state key="normal" title="Delete">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="removeAlarm:" destination="dwy-vJ-Moi" eventType="touchUpInside" id="dQg-ta-9la"/>
+                                    <segue destination="eUB-ev-eZj" kind="unwind" unwindAction="unwindToMain:" id="VDi-uz-6AQ"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Icz-q7-BBn">
+                                <rect key="frame" x="16" y="254" width="288" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KGo-4c-V2r">
+                                <rect key="frame" x="0.0" y="84" width="320" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CgP-ui-vA8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sHj-OO-nEI" firstAttribute="leading" secondItem="CgP-ui-vA8" secondAttribute="leading" constant="16" id="Lq6-J2-Zk5"/>
+                            <constraint firstItem="CgP-ui-vA8" firstAttribute="trailing" secondItem="sHj-OO-nEI" secondAttribute="trailing" constant="16" id="MYY-rc-7pm"/>
+                            <constraint firstItem="CgP-ui-vA8" firstAttribute="bottom" secondItem="sHj-OO-nEI" secondAttribute="bottom" constant="20" id="fif-ea-oJn"/>
+                            <constraint firstItem="sHj-OO-nEI" firstAttribute="top" secondItem="0SD-7x-8Tn" secondAttribute="bottom" constant="8" symbolic="YES" id="if7-EH-EM9"/>
+                            <constraint firstItem="CgP-ui-vA8" firstAttribute="trailing" secondItem="0SD-7x-8Tn" secondAttribute="trailing" constant="16" id="mA1-xJ-kUD"/>
+                            <constraint firstItem="0SD-7x-8Tn" firstAttribute="leading" secondItem="CgP-ui-vA8" secondAttribute="leading" constant="16" id="x7O-eE-roB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Change Alarm" id="OX8-fJ-zQT"/>
+                    <connections>
+                        <outlet property="infoNote" destination="Icz-q7-BBn" id="Qwu-4R-4ts"/>
+                        <outlet property="timePicker" destination="KGo-4c-V2r" id="4M9-zo-3Nc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oGR-ag-Ih4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="eUB-ev-eZj" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2055" y="458"/>
+        </scene>
+        <!--Add Alarm View Controller-->
+        <scene sceneID="T9K-4v-JRR">
+            <objects>
+                <viewController id="8B3-gR-ZsO" customClass="AddAlarmViewController" customModule="AlarmApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="40d-uN-Ro5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eH9-Zg-5dv">
+                                <rect key="frame" x="16" y="492" width="288" height="36"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="oLG-oR-d5E"/>
+                                </constraints>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="save:" destination="8B3-gR-ZsO" eventType="touchUpInside" id="HDg-J7-HnR"/>
+                                    <segue destination="Uny-id-Ngp" kind="unwind" unwindAction="unwindToMain:" id="iQE-8q-agd"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yIw-lX-eqk">
+                                <rect key="frame" x="0.0" y="82" width="320" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JEG-eF-dQ4">
+                                <rect key="frame" x="16" y="252" width="288" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="62d-BZ-pg4">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="New Alarm" id="pNU-Pc-qOs">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="rm7-zK-bQA">
+                                            <connections>
+                                                <segue destination="Uny-id-Ngp" kind="unwind" unwindAction="unwindToMain:" id="WAz-U8-3nE"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cWM-64-WQ8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cWM-64-WQ8" firstAttribute="trailing" secondItem="eH9-Zg-5dv" secondAttribute="trailing" constant="16" id="K7e-hp-piE"/>
+                            <constraint firstItem="cWM-64-WQ8" firstAttribute="bottom" secondItem="eH9-Zg-5dv" secondAttribute="bottom" constant="20" id="l5W-8b-ie7"/>
+                            <constraint firstItem="eH9-Zg-5dv" firstAttribute="leading" secondItem="cWM-64-WQ8" secondAttribute="leading" constant="16" id="p8U-Uc-IgZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myNote" destination="JEG-eF-dQ4" id="yoM-c1-2P1"/>
+                        <outlet property="timePicker" destination="yIw-lX-eqk" id="d4X-mp-0Yb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LXE-ZR-QZB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Uny-id-Ngp" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2055" y="-293"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Q3J-zH-eEy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GJI-Nq-Of4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jTO-OD-v6P">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="zjf-hw-ie0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IXM-1S-9Qb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="210" y="88.732394366197184"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -54,7 +54,7 @@ class MainViewController: UIViewController {
         
         switch menuType {
         case .home:
-            title = "KBTU"
+            title = "Home"
         case .covid:
             title = "COVID-19"
         case .news:

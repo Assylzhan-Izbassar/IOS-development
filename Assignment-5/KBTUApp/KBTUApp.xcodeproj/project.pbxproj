@@ -9,9 +9,13 @@
 /* Begin PBXBuildFile section */
 		FA109F0225F7E7CE0062EBD1 /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA109F0125F7E7CE0062EBD1 /* SideMenuTableViewController.swift */; };
 		FA19824925FB33CD00B74AFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA19824825FB33CD00B74AFB /* Assets.xcassets */; };
+		FA19825525FB87E300B74AFB /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19825425FB87E300B74AFB /* NewsModel.swift */; };
+		FA19825825FB8A8F00B74AFB /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19825725FB8A8F00B74AFB /* News.swift */; };
+		FA19825C25FB8ADC00B74AFB /* NewsCustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19825B25FB8ADC00B74AFB /* NewsCustomViewCell.swift */; };
+		FA19826025FB8BDA00B74AFB /* NewsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19825F25FB8BDA00B74AFB /* NewsContainerView.swift */; };
+		FA19826625FB9A0200B74AFB /* NewsInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19826525FB9A0200B74AFB /* NewsInfoViewController.swift */; };
 		FA4958A725FA0C0E0077334E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4958A625FA0C0E0077334E /* MainViewController.swift */; };
 		FA4958AA25FA0F570077334E /* SideTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4958A925FA0F570077334E /* SideTransition.swift */; };
-		FA4958B225FA37010077334E /* NewsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4958B125FA37010077334E /* NewsContainerView.swift */; };
 		FA4958B625FA60260077334E /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4958B525FA60260077334E /* ContainerViewController.swift */; };
 		FA4958BA25FA7A500077334E /* EventsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4958B925FA7A500077334E /* EventsContainerView.swift */; };
 		FA4958BE25FAA3BE0077334E /* AboutContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4958BD25FAA3BE0077334E /* AboutContainerView.swift */; };
@@ -21,14 +25,24 @@
 		FAC1F1AD25F3D08A009AE9A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1F1AC25F3D08A009AE9A4 /* SceneDelegate.swift */; };
 		FAC1F1B225F3D08A009AE9A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC1F1B025F3D08A009AE9A4 /* Main.storyboard */; };
 		FAC1F1B725F3D08B009AE9A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC1F1B525F3D08B009AE9A4 /* LaunchScreen.storyboard */; };
+		FAC80C2425FCA4F9002B47DB /* Covid.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC80C2325FCA4F9002B47DB /* Covid.swift */; };
+		FAC80C2725FCA551002B47DB /* CovidModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC80C2625FCA551002B47DB /* CovidModel.swift */; };
+		FAC80C2E25FCA778002B47DB /* CovidInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC80C2D25FCA778002B47DB /* CovidInfoVC.swift */; };
+		FAC80C3125FCBA1C002B47DB /* CustomEventsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC80C3025FCBA1C002B47DB /* CustomEventsViewCell.swift */; };
+		FAC80C3425FCBC92002B47DB /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC80C3325FCBC92002B47DB /* Events.swift */; };
+		FAC80C3725FCBD8C002B47DB /* EventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC80C3625FCBD8C002B47DB /* EventsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FA109F0125F7E7CE0062EBD1 /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
 		FA19824825FB33CD00B74AFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
+		FA19825425FB87E300B74AFB /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
+		FA19825725FB8A8F00B74AFB /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		FA19825B25FB8ADC00B74AFB /* NewsCustomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCustomViewCell.swift; sourceTree = "<group>"; };
+		FA19825F25FB8BDA00B74AFB /* NewsContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsContainerView.swift; sourceTree = "<group>"; };
+		FA19826525FB9A0200B74AFB /* NewsInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsInfoViewController.swift; sourceTree = "<group>"; };
 		FA4958A625FA0C0E0077334E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FA4958A925FA0F570077334E /* SideTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideTransition.swift; sourceTree = "<group>"; };
-		FA4958B125FA37010077334E /* NewsContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsContainerView.swift; sourceTree = "<group>"; };
 		FA4958B525FA60260077334E /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		FA4958B925FA7A500077334E /* EventsContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsContainerView.swift; sourceTree = "<group>"; };
 		FA4958BD25FAA3BE0077334E /* AboutContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutContainerView.swift; sourceTree = "<group>"; };
@@ -40,6 +54,12 @@
 		FAC1F1B125F3D08A009AE9A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAC1F1B625F3D08B009AE9A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAC1F1B825F3D08B009AE9A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAC80C2325FCA4F9002B47DB /* Covid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Covid.swift; sourceTree = "<group>"; };
+		FAC80C2625FCA551002B47DB /* CovidModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidModel.swift; sourceTree = "<group>"; };
+		FAC80C2D25FCA778002B47DB /* CovidInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidInfoVC.swift; sourceTree = "<group>"; };
+		FAC80C3025FCBA1C002B47DB /* CustomEventsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomEventsViewCell.swift; sourceTree = "<group>"; };
+		FAC80C3325FCBC92002B47DB /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		FAC80C3625FCBD8C002B47DB /* EventsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +73,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA19824B25FB4B2200B74AFB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA19825425FB87E300B74AFB /* NewsModel.swift */,
+				FA19825B25FB8ADC00B74AFB /* NewsCustomViewCell.swift */,
+				FA19825725FB8A8F00B74AFB /* News.swift */,
+				FA19826525FB9A0200B74AFB /* NewsInfoViewController.swift */,
+				FAC80C2325FCA4F9002B47DB /* Covid.swift */,
+				FAC80C2625FCA551002B47DB /* CovidModel.swift */,
+				FAC80C2D25FCA778002B47DB /* CovidInfoVC.swift */,
+				FAC80C3025FCBA1C002B47DB /* CustomEventsViewCell.swift */,
+				FAC80C3325FCBC92002B47DB /* Events.swift */,
+				FAC80C3625FCBD8C002B47DB /* EventsModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		FA4958AE25FA2E5D0077334E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -67,11 +104,11 @@
 		FA4958B825FA77F60077334E /* ChildViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				FA4958B125FA37010077334E /* NewsContainerView.swift */,
 				FA4958B925FA7A500077334E /* EventsContainerView.swift */,
 				FA4958BD25FAA3BE0077334E /* AboutContainerView.swift */,
 				FA4958C025FAA4120077334E /* CovidContainerView.swift */,
 				FA4958C325FAA49D0077334E /* HomeContainerView.swift */,
+				FA19825F25FB8BDA00B74AFB /* NewsContainerView.swift */,
 			);
 			path = ChildViewControllers;
 			sourceTree = "<group>";
@@ -95,6 +132,7 @@
 		FAC1F1A925F3D08A009AE9A4 /* KBTUApp */ = {
 			isa = PBXGroup;
 			children = (
+				FA19824B25FB4B2200B74AFB /* Models */,
 				FA4958AE25FA2E5D0077334E /* ViewControllers */,
 				FAC1F1AA25F3D08A009AE9A4 /* AppDelegate.swift */,
 				FAC1F1AC25F3D08A009AE9A4 /* SceneDelegate.swift */,
@@ -179,15 +217,25 @@
 			files = (
 				FA4958BE25FAA3BE0077334E /* AboutContainerView.swift in Sources */,
 				FA4958AA25FA0F570077334E /* SideTransition.swift in Sources */,
+				FA19826625FB9A0200B74AFB /* NewsInfoViewController.swift in Sources */,
+				FAC80C2725FCA551002B47DB /* CovidModel.swift in Sources */,
+				FAC80C3425FCBC92002B47DB /* Events.swift in Sources */,
 				FAC1F1AB25F3D08A009AE9A4 /* AppDelegate.swift in Sources */,
 				FA4958C425FAA49D0077334E /* HomeContainerView.swift in Sources */,
+				FA19825825FB8A8F00B74AFB /* News.swift in Sources */,
 				FA4958B625FA60260077334E /* ContainerViewController.swift in Sources */,
 				FAC1F1AD25F3D08A009AE9A4 /* SceneDelegate.swift in Sources */,
+				FA19826025FB8BDA00B74AFB /* NewsContainerView.swift in Sources */,
 				FA109F0225F7E7CE0062EBD1 /* SideMenuTableViewController.swift in Sources */,
+				FA19825C25FB8ADC00B74AFB /* NewsCustomViewCell.swift in Sources */,
+				FAC80C3125FCBA1C002B47DB /* CustomEventsViewCell.swift in Sources */,
+				FAC80C2E25FCA778002B47DB /* CovidInfoVC.swift in Sources */,
+				FAC80C2425FCA4F9002B47DB /* Covid.swift in Sources */,
+				FAC80C3725FCBD8C002B47DB /* EventsModel.swift in Sources */,
 				FA4958C125FAA4120077334E /* CovidContainerView.swift in Sources */,
 				FA4958BA25FA7A500077334E /* EventsContainerView.swift in Sources */,
+				FA19825525FB87E300B74AFB /* NewsModel.swift in Sources */,
 				FA4958A725FA0C0E0077334E /* MainViewController.swift in Sources */,
-				FA4958B225FA37010077334E /* NewsContainerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

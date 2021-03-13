@@ -13,6 +13,7 @@ enum MenuType: Int {
     case news
     case events
     case aboutUs
+//    case faculties
 }
 
 class SideMenuTableViewController: UITableViewController {
