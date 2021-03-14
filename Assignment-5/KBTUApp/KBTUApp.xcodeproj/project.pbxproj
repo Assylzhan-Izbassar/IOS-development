@@ -21,6 +21,18 @@
 		FA4958BE25FAA3BE0077334E /* AboutContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4958BD25FAA3BE0077334E /* AboutContainerView.swift */; };
 		FA4958C125FAA4120077334E /* CovidContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4958C025FAA4120077334E /* CovidContainerView.swift */; };
 		FA4958C425FAA49D0077334E /* HomeContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4958C325FAA49D0077334E /* HomeContainerView.swift */; };
+		FA63B48725FE536B008C2211 /* OlimpiadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63B48625FE536B008C2211 /* OlimpiadViewController.swift */; };
+		FA63B48A25FE5796008C2211 /* WomenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63B48925FE5796008C2211 /* WomenViewController.swift */; };
+		FA63B48D25FE6F27008C2211 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63B48C25FE6F27008C2211 /* HistoryViewController.swift */; };
+		FA63B49025FE71BA008C2211 /* RectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63B48F25FE71BA008C2211 /* RectorViewController.swift */; };
+		FA63B49325FE7AB6008C2211 /* VisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63B49225FE7AB6008C2211 /* VisionViewController.swift */; };
+		FA63B49625FE80E8008C2211 /* AlumniViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63B49525FE80E7008C2211 /* AlumniViewController.swift */; };
+		FA63B49925FE8582008C2211 /* DormitoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63B49825FE8582008C2211 /* DormitoryViewController.swift */; };
+		FA63B49C25FE8876008C2211 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63B49B25FE8876008C2211 /* ContactsViewController.swift */; };
+		FA63B49F25FE8DB2008C2211 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63B49E25FE8DB2008C2211 /* ImageTableViewCell.swift */; };
+		FA63B4A225FE8F24008C2211 /* ImagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63B4A125FE8F24008C2211 /* ImagesTableViewController.swift */; };
+		FA63B4A525FE96CA008C2211 /* FacultiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63B4A425FE96CA008C2211 /* FacultiesViewController.swift */; };
+		FA63B4AC25FEA081008C2211 /* FacultiesInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63B4AB25FEA081008C2211 /* FacultiesInfoViewController.swift */; };
 		FAC1F1AB25F3D08A009AE9A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1F1AA25F3D08A009AE9A4 /* AppDelegate.swift */; };
 		FAC1F1AD25F3D08A009AE9A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1F1AC25F3D08A009AE9A4 /* SceneDelegate.swift */; };
 		FAC1F1B225F3D08A009AE9A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC1F1B025F3D08A009AE9A4 /* Main.storyboard */; };
@@ -35,7 +47,7 @@
 
 /* Begin PBXFileReference section */
 		FA109F0125F7E7CE0062EBD1 /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
-		FA19824825FB33CD00B74AFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
+		FA19824825FB33CD00B74AFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "/Users/macbook/Desktop/Courses/IOS development/Tasks/IOS-development/Assignment-5/KBTUApp/KBTUApp/Assets.xcassets"; sourceTree = "<absolute>"; };
 		FA19825425FB87E300B74AFB /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		FA19825725FB8A8F00B74AFB /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		FA19825B25FB8ADC00B74AFB /* NewsCustomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCustomViewCell.swift; sourceTree = "<group>"; };
@@ -48,6 +60,18 @@
 		FA4958BD25FAA3BE0077334E /* AboutContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutContainerView.swift; sourceTree = "<group>"; };
 		FA4958C025FAA4120077334E /* CovidContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidContainerView.swift; sourceTree = "<group>"; };
 		FA4958C325FAA49D0077334E /* HomeContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerView.swift; sourceTree = "<group>"; };
+		FA63B48625FE536B008C2211 /* OlimpiadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OlimpiadViewController.swift; sourceTree = "<group>"; };
+		FA63B48925FE5796008C2211 /* WomenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WomenViewController.swift; sourceTree = "<group>"; };
+		FA63B48C25FE6F27008C2211 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		FA63B48F25FE71BA008C2211 /* RectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectorViewController.swift; sourceTree = "<group>"; };
+		FA63B49225FE7AB6008C2211 /* VisionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionViewController.swift; sourceTree = "<group>"; };
+		FA63B49525FE80E7008C2211 /* AlumniViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlumniViewController.swift; sourceTree = "<group>"; };
+		FA63B49825FE8582008C2211 /* DormitoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DormitoryViewController.swift; sourceTree = "<group>"; };
+		FA63B49B25FE8876008C2211 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		FA63B49E25FE8DB2008C2211 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
+		FA63B4A125FE8F24008C2211 /* ImagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesTableViewController.swift; sourceTree = "<group>"; };
+		FA63B4A425FE96CA008C2211 /* FacultiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultiesViewController.swift; sourceTree = "<group>"; };
+		FA63B4AB25FEA081008C2211 /* FacultiesInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultiesInfoViewController.swift; sourceTree = "<group>"; };
 		FAC1F1A725F3D08A009AE9A4 /* KBTUApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KBTUApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC1F1AA25F3D08A009AE9A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAC1F1AC25F3D08A009AE9A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,13 +103,13 @@
 				FA19825425FB87E300B74AFB /* NewsModel.swift */,
 				FA19825B25FB8ADC00B74AFB /* NewsCustomViewCell.swift */,
 				FA19825725FB8A8F00B74AFB /* News.swift */,
-				FA19826525FB9A0200B74AFB /* NewsInfoViewController.swift */,
 				FAC80C2325FCA4F9002B47DB /* Covid.swift */,
 				FAC80C2625FCA551002B47DB /* CovidModel.swift */,
 				FAC80C2D25FCA778002B47DB /* CovidInfoVC.swift */,
 				FAC80C3025FCBA1C002B47DB /* CustomEventsViewCell.swift */,
 				FAC80C3325FCBC92002B47DB /* Events.swift */,
 				FAC80C3625FCBD8C002B47DB /* EventsModel.swift */,
+				FA63B49E25FE8DB2008C2211 /* ImageTableViewCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -97,6 +121,17 @@
 				FA4958A625FA0C0E0077334E /* MainViewController.swift */,
 				FA109F0125F7E7CE0062EBD1 /* SideMenuTableViewController.swift */,
 				FA4958B525FA60260077334E /* ContainerViewController.swift */,
+				FA63B48625FE536B008C2211 /* OlimpiadViewController.swift */,
+				FA63B48925FE5796008C2211 /* WomenViewController.swift */,
+				FA63B48C25FE6F27008C2211 /* HistoryViewController.swift */,
+				FA19826525FB9A0200B74AFB /* NewsInfoViewController.swift */,
+				FA63B48F25FE71BA008C2211 /* RectorViewController.swift */,
+				FA63B49225FE7AB6008C2211 /* VisionViewController.swift */,
+				FA63B49525FE80E7008C2211 /* AlumniViewController.swift */,
+				FA63B49825FE8582008C2211 /* DormitoryViewController.swift */,
+				FA63B49B25FE8876008C2211 /* ContactsViewController.swift */,
+				FA63B4A125FE8F24008C2211 /* ImagesTableViewController.swift */,
+				FA63B4AB25FEA081008C2211 /* FacultiesInfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -109,6 +144,7 @@
 				FA4958C025FAA4120077334E /* CovidContainerView.swift */,
 				FA4958C325FAA49D0077334E /* HomeContainerView.swift */,
 				FA19825F25FB8BDA00B74AFB /* NewsContainerView.swift */,
+				FA63B4A425FE96CA008C2211 /* FacultiesViewController.swift */,
 			);
 			path = ChildViewControllers;
 			sourceTree = "<group>";
@@ -217,10 +253,14 @@
 			files = (
 				FA4958BE25FAA3BE0077334E /* AboutContainerView.swift in Sources */,
 				FA4958AA25FA0F570077334E /* SideTransition.swift in Sources */,
+				FA63B49625FE80E8008C2211 /* AlumniViewController.swift in Sources */,
+				FA63B49C25FE8876008C2211 /* ContactsViewController.swift in Sources */,
 				FA19826625FB9A0200B74AFB /* NewsInfoViewController.swift in Sources */,
 				FAC80C2725FCA551002B47DB /* CovidModel.swift in Sources */,
+				FA63B49325FE7AB6008C2211 /* VisionViewController.swift in Sources */,
 				FAC80C3425FCBC92002B47DB /* Events.swift in Sources */,
 				FAC1F1AB25F3D08A009AE9A4 /* AppDelegate.swift in Sources */,
+				FA63B49925FE8582008C2211 /* DormitoryViewController.swift in Sources */,
 				FA4958C425FAA49D0077334E /* HomeContainerView.swift in Sources */,
 				FA19825825FB8A8F00B74AFB /* News.swift in Sources */,
 				FA4958B625FA60260077334E /* ContainerViewController.swift in Sources */,
@@ -230,12 +270,20 @@
 				FA19825C25FB8ADC00B74AFB /* NewsCustomViewCell.swift in Sources */,
 				FAC80C3125FCBA1C002B47DB /* CustomEventsViewCell.swift in Sources */,
 				FAC80C2E25FCA778002B47DB /* CovidInfoVC.swift in Sources */,
+				FA63B4AC25FEA081008C2211 /* FacultiesInfoViewController.swift in Sources */,
+				FA63B48D25FE6F27008C2211 /* HistoryViewController.swift in Sources */,
 				FAC80C2425FCA4F9002B47DB /* Covid.swift in Sources */,
 				FAC80C3725FCBD8C002B47DB /* EventsModel.swift in Sources */,
 				FA4958C125FAA4120077334E /* CovidContainerView.swift in Sources */,
+				FA63B4A525FE96CA008C2211 /* FacultiesViewController.swift in Sources */,
+				FA63B49025FE71BA008C2211 /* RectorViewController.swift in Sources */,
 				FA4958BA25FA7A500077334E /* EventsContainerView.swift in Sources */,
+				FA63B48A25FE5796008C2211 /* WomenViewController.swift in Sources */,
 				FA19825525FB87E300B74AFB /* NewsModel.swift in Sources */,
+				FA63B49F25FE8DB2008C2211 /* ImageTableViewCell.swift in Sources */,
 				FA4958A725FA0C0E0077334E /* MainViewController.swift in Sources */,
+				FA63B48725FE536B008C2211 /* OlimpiadViewController.swift in Sources */,
+				FA63B4A225FE8F24008C2211 /* ImagesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

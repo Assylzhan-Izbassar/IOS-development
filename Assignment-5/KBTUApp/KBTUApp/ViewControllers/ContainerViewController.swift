@@ -40,6 +40,13 @@ class ContainerViewController: UIViewController {
         return viewController
     }()
     
+    lazy var facultiesContainerView: FacultiesViewController = {
+        var viewController = storyboard?.instantiateViewController(withIdentifier: "FacultiesViewController") as! FacultiesViewController
+        self.addVCAsChildVC(childVC: viewController)
+        
+        return viewController
+    }()
+    
     lazy var eventsContainerView: EventsContainerView = {
         var viewController = storyboard?.instantiateViewController(withIdentifier: "EventsContainerView") as! EventsContainerView
         self.addVCAsChildVC(childVC: viewController)
@@ -74,6 +81,7 @@ class ContainerViewController: UIViewController {
         homeContainerView.view.isHidden = !(menuType == .home)
         covidContainerView.view.isHidden = !(menuType == .covid)
         newsContainerView.view.isHidden = !(menuType == .news)
+        facultiesContainerView.view.isHidden = !(menuType == .faculties)
         eventsContainerView.view.isHidden = !(menuType == .events)
         aboutContainerView.view.isHidden = !(menuType == .aboutUs)
     }

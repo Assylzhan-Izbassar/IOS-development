@@ -59,6 +59,8 @@ class MainViewController: UIViewController {
             title = "COVID-19"
         case .news:
             title = "News"
+        case .faculties:
+            title = "Faculties"
         case .events:
             title = "Events"
         case .aboutUs:
