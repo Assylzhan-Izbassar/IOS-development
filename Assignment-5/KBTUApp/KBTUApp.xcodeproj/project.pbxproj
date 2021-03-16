@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		FA109F0225F7E7CE0062EBD1 /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA109F0125F7E7CE0062EBD1 /* SideMenuTableViewController.swift */; };
-		FA19824925FB33CD00B74AFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA19824825FB33CD00B74AFB /* Assets.xcassets */; };
 		FA19825525FB87E300B74AFB /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19825425FB87E300B74AFB /* NewsModel.swift */; };
 		FA19825825FB8A8F00B74AFB /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19825725FB8A8F00B74AFB /* News.swift */; };
 		FA19825C25FB8ADC00B74AFB /* NewsCustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19825B25FB8ADC00B74AFB /* NewsCustomViewCell.swift */; };
@@ -33,6 +32,7 @@
 		FA63B4A225FE8F24008C2211 /* ImagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63B4A125FE8F24008C2211 /* ImagesTableViewController.swift */; };
 		FA63B4A525FE96CA008C2211 /* FacultiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63B4A425FE96CA008C2211 /* FacultiesViewController.swift */; };
 		FA63B4AC25FEA081008C2211 /* FacultiesInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63B4AB25FEA081008C2211 /* FacultiesInfoViewController.swift */; };
+		FA8FFCBE25FF261200C420F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA19824825FB33CD00B74AFB /* Assets.xcassets */; };
 		FAC1F1AB25F3D08A009AE9A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1F1AA25F3D08A009AE9A4 /* AppDelegate.swift */; };
 		FAC1F1AD25F3D08A009AE9A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1F1AC25F3D08A009AE9A4 /* SceneDelegate.swift */; };
 		FAC1F1B225F3D08A009AE9A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC1F1B025F3D08A009AE9A4 /* Main.storyboard */; };
@@ -239,7 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAC1F1B725F3D08B009AE9A4 /* LaunchScreen.storyboard in Resources */,
-				FA19824925FB33CD00B74AFB /* Assets.xcassets in Resources */,
+				FA8FFCBE25FF261200C420F3 /* Assets.xcassets in Resources */,
 				FAC1F1B225F3D08A009AE9A4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
