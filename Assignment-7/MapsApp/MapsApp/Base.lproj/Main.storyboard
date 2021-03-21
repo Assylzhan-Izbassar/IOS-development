@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5fm-6g-4je">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Maps-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MapsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Okb-D1-edg">
+                                <rect key="frame" x="0.0" y="811" width="414" height="85"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <items/>
+                            </tabBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="C4f-tJ-HCQ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="723"/>
+                            </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BWh-X1-JjY">
+                                <rect key="frame" x="81" y="821" width="252" height="32"/>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Satellite"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37z-Uh-9wS">
+                                <rect key="frame" x="355" y="821" width="32" height="31"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" systemColor="systemIndigoColor"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7C-C7-eHJ">
+                                <rect key="frame" x="26" y="821" width="34" height="31"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" systemColor="systemIndigoColor"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="C4f-tJ-HCQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="08X-xO-Hly"/>
+                            <constraint firstItem="BWh-X1-JjY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="81" id="3l2-hq-tCJ"/>
+                            <constraint firstItem="BWh-X1-JjY" firstAttribute="leading" secondItem="i7C-C7-eHJ" secondAttribute="trailing" constant="21" id="4ll-5q-zOD"/>
+                            <constraint firstItem="i7C-C7-eHJ" firstAttribute="top" secondItem="C4f-tJ-HCQ" secondAttribute="bottom" constant="10" id="7ca-tq-7gQ"/>
+                            <constraint firstItem="37z-Uh-9wS" firstAttribute="top" secondItem="C4f-tJ-HCQ" secondAttribute="bottom" constant="10" id="8WP-hi-M4U"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="37z-Uh-9wS" secondAttribute="bottom" constant="10" id="JY8-4Z-4ky"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BWh-X1-JjY" secondAttribute="bottom" constant="10" id="Pt0-2m-YFj"/>
+                            <constraint firstAttribute="bottom" secondItem="Okb-D1-edg" secondAttribute="bottom" id="QAx-iB-vj0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="i7C-C7-eHJ" secondAttribute="bottom" constant="10" id="Toh-gw-WPc"/>
+                            <constraint firstItem="Okb-D1-edg" firstAttribute="top" secondItem="C4f-tJ-HCQ" secondAttribute="bottom" id="UNv-59-tJF"/>
+                            <constraint firstItem="C4f-tJ-HCQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bA9-k5-cSg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BWh-X1-JjY" secondAttribute="trailing" constant="81" id="cg2-7b-r58"/>
+                            <constraint firstItem="37z-Uh-9wS" firstAttribute="leading" secondItem="BWh-X1-JjY" secondAttribute="trailing" constant="22" id="eCZ-Bb-Gdi"/>
+                            <constraint firstItem="Okb-D1-edg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="flL-FR-vz0"/>
+                            <constraint firstItem="Okb-D1-edg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="rh1-a8-SBo"/>
+                            <constraint firstItem="BWh-X1-JjY" firstAttribute="top" secondItem="C4f-tJ-HCQ" secondAttribute="bottom" constant="10" id="utV-Yu-QhW"/>
+                            <constraint firstItem="i7C-C7-eHJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="26" id="vRH-7J-kju"/>
+                            <constraint firstItem="C4f-tJ-HCQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wxL-7G-6aw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="37z-Uh-9wS" secondAttribute="trailing" constant="27" id="yDS-ij-bcK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Maps" id="1Y9-GR-o7Q">
+                        <barButtonItem key="rightBarButtonItem" systemItem="organize" id="g2a-jq-hXY"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="88.392857142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GI6-ty-3W6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5fm-6g-4je" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1rW-ZU-XYH">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="V9B-Tn-KYf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bf4-UE-3Bu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="88.392857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
