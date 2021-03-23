@@ -18,11 +18,14 @@
                         <subviews>
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Okb-D1-edg">
                                 <rect key="frame" x="0.0" y="811" width="414" height="85"/>
-                                <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <items/>
                             </tabBar>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="C4f-tJ-HCQ">
                                 <rect key="frame" x="0.0" y="88" width="414" height="723"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Vvq-RP-Wn8" appends="YES" id="tlS-fn-r6l"/>
+                                </connections>
                             </mapView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BWh-X1-JjY">
                                 <rect key="frame" x="81" y="821" width="252" height="32"/>
@@ -31,6 +34,9 @@
                                     <segment title="Satellite"/>
                                     <segment title="Hybrid"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentSelected:" destination="BYZ-38-t0r" eventType="valueChanged" id="hct-7r-6FE"/>
+                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37z-Uh-9wS">
                                 <rect key="frame" x="355" y="821" width="32" height="31"/>
@@ -47,6 +53,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="C4f-tJ-HCQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="08X-xO-Hly"/>
                             <constraint firstItem="BWh-X1-JjY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="81" id="3l2-hq-tCJ"/>
@@ -72,8 +79,16 @@
                     <navigationItem key="navigationItem" title="Maps" id="1Y9-GR-o7Q">
                         <barButtonItem key="rightBarButtonItem" systemItem="organize" id="g2a-jq-hXY"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="myMapView" destination="C4f-tJ-HCQ" id="NKg-0f-VpV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="Vvq-RP-Wn8">
+                    <connections>
+                        <action selector="longPressed:" destination="BYZ-38-t0r" id="QGH-I9-RON"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="88.392857142857139"/>
         </scene>
@@ -85,7 +100,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1rW-ZU-XYH">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" systemColor="systemTealColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -103,9 +117,6 @@
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
