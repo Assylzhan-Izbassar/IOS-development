@@ -8,6 +8,28 @@
 import UIKit
 import MapKit
 
+extension ViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation { return nil }
+
+        let reuseIdentifier = "Placemark"
+
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
+
+        if annotationView == nil {
+            annotationView = CustomAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
+        } else {
+            annotationView?.annotation = annotation
+        }
+
+        return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        performSegue(withIdentifier: "EditViewController", sender: view)
+    }
+}
+
 class ViewController: UIViewController {
     
     /**
@@ -18,6 +40,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        myMapView.register(CustomAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
     }
 
     /**
@@ -50,6 +74,7 @@ class ViewController: UIViewController {
             let firstTextField = alertController.textFields![0] as UITextField
             let secondTextField = alertController.textFields![1] as UITextField
             
+        
             let annotation = MKPointAnnotation()
             annotation.title = firstTextField.text
             annotation.subtitle = secondTextField.text
@@ -64,6 +89,13 @@ class ViewController: UIViewController {
         alertController.addAction(cancelBtn)
         
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? EditViewController,
+            let annotationView = sender as? MKPinAnnotationView {
+            destination._title = "Almaty"
+        }
     }
 }
 
