@@ -81,6 +81,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="myMapView" destination="C4f-tJ-HCQ" id="NKg-0f-VpV"/>
+                        <segue destination="Q1V-bz-Sc2" kind="show" identifier="EditViewController" id="vBv-Pw-AQy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -95,21 +96,24 @@
         <!--Edit-->
         <scene sceneID="uBN-gW-Kjf">
             <objects>
-                <viewController id="Q1V-bz-Sc2" customClass="EditViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditViewController" id="Q1V-bz-Sc2" customClass="EditViewController" customModule="MapsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Iwc-wU-uN9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uQd-7g-sku">
-                                <rect key="frame" x="20" y="168" width="374" height="74"/>
+                                <rect key="frame" x="20" y="166" width="374" height="76"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7J5-Pf-uIC">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="32"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="Qnf-u2-Mhr"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="57Q-VW-OLJ">
-                                        <rect key="frame" x="0.0" y="40" width="374" height="34"/>
+                                        <rect key="frame" x="0.0" y="42" width="374" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="Uua-xq-YM7"/>
                                         </constraints>
@@ -123,7 +127,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="c1N-RF-qEx" firstAttribute="trailing" secondItem="uQd-7g-sku" secondAttribute="trailing" constant="20" id="6Vb-gb-ZXg"/>
-                            <constraint firstItem="uQd-7g-sku" firstAttribute="top" secondItem="c1N-RF-qEx" secondAttribute="top" constant="80" id="X1Y-nm-fuy"/>
+                            <constraint firstItem="uQd-7g-sku" firstAttribute="top" secondItem="c1N-RF-qEx" secondAttribute="top" constant="78" id="Hfq-ST-Soh"/>
                             <constraint firstItem="uQd-7g-sku" firstAttribute="leading" secondItem="c1N-RF-qEx" secondAttribute="leading" constant="20" id="YOA-9l-2xf"/>
                             <constraint firstItem="c1N-RF-qEx" firstAttribute="bottom" secondItem="uQd-7g-sku" secondAttribute="bottom" constant="620" id="adw-Sl-sIP"/>
                         </constraints>
@@ -139,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D07-II-VRK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2984.057971014493" y="87.723214285714278"/>
+            <point key="canvasLocation" x="2071" y="88"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GI6-ty-3W6">
@@ -158,24 +162,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bf4-UE-3Bu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="88.392857142857139"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Clj-NA-Ucg">
-            <objects>
-                <navigationController storyboardIdentifier="EditViewController" automaticallyAdjustsScrollViewInsets="NO" id="6mk-eT-nvo" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nES-5V-hIm">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Q1V-bz-Sc2" kind="relationship" relationship="rootViewController" id="Noa-xK-C2c"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Aaq-oI-YDO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2073.913043478261" y="87.723214285714278"/>
         </scene>
     </scenes>
     <resources>

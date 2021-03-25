@@ -19,8 +19,8 @@ class EditViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        pinTitle.placeholder = _title
-        pinSubTitle.placeholder = _subtitle
+        pinTitle.text = _title
+        pinSubTitle.text = _subtitle
     }
     
 

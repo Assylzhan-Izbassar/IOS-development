@@ -15,6 +15,8 @@
 		FADCF6A22607924F00D965FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FADCF6A02607924F00D965FF /* LaunchScreen.storyboard */; };
 		FAE9E450260BA6B500861F33 /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE9E44F260BA6B500861F33 /* CustomAnnotationView.swift */; };
 		FAE9E453260BAB2300861F33 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE9E452260BAB2300861F33 /* EditViewController.swift */; };
+		FAE9E459260CE80500861F33 /* AnotationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE9E458260CE80500861F33 /* AnotationContext.swift */; };
+		FAE9E462260CE9C300861F33 /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE9E461260CE9C300861F33 /* CustomAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		FADCF6A32607924F00D965FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAE9E44F260BA6B500861F33 /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
 		FAE9E452260BAB2300861F33 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		FAE9E458260CE80500861F33 /* AnotationContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotationContext.swift; sourceTree = "<group>"; };
+		FAE9E461260CE9C300861F33 /* CustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 		FADCF6942607924D00D965FF /* MapsApp */ = {
 			isa = PBXGroup;
 			children = (
+				FAE9E456260CE79300861F33 /* DAL */,
 				FADCF6952607924D00D965FF /* AppDelegate.swift */,
 				FADCF6972607924D00D965FF /* SceneDelegate.swift */,
 				FADCF6992607924D00D965FF /* ViewController.swift */,
@@ -71,6 +76,23 @@
 				FAE9E452260BAB2300861F33 /* EditViewController.swift */,
 			);
 			path = MapsApp;
+			sourceTree = "<group>";
+		};
+		FAE9E456260CE79300861F33 /* DAL */ = {
+			isa = PBXGroup;
+			children = (
+				FAE9E460260CE9A600861F33 /* Entities */,
+				FAE9E458260CE80500861F33 /* AnotationContext.swift */,
+			);
+			path = DAL;
+			sourceTree = "<group>";
+		};
+		FAE9E460260CE9A600861F33 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				FAE9E461260CE9C300861F33 /* CustomAnnotation.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,8 +168,10 @@
 				FAE9E453260BAB2300861F33 /* EditViewController.swift in Sources */,
 				FADCF69A2607924D00D965FF /* ViewController.swift in Sources */,
 				FADCF6962607924D00D965FF /* AppDelegate.swift in Sources */,
+				FAE9E459260CE80500861F33 /* AnotationContext.swift in Sources */,
 				FAE9E450260BA6B500861F33 /* CustomAnnotationView.swift in Sources */,
 				FADCF6982607924D00D965FF /* SceneDelegate.swift in Sources */,
+				FAE9E462260CE9C300861F33 /* CustomAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

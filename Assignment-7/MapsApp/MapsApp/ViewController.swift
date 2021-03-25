@@ -8,7 +8,11 @@
 import UIKit
 import MapKit
 
-extension ViewController: MKMapViewDelegate {
+extension ViewController: MKMapViewDelegate, PerformSegueInfoBtn {
+    func setSegueToEdit(_ annotation: MKAnnotation) {
+        performSegue(withIdentifier: "EditViewController", sender: annotation)
+    }
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is MKUserLocation { return nil }
 
@@ -25,7 +29,9 @@ extension ViewController: MKMapViewDelegate {
         return annotationView
     }
     
-    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+    func mapView(_ mapView: MKMapView,
+           annotationView view: MKAnnotationView,
+           calloutAccessoryControlTapped control: UIControl) {
         performSegue(withIdentifier: "EditViewController", sender: view)
     }
 }
@@ -42,6 +48,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         myMapView.register(CustomAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
+        
+        CustomAnnotationView.delegate = self
     }
 
     /**
@@ -91,10 +99,11 @@ class ViewController: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? EditViewController,
-            let annotationView = sender as? MKPinAnnotationView {
-            destination._title = "Almaty"
+        if let destination = segue.destination as? EditViewController {
+            destination._title = (sender as! MKAnnotation).title!!
+            destination._subtitle = (sender as! MKAnnotation).subtitle!!
         }
     }
 }
