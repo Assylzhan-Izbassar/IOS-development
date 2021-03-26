@@ -9,6 +9,14 @@ import UIKit
 import MapKit
 import CoreData
 
+protocol AnnotationViewDelegate: class {
+    func showAnnotationView(_ isHidden: Bool)
+}
+
+protocol AnnotationViewDataSource: class {
+    func refershData()
+}
+
 class ViewController: UIViewController {
     
     /**
@@ -18,6 +26,10 @@ class ViewController: UIViewController {
     private var mapTypes: [Int: MKMapType] = [0: .standard, 1: .satellite, 2: .hybrid]
     var annotations: [NSManagedObject] = []
     var isInit: Bool = false
+    var index: Int = -1
+    var isHidden: Bool = true
+    static var delegate: AnnotationViewDelegate?
+    static var dataSource: AnnotationViewDataSource?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +46,10 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        fetchTheData()
+    }
+    
+    func fetchTheData(){
         guard
             let appDelegate = UIApplication.shared.delegate as? AppDelegate
         else {
@@ -56,6 +72,10 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func showTableList(_ sender: UIBarButtonItem) {
+        self.showAnnotations()
+    }
+
     func loadAnnotations() {
         for object in annotations {
             let annotation = MKPointAnnotation()
@@ -97,15 +117,7 @@ class ViewController: UIViewController {
             let firstTextField = alertController.textFields![0] as UITextField
             let secondTextField = alertController.textFields![1] as UITextField
             
-        
-            let annotation = MKPointAnnotation()
-            annotation.title = firstTextField.text
-            annotation.subtitle = secondTextField.text
-            annotation.coordinate = mapCoordinate
-            
-            self?.save(annotation)
-            
-            self?.myMapView.addAnnotation(annotation)
+            self?.addAnnotation(firstTextField.text!, secondTextField.text!, mapCoordinate, true)
         }
         
         let cancelBtn = UIAlertAction(title: "Cancel", style: .default, handler: nil)
@@ -116,6 +128,58 @@ class ViewController: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    func addAnnotation(_ title: String, _ subtitle: String, _ coordinate: CLLocationCoordinate2D, _ isSaved: Bool) {
+        let annotation = MKPointAnnotation()
+        annotation.title = title
+        annotation.subtitle = subtitle
+        annotation.coordinate = coordinate
+        
+        self.myMapView.addAnnotation(annotation)
+        
+        if isSaved {
+            self.save(annotation)
+            self.zoomToAnnotation(annotation.coordinate, title)
+        }
+        
+    }
+    
+    @IBAction func nextAnnotation(_ sender: UIButton) {
+        fetchTheData()
+        
+        if annotations.count == 0 || annotations.count == 1 {
+            return
+        }
+        if index + 1 < annotations.count {
+            index += 1
+        } else {
+            index = 0
+        }
+        
+        let longitude = annotations[index].value(forKey: "longitude") as! CLLocationDegrees
+        let latitude = annotations[index].value(forKey: "latitude") as! CLLocationDegrees
+        let title = annotations[index].value(forKey: "title") as! String
+        
+        zoomToAnnotation(CLLocationCoordinate2D(latitude: latitude, longitude: longitude), title)
+    }
+    @IBAction func backAnnotation(_ sender: UIButton) {
+        fetchTheData()
+        
+        if annotations.count == 0 || annotations.count == 1 {
+            return
+        }
+        
+        if index - 1 > -1 {
+            index -= 1
+        } else {
+            index = annotations.count - 1
+        }
+        
+        let longitude = annotations[index].value(forKey: "longitude") as! CLLocationDegrees
+        let latitude = annotations[index].value(forKey: "latitude") as! CLLocationDegrees
+        let title = annotations[index].value(forKey: "title") as! String
+        
+        zoomToAnnotation(CLLocationCoordinate2D(latitude: latitude, longitude: longitude), title)
+    }
     // MARK: - Saving data to CoreData
     
     func save(_ newAnnotation: MKPointAnnotation) {
@@ -145,21 +209,79 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func unwind( _ seg: UIStoryboardSegue) {}
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? EditViewController {
             destination._title = (sender as! MKAnnotation).title!!
             destination._subtitle = (sender as! MKAnnotation).subtitle!!
         }
-        if let destination = segue.destination as? AnnotationsViewController {
-            destination.annotations = self.annotations
+        
+        if segue.identifier == "goToList" {
+            if let destination = segue.destination as? AnnotationsViewController {
+                destination.annotations = annotations
+            }
         }
     }
 }
 
 extension ViewController: MKMapViewDelegate, PerformSegueInfoBtn, CoreDataDelegate {
     
+    func setNavTitle(_ title: String){
+        navigationController?.viewControllers.first?.title = title
+    }
+    
     func setSegueToEdit(_ annotation: MKAnnotation) {
         performSegue(withIdentifier: "EditViewController", sender: annotation)
+    }
+    
+    func showAnnotations(){
+        isHidden = !isHidden
+        ViewController.dataSource?.refershData()
+        ViewController.delegate?.showAnnotationView(isHidden)
+    }
+    
+    func zoomToAnnotation(_ coordinate: CLLocationCoordinate2D, _ title: String) {
+        
+        setNavTitle(title)
+        
+        let regionRadius: CLLocationDistance = 2500
+        let coordinateRegion = MKCoordinateRegion(center: coordinate, latitudinalMeters: regionRadius * 2.0, longitudinalMeters: regionRadius * 2.0)
+        myMapView.setRegion(coordinateRegion, animated: true)
+    }
+    
+    func updateAnnotation(_ oldTitle: String, _ oldSubtitle: String, _ newTitle: String, _ newSubtitle: String){
+        
+        for o in annotations {
+            if o.value(forKey: "title") as! String == oldTitle && o.value(forKey: "subtitle") as! String == oldSubtitle {
+                o.setValue(newTitle, forKey: "title")
+                o.setValue(newSubtitle, forKey: "subtitle")
+                
+                let longitude = o.value(forKey: "longitude") as! CLLocationDegrees
+                let latitude = o.value(forKey: "latitude") as! CLLocationDegrees
+                
+                self.removeFromMap(latitude, longitude)
+                
+                self.addAnnotation(newTitle, newSubtitle, CLLocationCoordinate2D(latitude: latitude, longitude: longitude), false)
+                
+                break
+            }
+        }
+        
+        guard
+            let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        else {
+            return
+        }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        do {
+            if managedContext.hasChanges {
+                try managedContext.save()
+            }
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
     }
     
     func removeFromMap(_ latitude: Double, _ longitude: Double) {

@@ -11,6 +11,29 @@ import MapKit
 
 protocol CoreDataDelegate: class {
     func removeFromMap(_ latitude: Double, _ longitude: Double)
+    func zoomToAnnotation(_ coordinate: CLLocationCoordinate2D, _ title: String)
+    func showAnnotations()
+    func setNavTitle(_ title: String)
+}
+
+extension AnnotationsViewController: AnnotationViewDataSource {
+    func refershData() {
+        guard
+            let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        else {
+            return
+        }
+      
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CustomAnnotation")
+      
+        do {
+            annotations = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        myTable.reloadData()
+    }
 }
 
 class AnnotationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -20,11 +43,14 @@ class AnnotationsViewController: UIViewController, UITableViewDelegate, UITableV
     var annotations: [NSManagedObject] = []
     static var delegate: CoreDataDelegate?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         myTable.dataSource = self
         myTable.delegate = self
+        
+        ViewController.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,8 +58,11 @@ class AnnotationsViewController: UIViewController, UITableViewDelegate, UITableV
         if let selectedIndexPath = myTable.indexPathForSelectedRow {
             myTable.deselectRow(at: selectedIndexPath, animated: animated)
         }
-        myTable.reloadData()
+        
+        // fetching the data
+        self.refershData()
     }
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return annotations.count
@@ -58,8 +87,10 @@ class AnnotationsViewController: UIViewController, UITableViewDelegate, UITableV
 
         myTable.deleteRows(at: [indexPath], with: .automatic)
     }
-    
+
     func removeAnnotaion(_ annotation: NSManagedObject) {
+        
+        AnnotationsViewController.delegate?.setNavTitle("Maps")
         // remove from the map
         AnnotationsViewController.delegate!.removeFromMap((annotation.value(forKey: "latitude") as? Double)!, (annotation.value(forKey: "longitude") as? Double)!)
         
@@ -81,13 +112,19 @@ class AnnotationsViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        
+        let coordinateIndex = myTable.indexPath(for: (sender as! UITableViewCell))!.row
+        let longitude = annotations[coordinateIndex].value(forKey: "longitude") as! CLLocationDegrees
+        let latitude = annotations[coordinateIndex].value(forKey: "latitude") as! CLLocationDegrees
+        let title = annotations[coordinateIndex].value(forKey: "title") as! String
+        
+        AnnotationsViewController.delegate?.zoomToAnnotation(CLLocationCoordinate2D(latitude: latitude, longitude: longitude), title)
+        AnnotationsViewController.delegate?.showAnnotations()
     }
-    */
+
 }

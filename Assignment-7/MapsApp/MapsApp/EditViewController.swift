@@ -15,6 +15,7 @@ class EditViewController: UIViewController {
     
     var _title: String = ""
     var _subtitle: String = ""
+    var _id = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,15 +24,18 @@ class EditViewController: UIViewController {
         pinSubTitle.text = _subtitle
     }
     
-
-    /*
     // MARK: - Navigation
+    
+    @IBAction func unwindToViewController( _ seg: UIStoryboardSegue) {}
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "backToViewController" {
+            if let destination = segue.destination as? ViewController {
+                destination.updateAnnotation(_title, _subtitle, pinTitle.text!, pinSubTitle.text!)
+            }
+        }
     }
-    */
 
 }

@@ -17,6 +17,7 @@
 		FAE9E453260BAB2300861F33 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE9E452260BAB2300861F33 /* EditViewController.swift */; };
 		FAE9E466260DE3B800861F33 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAE9E464260DE3B800861F33 /* Model.xcdatamodeld */; };
 		FAE9E46C260DE6F100861F33 /* AnnotationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE9E46B260DE6F100861F33 /* AnnotationsViewController.swift */; };
+		FAE9E47B260E63D400861F33 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE9E47A260E63D400861F33 /* ContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		FAE9E452260BAB2300861F33 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		FAE9E465260DE3B800861F33 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		FAE9E46B260DE6F100861F33 /* AnnotationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationsViewController.swift; sourceTree = "<group>"; };
+		FAE9E47A260E63D400861F33 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				FAE9E46B260DE6F100861F33 /* AnnotationsViewController.swift */,
 				FADCF6992607924D00D965FF /* ViewController.swift */,
 				FAE9E452260BAB2300861F33 /* EditViewController.swift */,
+				FAE9E47A260E63D400861F33 /* ContainerView.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				FADCF69A2607924D00D965FF /* ViewController.swift in Sources */,
 				FAE9E46C260DE6F100861F33 /* AnnotationsViewController.swift in Sources */,
 				FADCF6962607924D00D965FF /* AppDelegate.swift in Sources */,
+				FAE9E47B260E63D400861F33 /* ContainerView.swift in Sources */,
 				FAE9E466260DE3B800861F33 /* Model.xcdatamodeld in Sources */,
 				FAE9E450260BA6B500861F33 /* CustomAnnotationView.swift in Sources */,
 				FADCF6982607924D00D965FF /* SceneDelegate.swift in Sources */,
