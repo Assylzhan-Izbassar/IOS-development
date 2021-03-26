@@ -15,8 +15,8 @@
 		FADCF6A22607924F00D965FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FADCF6A02607924F00D965FF /* LaunchScreen.storyboard */; };
 		FAE9E450260BA6B500861F33 /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE9E44F260BA6B500861F33 /* CustomAnnotationView.swift */; };
 		FAE9E453260BAB2300861F33 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE9E452260BAB2300861F33 /* EditViewController.swift */; };
-		FAE9E459260CE80500861F33 /* AnotationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE9E458260CE80500861F33 /* AnotationContext.swift */; };
-		FAE9E462260CE9C300861F33 /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE9E461260CE9C300861F33 /* CustomAnnotation.swift */; };
+		FAE9E466260DE3B800861F33 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAE9E464260DE3B800861F33 /* Model.xcdatamodeld */; };
+		FAE9E46C260DE6F100861F33 /* AnnotationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE9E46B260DE6F100861F33 /* AnnotationsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +30,8 @@
 		FADCF6A32607924F00D965FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAE9E44F260BA6B500861F33 /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
 		FAE9E452260BAB2300861F33 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
-		FAE9E458260CE80500861F33 /* AnotationContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotationContext.swift; sourceTree = "<group>"; };
-		FAE9E461260CE9C300861F33 /* CustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
+		FAE9E465260DE3B800861F33 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		FAE9E46B260DE6F100861F33 /* AnnotationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,35 +64,27 @@
 		FADCF6942607924D00D965FF /* MapsApp */ = {
 			isa = PBXGroup;
 			children = (
-				FAE9E456260CE79300861F33 /* DAL */,
+				FAE9E472260DF44400861F33 /* ViewControllers */,
 				FADCF6952607924D00D965FF /* AppDelegate.swift */,
 				FADCF6972607924D00D965FF /* SceneDelegate.swift */,
-				FADCF6992607924D00D965FF /* ViewController.swift */,
 				FADCF69B2607924D00D965FF /* Main.storyboard */,
 				FADCF69E2607924F00D965FF /* Assets.xcassets */,
 				FADCF6A02607924F00D965FF /* LaunchScreen.storyboard */,
 				FADCF6A32607924F00D965FF /* Info.plist */,
-				FAE9E44F260BA6B500861F33 /* CustomAnnotationView.swift */,
-				FAE9E452260BAB2300861F33 /* EditViewController.swift */,
+				FAE9E464260DE3B800861F33 /* Model.xcdatamodeld */,
 			);
 			path = MapsApp;
 			sourceTree = "<group>";
 		};
-		FAE9E456260CE79300861F33 /* DAL */ = {
+		FAE9E472260DF44400861F33 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				FAE9E460260CE9A600861F33 /* Entities */,
-				FAE9E458260CE80500861F33 /* AnotationContext.swift */,
+				FAE9E44F260BA6B500861F33 /* CustomAnnotationView.swift */,
+				FAE9E46B260DE6F100861F33 /* AnnotationsViewController.swift */,
+				FADCF6992607924D00D965FF /* ViewController.swift */,
+				FAE9E452260BAB2300861F33 /* EditViewController.swift */,
 			);
-			path = DAL;
-			sourceTree = "<group>";
-		};
-		FAE9E460260CE9A600861F33 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				FAE9E461260CE9C300861F33 /* CustomAnnotation.swift */,
-			);
-			path = Entities;
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,11 +159,11 @@
 			files = (
 				FAE9E453260BAB2300861F33 /* EditViewController.swift in Sources */,
 				FADCF69A2607924D00D965FF /* ViewController.swift in Sources */,
+				FAE9E46C260DE6F100861F33 /* AnnotationsViewController.swift in Sources */,
 				FADCF6962607924D00D965FF /* AppDelegate.swift in Sources */,
-				FAE9E459260CE80500861F33 /* AnotationContext.swift in Sources */,
+				FAE9E466260DE3B800861F33 /* Model.xcdatamodeld in Sources */,
 				FAE9E450260BA6B500861F33 /* CustomAnnotationView.swift in Sources */,
 				FADCF6982607924D00D965FF /* SceneDelegate.swift in Sources */,
-				FAE9E462260CE9C300861F33 /* CustomAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +365,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FAE9E464260DE3B800861F33 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FAE9E465260DE3B800861F33 /* Model.xcdatamodel */,
+			);
+			currentVersion = FAE9E465260DE3B800861F33 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FADCF68A2607924C00D965FF /* Project object */;
 }
