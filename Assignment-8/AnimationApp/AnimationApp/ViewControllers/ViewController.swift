@@ -41,10 +41,19 @@ class ViewController: UIViewController {
         }, completion: nil)
     }
     
-    @IBAction func nextView(_ sender: Any) {
+    @IBAction func nextView(_ sender: UIButton) {
         if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DestinationViewController") as? ListViewController {
             vc.modalPresentationStyle = .overCurrentContext
+            
             self.present(vc, animated: false, completion: nil)
+            
+            UIView.animate(withDuration: 1.0, delay: 0.2, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .allowAnimatedContent, animations: {
+                self.email.center.x = 0
+            }, completion: nil)
+            
+            UIView.animate(withDuration: 1.0, delay: 0.2, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .allowAnimatedContent, animations: {
+                self.password.center.x = self.view.frame.width
+            }, completion: nil)
         }
     }
 }

@@ -33,9 +33,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CustomTableViewCell
-        
-        cell.cellTitle.text = PhoneContext.phones[indexPath.row].getTitle()
-        cell.cellPrice.text = PhoneContext.phones[indexPath.row].getPrice()
+
+        cell.setFields(PhoneContext.phones[indexPath.row])
         
         return cell
     }
@@ -43,10 +42,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         cell.transform = CGAffineTransform(translationX: 0, y: cell.contentView.frame.height)
-        UIView.animate(withDuration: 1, delay: 0.4 * Double(indexPath.row), animations: {
+        UIView.animate(withDuration: 1, delay: 0.1 * Double(indexPath.row), animations: {
             cell.transform = CGAffineTransform(translationX: cell.contentView.frame.width, y: cell.contentView.frame.height)
         })
     }
-    
-    
 }

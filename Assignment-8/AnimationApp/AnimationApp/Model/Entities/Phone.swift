@@ -18,7 +18,9 @@ class Phone {
         self.price = price
         self.processorType = processorType
         
-        if cameraPixel / 10 == 0 {
+        let temp = String(cameraPixel)
+        
+        if temp.hasSuffix(".0") {
             self.cameraPixel = String(Int(cameraPixel)) + "MPX"
         } else {
             self.cameraPixel = String(cameraPixel) + "MPX"
