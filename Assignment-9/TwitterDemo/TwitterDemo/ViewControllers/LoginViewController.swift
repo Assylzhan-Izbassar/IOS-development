@@ -7,8 +7,8 @@
 
 import UIKit
 
-class LoginViewController: StyledUIViewController {
-
+class LoginViewController: UIViewController {
+    
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
@@ -16,15 +16,20 @@ class LoginViewController: StyledUIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // make some decore
         decorate()
     }
     
-    func decorate() {
-        self.makeCorner(textfield: email, color: UIColor.white.cgColor)
-        self.makeCorner(textfield: password, color: UIColor.white.cgColor)
-        self.makeCorner(button: loginBtn, color: UIColor.white.cgColor)
-    }
-    
     @IBAction func loginPressed(_ sender: UIButton) {
+    }
+}
+
+// MARK: - Extension
+
+extension LoginViewController: Decoration {
+    func decorate() {
+        makeCorner(textfield: email, color: UIColor.white.cgColor)
+        makeCorner(textfield: password, color: UIColor.white.cgColor)
+        makeCorner(button: loginBtn, color: UIColor.white.cgColor)
     }
 }

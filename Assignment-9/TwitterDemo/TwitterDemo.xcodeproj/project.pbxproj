@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,7 +18,7 @@
 		FA410466261F65EE002BF340 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA410465261F65EE002BF340 /* SignUpViewController.swift */; };
 		FA41046C261F69E4002BF340 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA41046B261F69E4002BF340 /* User.swift */; };
 		FA41046F261F6C4B002BF340 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA41046E261F6C4B002BF340 /* Tweet.swift */; };
-		FA410472261F74A7002BF340 /* Decorations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA410471261F74A7002BF340 /* Decorations.swift */; };
+		FA410472261F74A7002BF340 /* Decoration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA410471261F74A7002BF340 /* Decoration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +36,7 @@
 		FA410465261F65EE002BF340 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FA41046B261F69E4002BF340 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FA41046E261F6C4B002BF340 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
-		FA410471261F74A7002BF340 /* Decorations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decorations.swift; sourceTree = "<group>"; };
+		FA410471261F74A7002BF340 /* Decoration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoration.swift; sourceTree = "<group>"; };
 		FAA2EE4BC7CF130FB69BC6EF /* Pods-TwitterDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterDemo.debug.xcconfig"; path = "Target Support Files/Pods-TwitterDemo/Pods-TwitterDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,7 +58,6 @@
 				FAA2EE4BC7CF130FB69BC6EF /* Pods-TwitterDemo.debug.xcconfig */,
 				11358F2BA2473301DC0A99E2 /* Pods-TwitterDemo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -109,7 +108,7 @@
 			children = (
 				FA41045F261F6046002BF340 /* LoginViewController.swift */,
 				FA410465261F65EE002BF340 /* SignUpViewController.swift */,
-				FA410471261F74A7002BF340 /* Decorations.swift */,
+				FA410471261F74A7002BF340 /* Decoration.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -238,7 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA410472261F74A7002BF340 /* Decorations.swift in Sources */,
+				FA410472261F74A7002BF340 /* Decoration.swift in Sources */,
 				FA410460261F6046002BF340 /* LoginViewController.swift in Sources */,
 				FA41044A261F6001002BF340 /* AppDelegate.swift in Sources */,
 				FA410466261F65EE002BF340 /* SignUpViewController.swift in Sources */,

@@ -8,12 +8,13 @@
 import Foundation
 import UIKit
 
-class StyledUIViewController: UIViewController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
+protocol Decoration: class {
+    func decorate()
+}
+
+// MARK: - Extension
+
+extension Decoration {
     func makeCorner(button b: UIButton, color c: CGColor?) {
         b.layer.cornerRadius = 22.0
         b.layer.borderWidth = 2.0

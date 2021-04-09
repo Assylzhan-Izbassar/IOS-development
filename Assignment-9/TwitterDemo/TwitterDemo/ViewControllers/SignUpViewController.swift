@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignUpViewController: StyledUIViewController {
+class SignUpViewController: UIViewController {
 
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var surname: UITextField!
@@ -19,15 +19,20 @@ class SignUpViewController: StyledUIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // make some decore
         decorate()
     }
-    
+}
+
+// MARK: - Extension
+
+extension SignUpViewController: Decoration {
     func decorate() {
-        self.makeCorner(textfield: name, color: UIColor.white.cgColor)
-        self.makeCorner(textfield: surname, color: UIColor.white.cgColor)
-        self.makeCorner(textfield: email, color: UIColor.white.cgColor)
-        self.makeCorner(textfield: password, color: UIColor.white.cgColor)
-        self.makeCorner(button: signInBtn, color: UIColor.white.cgColor)
+        makeCorner(textfield: name, color: UIColor.white.cgColor)
+        makeCorner(textfield: surname, color: UIColor.white.cgColor)
+        makeCorner(textfield: email, color: UIColor.white.cgColor)
+        makeCorner(textfield: password, color: UIColor.white.cgColor)
+        makeCorner(button: signInBtn, color: UIColor.white.cgColor)
         birthday.setValue(UIColor.white, forKeyPath: "textColor")
     }
 }
