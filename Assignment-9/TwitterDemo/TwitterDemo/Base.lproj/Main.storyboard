@@ -85,6 +85,7 @@
                     <navigationItem key="navigationItem" id="edG-eK-NYY"/>
                     <connections>
                         <outlet property="email" destination="xvL-Kq-ubD" id="EvN-e4-wCM"/>
+                        <outlet property="loginBtn" destination="01Q-Jn-akC" id="OFv-7M-J8f"/>
                         <outlet property="password" destination="CC3-Xk-2M9" id="I8J-LD-cgj"/>
                     </connections>
                 </viewController>
@@ -140,7 +141,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4g5-aK-cnP">
                                 <rect key="frame" x="75" y="507" width="264" height="216"/>
                                 <subviews>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="b37-6n-t47">
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="b37-6n-t47">
                                         <rect key="frame" x="0.0" y="0.0" width="264" height="216"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </datePicker>
@@ -182,6 +183,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HzR-n6-Ktv"/>
+                    <connections>
+                        <outlet property="birthday" destination="b37-6n-t47" id="J6Q-rh-Sie"/>
+                        <outlet property="email" destination="Zy3-pR-u28" id="DQg-D8-tTs"/>
+                        <outlet property="name" destination="gDJ-nv-5Bq" id="sNx-dE-dpR"/>
+                        <outlet property="password" destination="qPP-HG-lkg" id="ugZ-eu-JnI"/>
+                        <outlet property="signInBtn" destination="qM1-eT-vOn" id="TqD-0b-QoJ"/>
+                        <outlet property="surname" destination="GFB-nV-6pp" id="fMv-NL-QTM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AWp-4f-5Vs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

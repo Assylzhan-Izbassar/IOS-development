@@ -14,15 +14,22 @@ class StyledUIViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    func makeCorner(button b: UIButton, color c: CGColor) {
-        b.layer.cornerRadius = 15.0
+    func makeCorner(button b: UIButton, color c: CGColor?) {
+        b.layer.cornerRadius = 22.0
         b.layer.borderWidth = 2.0
-        b.layer.borderColor =  c
+        
+        if let x = c {
+            b.layer.borderColor =  x
+        }
     }
     
-    func makeCorner(textfield t: UITextField, color c: CGColor) {
-        t.layer.cornerRadius = 15.0
+    func makeCorner(textfield t: UITextField, color c: CGColor?) {
+        t.layer.cornerRadius = 22.0
         t.layer.borderWidth = 2.0
-        t.layer.borderColor = c
+        
+        if let x = c {
+            t.layer.borderColor =  x
+        }
+        t.clipsToBounds = true
     }
 }
