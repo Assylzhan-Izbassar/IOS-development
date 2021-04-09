@@ -162,6 +162,9 @@
                                 <state key="normal" title="Sign in">
                                     <color key="titleColor" red="0.13615781069999999" green="0.63111025089999995" blue="0.95689719920000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="signInUser:" destination="dmf-5E-sO1" eventType="touchUpInside" id="Nx6-6L-RSV"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oF6-fE-43G"/>

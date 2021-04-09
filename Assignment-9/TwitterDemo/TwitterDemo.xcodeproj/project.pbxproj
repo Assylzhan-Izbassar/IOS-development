@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		564A324A48FC4FE17B201393 /* Pods_TwitterDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEBFF8D6432C4FF7427FE4B3 /* Pods_TwitterDemo.framework */; };
-		FA1FF4BC2620186C00E096AF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA1FF4BB2620186C00E096AF /* GoogleService-Info.plist */; };
 		FA41044A261F6001002BF340 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA410449261F6001002BF340 /* AppDelegate.swift */; };
 		FA41044C261F6001002BF340 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA41044B261F6001002BF340 /* SceneDelegate.swift */; };
 		FA410451261F6001002BF340 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA41044F261F6001002BF340 /* Main.storyboard */; };
@@ -19,12 +18,12 @@
 		FA41046C261F69E4002BF340 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA41046B261F69E4002BF340 /* User.swift */; };
 		FA41046F261F6C4B002BF340 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA41046E261F6C4B002BF340 /* Tweet.swift */; };
 		FA410472261F74A7002BF340 /* Decoration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA410471261F74A7002BF340 /* Decoration.swift */; };
+		FA67777C2620C3C4005B734B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA67777B2620C3C4005B734B /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		11358F2BA2473301DC0A99E2 /* Pods-TwitterDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterDemo.release.xcconfig"; path = "Target Support Files/Pods-TwitterDemo/Pods-TwitterDemo.release.xcconfig"; sourceTree = "<group>"; };
 		DEBFF8D6432C4FF7427FE4B3 /* Pods_TwitterDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA1FF4BB2620186C00E096AF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FA410446261F6001002BF340 /* TwitterDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA410449261F6001002BF340 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA41044B261F6001002BF340 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +36,7 @@
 		FA41046B261F69E4002BF340 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FA41046E261F6C4B002BF340 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		FA410471261F74A7002BF340 /* Decoration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoration.swift; sourceTree = "<group>"; };
+		FA67777B2620C3C4005B734B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FAA2EE4BC7CF130FB69BC6EF /* Pods-TwitterDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterDemo.debug.xcconfig"; path = "Target Support Files/Pods-TwitterDemo/Pods-TwitterDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,7 +98,7 @@
 				FA410452261F6003002BF340 /* Assets.xcassets */,
 				FA410454261F6003002BF340 /* LaunchScreen.storyboard */,
 				FA410457261F6003002BF340 /* Info.plist */,
-				FA1FF4BB2620186C00E096AF /* GoogleService-Info.plist */,
+				FA67777B2620C3C4005B734B /* GoogleService-Info.plist */,
 			);
 			path = TwitterDemo;
 			sourceTree = "<group>";
@@ -182,7 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA410456261F6003002BF340 /* LaunchScreen.storyboard in Resources */,
-				FA1FF4BC2620186C00E096AF /* GoogleService-Info.plist in Resources */,
+				FA67777C2620C3C4005B734B /* GoogleService-Info.plist in Resources */,
 				FA410453261F6003002BF340 /* Assets.xcassets in Resources */,
 				FA410451261F6001002BF340 /* Main.storyboard in Resources */,
 			);

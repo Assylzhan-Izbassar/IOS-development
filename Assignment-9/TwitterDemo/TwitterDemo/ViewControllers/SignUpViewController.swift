@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class SignUpViewController: UIViewController {
 
@@ -21,6 +23,47 @@ class SignUpViewController: UIViewController {
         
         // make some decore
         decorate()
+    }
+    
+    func showMessage(title t: String, message m: String) {
+        let alert = UIAlertController(title: t, message: m, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "Okay", style: .default) { (UIAlertAction) in
+            if t != "Error" {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+        
+        alert.addAction(ok)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func validate(password p: String) -> Bool {
+
+        return true
+    }
+    
+    func validate(email e: String) -> Bool {
+        
+        return true
+    }
+    
+    /**
+    Sign in the new user
+     */
+    @IBAction func signInUser(_ sender: UIButton) {
+        
+        if let e = email.text, let p = password.text {
+            if validate(email: e) && validate(password: p) {
+                _ = User(name.text!, surname.text!, birthday.date, e, p)
+                Auth.auth().createUser(withEmail: e, password: p) { [weak self] (result, error) in
+                    if error == nil {
+                        Auth.auth().currentUser?.sendEmailVerification(completion: nil)
+                        self?.showMessage(title: "Success", message: "Please, verify your email!")
+                    }
+                }
+            }
+        }
     }
 }
 
