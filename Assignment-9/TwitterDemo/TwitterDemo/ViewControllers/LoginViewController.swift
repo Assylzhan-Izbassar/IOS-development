@@ -6,21 +6,79 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
+    var currentUser: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        currentUser = (Auth.auth().currentUser)
         
         // make some decore
         decorate()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        currentUser = (Auth.auth().currentUser)
+        if currentUser != nil && (currentUser!.isEmailVerified) {
+             goToMainPage()
+        }
+    }
+    
+    func showMessage(title t: String, message m: String) {
+        let alert = UIAlertController(title: t, message: m, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "Okay", style: .default) { (UIAlertAction) in
+            if t != "Error" {
+                // do something
+            }
+        }
+        
+        alert.addAction(ok)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func validate(email e: String) -> Bool {
+        
+        return true
+    }
+    
+    func validate(password p: String) -> Bool {
+        
+        return true
+    }
+    
+    func goToMainPage() {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        
+        if let mainPage = storyboard.instantiateViewController(identifier: "TweetsTableViewController") as? TweetsTableViewController {
+            mainPage.modalPresentationStyle = .fullScreen
+            present(mainPage, animated: true, completion: nil)
+        }
+    }
+    
     @IBAction func loginPressed(_ sender: UIButton) {
+        let email = self.email.text ?? ""
+        let password = self.password.text ?? ""
+        if validate(email: email) && validate(password: password) {
+            Auth.auth().signIn(withEmail: email, password: password) { [weak self] (result, error) in
+                if error == nil {
+                    if Auth.auth().currentUser!.isEmailVerified {
+                        self?.goToMainPage()
+                    } else {
+                        self?.showMessage(title: "Warning", message: "Please, verify your email!")
+                    }
+                } else {
+                    
+                }
+            }
+        }
     }
 }
 

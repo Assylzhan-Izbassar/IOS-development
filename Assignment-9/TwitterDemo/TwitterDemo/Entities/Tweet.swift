@@ -8,12 +8,12 @@
 import Foundation
 
 class Tweet {
-    private var author: User
+    private var author: CustomUser
     private var content: String
     private var hashtag: String
     private var tweetedDate: Date
     
-    var wrappedAuthor: User {
+    var wrappedAuthor: CustomUser {
         get { return author }
         set { author = newValue }
     }
@@ -33,7 +33,7 @@ class Tweet {
         set { tweetedDate = newValue }
     }
     
-    init(_ author: User, _ content: String, _ hashtag: String, _ tweetedDate: Date) {
+    init(_ author: CustomUser, _ content: String, _ hashtag: String, _ tweetedDate: Date) {
         self.author = author
         self.content = content
         self.hashtag = hashtag

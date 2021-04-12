@@ -55,11 +55,12 @@ class SignUpViewController: UIViewController {
         
         if let e = email.text, let p = password.text {
             if validate(email: e) && validate(password: p) {
-                _ = User(name.text!, surname.text!, birthday.date, e, p)
                 Auth.auth().createUser(withEmail: e, password: p) { [weak self] (result, error) in
                     if error == nil {
                         Auth.auth().currentUser?.sendEmailVerification(completion: nil)
                         self?.showMessage(title: "Success", message: "Please, verify your email!")
+                    } else {
+                        self?.showMessage(title: "Error", message: "Something went wrong!")
                     }
                 }
             }

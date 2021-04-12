@@ -7,24 +7,24 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
 
-class User {
+class CustomUser: User {
     private var name: String
     private var surname: String
     private var birthday: Date
-    private var email: String
-    private var password: String
+//    private var password: String
     private var picture: UIImage?
     
     private var tweets = Array<Tweet>()
     
     var wrappedName: String {
-        get { return name }
+        get { return name.prefix(1).capitalized + name.dropFirst() }
         set { name = newValue }
     }
     
     var wrappedSurname: String {
-        get { return surname }
+        get { return surname.prefix(1).capitalized + surname.dropFirst() }
         set { surname = newValue }
     }
     
@@ -33,13 +33,9 @@ class User {
         set { birthday = newValue }
     }
     
-    var wrappedEmail: String {
-        get { return surname }
-    }
-    
-    var wrappedPassword: String {
-        get { return surname }
-    }
+//    var wrappedPassword: String {
+//        get { return password }
+//    }
     
     var wrappedPicture: UIImage {
         get { return picture ?? UIImage() }
@@ -53,8 +49,7 @@ class User {
     init(_ name: String, _ surname: String, _ birthday: Date, _ email: String, _ password: String) {
         self.name = name
         self.surname = surname
-        self.email = email
-        self.password = password
+//        self.password = password
         self.birthday = birthday
     }
     
