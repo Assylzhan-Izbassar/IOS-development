@@ -6,14 +6,24 @@
 //
 
 import Foundation
+import FirebaseDatabase
 
 class Tweet {
-    private var author: CustomUser
+    private var author: String
     private var content: String
     private var hashtag: String
     private var tweetedDate: Date
     
-    var wrappedAuthor: CustomUser {
+    var data: [String: String] {
+        return [
+            "tweet" : content,
+            "author" : author,
+            "tweetedDate" : dateToStr,
+            "hashtag" : hashtag
+        ]
+    }
+    
+    var wrappedAuthor: String {
         get { return author }
         set { author = newValue }
     }
@@ -33,7 +43,28 @@ class Tweet {
         set { tweetedDate = newValue }
     }
     
-    init(_ author: CustomUser, _ content: String, _ hashtag: String, _ tweetedDate: Date) {
+    var dateToStr: String {
+        get {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "YY/MM/dd"
+            
+            return dateFormatter.string(from: wrappedDate)
+        }
+    }
+    
+    init(snapshot: DataSnapshot) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YY/MM/dd"
+        
+        let value = snapshot.value as! [String: String]
+        
+        self.author = value["author"] ?? ""
+        self.content = value["tweet"] ?? ""
+        self.hashtag = value["hashtag"] ?? ""
+        self.tweetedDate = dateFormatter.date(from: value["tweetedDate"]!) ?? Date()
+    }
+    
+    init(_ author: String, _ content: String, _ hashtag: String, _ tweetedDate: Date) {
         self.author = author
         self.content = content
         self.hashtag = hashtag

@@ -14,6 +14,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var activeIndicator: UIActivityIndicatorView!
     var currentUser: User?
     
     override func viewDidLoad() {
@@ -22,6 +23,14 @@ class LoginViewController: UIViewController {
         
         // make some decore
         decorate()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let t = password.text {
+            if t != "" {
+                password.text = ""
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -59,6 +68,10 @@ class LoginViewController: UIViewController {
         
         if let mainPage = storyboard.instantiateViewController(identifier: "TweetsTableViewController") as? TweetsTableViewController {
             mainPage.modalPresentationStyle = .fullScreen
+            
+            currentUser = (Auth.auth().currentUser)
+            mainPage.email = currentUser?.email ?? "email"
+            
             present(mainPage, animated: true, completion: nil)
         }
     }
@@ -66,8 +79,11 @@ class LoginViewController: UIViewController {
     @IBAction func loginPressed(_ sender: UIButton) {
         let email = self.email.text ?? ""
         let password = self.password.text ?? ""
-        if validate(email: email) && validate(password: password) {
+        
+        if validate(email: email) && validate(password: password) && !activeIndicator.isAnimating {
+            activeIndicator.startAnimating()
             Auth.auth().signIn(withEmail: email, password: password) { [weak self] (result, error) in
+                self?.activeIndicator.stopAnimating()
                 if error == nil {
                     if Auth.auth().currentUser!.isEmailVerified {
                         self?.goToMainPage()
@@ -80,6 +96,9 @@ class LoginViewController: UIViewController {
             }
         }
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//    }
 }
 
 // MARK: - Extension
