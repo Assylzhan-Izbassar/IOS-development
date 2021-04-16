@@ -15,18 +15,25 @@ class Tweet {
     private var tweetedDate: Date
     private var fullName: String
     private var pictureName: String?
+    private var id: String
     
     var user: CustomUser?
     
     var data: [String: String] {
         return [
+            "id" : wrappedId,
             "tweet" : wrappedContent,
             "author" : wrappedAuthor,
             "tweetedDate" : dateToStr,
-            "hashtag" : wrappedPictureUrl,
+            "hashtag" : wrappedHashTag,
             "fullname": wrappedFullname,
-            "pictureName": user?.wrappedPictureURL ?? ""
+            "pictureName": wrappedPictureUrl
         ]
+    }
+    
+    var wrappedId: String {
+        get { return id }
+        set { id = newValue}
     }
     
     var wrappedAuthor: String {
@@ -40,8 +47,7 @@ class Tweet {
     }
     
     var wrappedPictureUrl: String {
-        get { return pictureName ?? "default" }
-        set { pictureName = newValue }
+        get { return pictureName ?? "default"}
     }
     
     var wrappedContent: String {
@@ -62,7 +68,7 @@ class Tweet {
     var dateToStr: String {
         get {
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd/MM/YY"
+            dateFormatter.dateFormat = "dd/MM/yy"
             
             return dateFormatter.string(from: wrappedDate)
         }
@@ -70,7 +76,7 @@ class Tweet {
     
     init(snapshot: DataSnapshot) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/YY"
+        dateFormatter.dateFormat = "dd/MM/yy"
         
         let value = snapshot.value as! [String: String]
         
@@ -80,18 +86,20 @@ class Tweet {
         self.fullName = value["fullname"] ?? ""
         self.tweetedDate = dateFormatter.date(from: value["tweetedDate"]!) ?? Date()
         self.pictureName = value["pictureName"] ?? ""
+        self.id = value["id"] ?? ""
     }
     
-    init(_ author: String, _ fullname: String, _ content: String, _ hashtag: String, _ tweetedDate: Date) {
+    init(_ id: String, _ author: String, _ fullname: String, _ content: String, _ hashtag: String, _ tweetedDate: Date) {
         self.author = author
         self.content = content
         self.hashtag = hashtag
         self.tweetedDate = tweetedDate
         self.fullName = fullname
+        self.id = id
     }
     
-    convenience init(_ author: String, _ fullname: String, _ pictureUrl: String, _ content: String, _ hashtag: String, _ tweetedDate: Date) {
-        self.init(author, fullname, content, hashtag, tweetedDate)
+    convenience init(_ id: String, _ author: String, _ fullname: String, _ pictureUrl: String, _ content: String, _ hashtag: String, _ tweetedDate: Date) {
+        self.init(id, author, fullname, content, hashtag, tweetedDate)
         self.pictureName = pictureUrl
     }
 }

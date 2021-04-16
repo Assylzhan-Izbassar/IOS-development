@@ -85,14 +85,17 @@ class LoginViewController: UIViewController {
         
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
-        if let mainPage = storyboard.instantiateViewController(identifier: "TweetsTableViewController") as? TweetsTableViewController {
-            mainPage.modalPresentationStyle = .fullScreen
-            
-            currentUser = (Auth.auth().currentUser)
-            
-            mainPage.user = user
-            
-            present(mainPage, animated: true, completion: nil)
+        if let tabBar = storyboard.instantiateViewController(identifier: "TabBar") as? UITabBarController {
+            if let mainPage = tabBar.viewControllers![0] as? TweetsTableViewController {
+                
+                tabBar.modalPresentationStyle = .fullScreen
+                
+                currentUser = (Auth.auth().currentUser)
+                
+                mainPage.user = user
+                
+                present(tabBar, animated: true, completion: nil)
+            }
         }
     }
     

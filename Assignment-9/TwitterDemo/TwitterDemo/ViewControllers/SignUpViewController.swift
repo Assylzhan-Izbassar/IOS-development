@@ -62,12 +62,15 @@ class SignUpViewController: UIViewController {
         let pictureName = "\(self.randomString(length: 7) ).png"
         let storageRef = Storage.storage().reference().child(pictureName)
         
+        let key = Database.database(url: "https://twitter-8ae9b-default-rtdb.europe-west1.firebasedatabase.app/").reference().child("users").childByAutoId().key
+        
         let _name = name.text
         let _surname = surname.text
         let _birth = birthday.date
+
         
         if let e = email.text, let p = password.text {
-            let user = CustomUser(_name!, _surname!, e, _birth, pictureName)
+            let user = CustomUser(key!, _name!, _surname!, e, _birth, pictureName)
             
             if validate(email: e) && validate(password: p) {
                 Auth.auth().createUser(withEmail: e, password: p) { [weak self] (result, error) in
@@ -83,7 +86,7 @@ class SignUpViewController: UIViewController {
                                     return
                                 }
                                 
-                                Database.database(url: "https://twitter-8ae9b-default-rtdb.europe-west1.firebasedatabase.app/").reference().child("users").childByAutoId().setValue(user.data)
+                                Database.database(url: "https://twitter-8ae9b-default-rtdb.europe-west1.firebasedatabase.app/").reference().child("users").child(key!).setValue(user.data)
                             })
                         }
                         
@@ -114,7 +117,9 @@ extension SignUpViewController: Decoration, UIImagePickerControllerDelegate, UIN
         makeCorner(textfield: email, color: UIColor.white.cgColor)
         makeCorner(textfield: password, color: UIColor.white.cgColor)
         makeCorner(button: signInBtn, color: UIColor.white.cgColor)
+        
         birthday.setValue(UIColor.white, forKeyPath: "textColor")
+        birthday.setValue(false, forKeyPath: "highlightsToday")
     }
     
     @objc func handleSelectedProfileImageView() {

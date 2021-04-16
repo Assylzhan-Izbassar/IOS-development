@@ -19,6 +19,8 @@
 		FA41046F261F6C4B002BF340 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA41046E261F6C4B002BF340 /* Tweet.swift */; };
 		FA410472261F74A7002BF340 /* Decoration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA410471261F74A7002BF340 /* Decoration.swift */; };
 		FA56178C26297BEC000096C1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56178B26297BEC000096C1 /* Extensions.swift */; };
+		FA5617932629C8AF000096C1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5617922629C8AF000096C1 /* SearchViewController.swift */; };
+		FA5617972629D27A000096C1 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5617962629D27A000096C1 /* EditViewController.swift */; };
 		FA67777C2620C3C4005B734B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA67777B2620C3C4005B734B /* GoogleService-Info.plist */; };
 		FAB6BDBF2622F67C00D22915 /* TweetsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB6BDBE2622F67C00D22915 /* TweetsTableViewController.swift */; };
 		FAB6BDC22622FC4C00D22915 /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB6BDC12622FC4C00D22915 /* TweetTableViewCell.swift */; };
@@ -41,6 +43,8 @@
 		FA41046E261F6C4B002BF340 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		FA410471261F74A7002BF340 /* Decoration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoration.swift; sourceTree = "<group>"; };
 		FA56178B26297BEC000096C1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FA5617922629C8AF000096C1 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		FA5617962629D27A000096C1 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		FA67777B2620C3C4005B734B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FAA2EE4BC7CF130FB69BC6EF /* Pods-TwitterDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterDemo.debug.xcconfig"; path = "Target Support Files/Pods-TwitterDemo/Pods-TwitterDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		FAB6BDBE2622F67C00D22915 /* TweetsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetsTableViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +124,8 @@
 				FA410471261F74A7002BF340 /* Decoration.swift */,
 				FAB6BDBE2622F67C00D22915 /* TweetsTableViewController.swift */,
 				FAB6BDC42624953C00D22915 /* TableHeader.swift */,
+				FA5617922629C8AF000096C1 /* SearchViewController.swift */,
+				FA5617962629D27A000096C1 /* EditViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -257,12 +263,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA5617972629D27A000096C1 /* EditViewController.swift in Sources */,
 				FA410472261F74A7002BF340 /* Decoration.swift in Sources */,
 				FAB6BDC52624953C00D22915 /* TableHeader.swift in Sources */,
 				FA410460261F6046002BF340 /* LoginViewController.swift in Sources */,
 				FAB6BDC22622FC4C00D22915 /* TweetTableViewCell.swift in Sources */,
 				FA41044A261F6001002BF340 /* AppDelegate.swift in Sources */,
 				FA410466261F65EE002BF340 /* SignUpViewController.swift in Sources */,
+				FA5617932629C8AF000096C1 /* SearchViewController.swift in Sources */,
 				FA41046F261F6C4B002BF340 /* Tweet.swift in Sources */,
 				FAB6BDBF2622F67C00D22915 /* TweetsTableViewController.swift in Sources */,
 				FA41046C261F69E4002BF340 /* CustomUser.swift in Sources */,

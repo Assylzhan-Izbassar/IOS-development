@@ -19,6 +19,10 @@ class TweetsTableViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        fetchData()
+    }
+    
+    func fetchData() {
         ref.child("tweets").observe(.value, with: { [weak self]
             (snapshot) in
             self?.tweets.removeAll()
@@ -27,6 +31,7 @@ class TweetsTableViewController: UIViewController, UITableViewDelegate, UITableV
                     self?.tweets.append(Tweet(snapshot: x))
                 }
             }
+            
             self?.myTable.reloadData()
         })
     }
@@ -62,20 +67,48 @@ class TweetsTableViewController: UIViewController, UITableViewDelegate, UITableV
         
         if tweets[indexPath.row].wrappedPictureUrl != "default" {
             cell.userImage.loadImageUsingCache(tweets[indexPath.row].wrappedPictureUrl)
-//            let pathReference = Storage.storage().reference(withPath: tweets[indexPath.row].wrappedPictureUrl)
-//
-//            pathReference.getData(maxSize: 1 * 1024 * 1024) { data, error in
-//              if let error = error {
-//                print(error)
-//                return
-//              } else {
-//                // Data for "images/island.jpg" is returned
-//                cell.userImage.image = UIImage(data: data!)
-//              }
-//            }
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        if tweets[indexPath.row].wrappedAuthor != user?.wrappedEmail {
+            return
+        }
+        
+        let alert = UIAlertController(title: "Tweet", message: "Edit your tweet", preferredStyle: .alert)
+
+        alert.addTextField { (textField) in
+            textField.text = String(self.tweets[indexPath.row].wrappedContent.dropLast(self.tweets[indexPath.row].wrappedHashTag.count))
+        }
+        
+        alert.addTextField { (textField) in
+            textField.text = self.tweets[indexPath.row].wrappedHashTag
+        }
+
+        alert.addAction(UIAlertAction(title: "Tweet", style: .default, handler: { [self, weak alert] (_) in
+            let content = alert?.textFields![0]
+            let hashtag = alert?.textFields![1]
+            
+            if let tweetContent = content, let tweetHashtag = hashtag {
+                let tweet = Tweet(self.tweets[indexPath.row].wrappedId, self.user?.wrappedEmail ?? "default", self.user?.fullName ?? "default", self.user?.wrappedPictureURL ?? "default", tweetContent.text! + tweetHashtag.text!, tweetHashtag.text!, Date())
+                self.ref.child("tweets").child( self.tweets[indexPath.row].wrappedId).updateChildValues(tweet.data)
+            }
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {_ in
+        }))
+
+        self.present(alert, animated: true, completion: nil)
+        
+        if let selectedIndexPath = myTable.indexPathForSelectedRow {
+            myTable.deselectRow(at: selectedIndexPath, animated: true)
+        }
+        
+        fetchData()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -83,6 +116,21 @@ class TweetsTableViewController: UIViewController, UITableViewDelegate, UITableV
         let size = Int(95 + tweets[indexPath.row].wrappedContent.count / 3)
         return CGFloat(size)
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        guard editingStyle == .delete else { return }
+        
+        if tweets[indexPath.row].wrappedAuthor != user?.wrappedEmail {
+            return
+        }
+        
+        let key = tweets[indexPath.row].wrappedId
+        ref.child("tweets").child(key).setValue(nil)
+        tweets.remove(at: indexPath.row)
+                
+        myTable.deleteRows(at: [indexPath], with: .automatic)
+    }
+    
 
     // MARK: - Navigation
 

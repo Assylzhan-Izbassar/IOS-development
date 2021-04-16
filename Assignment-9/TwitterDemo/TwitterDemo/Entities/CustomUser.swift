@@ -16,15 +16,22 @@ class CustomUser {
     private var birthday: Date
     private var pictureURL: String
     private var email: String
+    private var id: String
     
     var data: [String: String] {
         return [
+            "id" : wrappedId,
             "name" : wrappedName,
             "surname" : wrappedSurname,
             "email": wrappedEmail,
             "birthday" : dateToStr,
             "pictureURL" : wrappedPictureURL
         ]
+    }
+    
+    var wrappedId: String {
+        get {return id}
+        set {id = newValue}
     }
     
     var wrappedName: String {
@@ -61,23 +68,24 @@ class CustomUser {
     var dateToStr: String {
         get {
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd/MM/YY"
+            dateFormatter.dateFormat =  "dd/MM/yy"
             
             return dateFormatter.string(from: wrappedBirthday)
         }
     }
     
-    init(_ name: String, _ surname: String, _ email: String, _ birthday: Date, _ pictureName: String) {
+    init(_ id: String, _ name: String, _ surname: String, _ email: String, _ birthday: Date, _ pictureName: String) {
         self.name = name
         self.surname = surname
         self.email = email
         self.birthday = birthday
         self.pictureURL = pictureName
+        self.id = id
     }
     
     init(snapshot: DataSnapshot) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/YY"
+        dateFormatter.dateFormat =  "dd/MM/yy"
         
         let value = snapshot.value as! [String: String]
         
@@ -86,5 +94,6 @@ class CustomUser {
         email = value["email"] ?? ""
         birthday = dateFormatter.date(from: value["birthday"]!) ?? Date()
         pictureURL = value["pictureURL"] ?? ""
+        id = value["id"] ?? ""
     }
 }
