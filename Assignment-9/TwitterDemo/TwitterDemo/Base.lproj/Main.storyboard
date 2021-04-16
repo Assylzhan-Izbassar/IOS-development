@@ -681,6 +681,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="hlC-YR-BWd"/>
                     <connections>
+                        <outlet property="myTable" destination="D5q-zy-jug" id="70B-Dz-s9h"/>
                         <outlet property="myTableView" destination="D5q-zy-jug" id="NTP-yy-cvU"/>
                         <outlet property="myTextField" destination="jAL-7k-UYF" id="iUB-Iw-Cmv"/>
                     </connections>

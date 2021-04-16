@@ -16,6 +16,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     var searchedTweets: [Tweet] = []
     var allTweets: [Tweet] = []
+    var user: CustomUser?
+    @IBOutlet weak var myTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +50,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBAction func searchPressed(_ sender: UIButton) {
         fetchData()
-        print(searchedTweets)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -69,5 +70,66 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         }
 
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        if searchedTweets[indexPath.row].wrappedAuthor != user?.wrappedEmail {
+            return
+        }
+        
+        let alert = UIAlertController(title: "Tweet", message: "Edit your tweet", preferredStyle: .alert)
+
+        alert.addTextField { (textField) in
+            textField.text = String(self.searchedTweets[indexPath.row].wrappedContent.dropLast(self.searchedTweets[indexPath.row].wrappedHashTag.count))
+        }
+        
+        alert.addTextField { (textField) in
+            textField.text = self.searchedTweets[indexPath.row].wrappedHashTag
+        }
+
+        alert.addAction(UIAlertAction(title: "Tweet", style: .default, handler: { [self, weak alert] (_) in
+            let content = alert?.textFields![0]
+            let hashtag = alert?.textFields![1]
+            
+            if let tweetContent = content, let tweetHashtag = hashtag {
+                let tweet = Tweet(self.searchedTweets[indexPath.row].wrappedId, self.user?.wrappedEmail ?? "default", self.user?.fullName ?? "default", self.user?.wrappedPictureURL ?? "default", tweetContent.text! + tweetHashtag.text!, tweetHashtag.text!, Date())
+                self.ref.child("tweets").child( self.searchedTweets[indexPath.row].wrappedId).updateChildValues(tweet.data)
+            }
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {_ in
+        }))
+
+        self.present(alert, animated: true, completion: nil)
+        
+        if let selectedIndexPath = myTable.indexPathForSelectedRow {
+            myTable.deselectRow(at: selectedIndexPath, animated: true)
+        }
+        
+        fetchData()
+    }
+    
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        let size = Int(95 + searchedTweets[indexPath.row].wrappedContent.count / 3)
+        return CGFloat(size)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        guard editingStyle == .delete else { return }
+        
+        if searchedTweets[indexPath.row].wrappedAuthor != user?.wrappedEmail {
+            return
+        }
+        
+        let key = searchedTweets[indexPath.row].wrappedId
+        ref.child("tweets").child(key).setValue(nil)
+        searchedTweets.remove(at: indexPath.row)
+                
+        myTable.deleteRows(at: [indexPath], with: .automatic)
     }
 }

@@ -86,13 +86,14 @@ class LoginViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
         if let tabBar = storyboard.instantiateViewController(identifier: "TabBar") as? UITabBarController {
-            if let mainPage = tabBar.viewControllers![0] as? TweetsTableViewController {
+            if let mainPage = tabBar.viewControllers![0] as? TweetsTableViewController, let secondPage = tabBar.viewControllers![1] as? SearchViewController {
                 
                 tabBar.modalPresentationStyle = .fullScreen
                 
                 currentUser = (Auth.auth().currentUser)
                 
                 mainPage.user = user
+                secondPage.user = user
                 
                 present(tabBar, animated: true, completion: nil)
             }
