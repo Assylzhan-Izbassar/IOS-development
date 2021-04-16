@@ -10,21 +10,18 @@ import Firebase
 import FirebaseAuth
 
 class TweetsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
-    
-    var tweet: Tweet?
-    var email = ""
-    var tweets: [Tweet] = []
+
     @IBOutlet weak var myTable: UITableView!
+    let ref = Database.database(url: "https://twitter-8ae9b-default-rtdb.europe-west1.firebasedatabase.app/").reference()
+    var tweets: [Tweet] = []
+    var user: CustomUser?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let ref = Database.database(url: "https://twitter-8ae9b-default-rtdb.europe-west1.firebasedatabase.app/").reference()
-        
         ref.child("tweets").observe(.value, with: { [weak self]
             (snapshot) in
             self?.tweets.removeAll()
-            self?.tweets.append(Tweet(self!.email, "You can inspect references to better understand the files they point to using the fullPath, name, and bucket properties. These properties get the file's full path, name, and bucket.", "@coll", Date()))
             for item in snapshot.children {
                 if let x = item as? DataSnapshot {
                     self?.tweets.append(Tweet(snapshot: x))
@@ -59,6 +56,24 @@ class TweetsTableViewController: UIViewController, UITableViewDelegate, UITableV
         cell.handle.text = tweets[indexPath.row].wrappedAuthor
         cell.content.text = tweets[indexPath.row].wrappedContent
         cell.published.text = tweets[indexPath.row].dateToStr
+        cell.fullname.text = tweets[indexPath.row].wrappedFullname
+        
+        cell.userImage.image = UIImage(named: "avatar")
+        
+        if tweets[indexPath.row].wrappedPictureUrl != "default" {
+            cell.userImage.loadImageUsingCache(tweets[indexPath.row].wrappedPictureUrl)
+//            let pathReference = Storage.storage().reference(withPath: tweets[indexPath.row].wrappedPictureUrl)
+//
+//            pathReference.getData(maxSize: 1 * 1024 * 1024) { data, error in
+//              if let error = error {
+//                print(error)
+//                return
+//              } else {
+//                // Data for "images/island.jpg" is returned
+//                cell.userImage.image = UIImage(data: data!)
+//              }
+//            }
+        }
         
         return cell
     }
@@ -74,6 +89,7 @@ class TweetsTableViewController: UIViewController, UITableViewDelegate, UITableV
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dest = segue.destination as! TableHeader
-        dest._email = email
+        
+        dest.user = user
     }
 }

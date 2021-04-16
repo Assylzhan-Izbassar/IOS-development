@@ -15,7 +15,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var activeIndicator: UIActivityIndicatorView!
+
     var currentUser: User?
+    var user: CustomUser?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,9 +37,25 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         currentUser = (Auth.auth().currentUser)
+        
         if currentUser != nil && (currentUser!.isEmailVerified) {
-             goToMainPage()
+             fetchData(currentUser?.email ?? "default")
         }
+    }
+    
+    func fetchData(_ email: String) {
+        Database.database(url: "https://twitter-8ae9b-default-rtdb.europe-west1.firebasedatabase.app/").reference().child("users").observe(.value, with: { [weak self]
+            (snapshot) in
+            for item in snapshot.children {
+                if let x = item as? DataSnapshot {
+                    let value = x.value as! [String: String]
+                    if value["email"] == email {
+                        self?.user = CustomUser(snapshot: x)
+                    }
+                }
+            }
+            self?.goToMainPage()
+        })
     }
     
     func showMessage(title t: String, message m: String) {
@@ -64,13 +82,15 @@ class LoginViewController: UIViewController {
     }
     
     func goToMainPage() {
+        
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
         if let mainPage = storyboard.instantiateViewController(identifier: "TweetsTableViewController") as? TweetsTableViewController {
             mainPage.modalPresentationStyle = .fullScreen
             
             currentUser = (Auth.auth().currentUser)
-            mainPage.email = currentUser?.email ?? "email"
+            
+            mainPage.user = user
             
             present(mainPage, animated: true, completion: nil)
         }
@@ -82,11 +102,12 @@ class LoginViewController: UIViewController {
         
         if validate(email: email) && validate(password: password) && !activeIndicator.isAnimating {
             activeIndicator.startAnimating()
+            
             Auth.auth().signIn(withEmail: email, password: password) { [weak self] (result, error) in
                 self?.activeIndicator.stopAnimating()
                 if error == nil {
                     if Auth.auth().currentUser!.isEmailVerified {
-                        self?.goToMainPage()
+                        self?.fetchData(email)
                     } else {
                         self?.showMessage(title: "Warning", message: "Please, verify your email!")
                     }

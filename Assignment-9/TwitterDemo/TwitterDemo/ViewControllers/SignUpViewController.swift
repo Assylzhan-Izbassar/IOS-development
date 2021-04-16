@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseDatabase
 import FirebaseStorage
 
 class SignUpViewController: UIViewController {
@@ -58,9 +59,16 @@ class SignUpViewController: UIViewController {
     Sign in the new user
      */
     @IBAction func signInUser(_ sender: UIButton) {
-        let storageRef = Storage.storage().reference().child("\(self.randomString(length: 7) ).png")
+        let pictureName = "\(self.randomString(length: 7) ).png"
+        let storageRef = Storage.storage().reference().child(pictureName)
+        
+        let _name = name.text
+        let _surname = surname.text
+        let _birth = birthday.date
         
         if let e = email.text, let p = password.text {
+            let user = CustomUser(_name!, _surname!, e, _birth, pictureName)
+            
             if validate(email: e) && validate(password: p) {
                 Auth.auth().createUser(withEmail: e, password: p) { [weak self] (result, error) in
                     if error == nil {
@@ -74,8 +82,8 @@ class SignUpViewController: UIViewController {
                                     print(error!)
                                     return
                                 }
-
-                                print(metadata as Any)
+                                
+                                Database.database(url: "https://twitter-8ae9b-default-rtdb.europe-west1.firebasedatabase.app/").reference().child("users").childByAutoId().setValue(user.data)
                             })
                         }
                         
