@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		FA382AAC2632D1D9005AEB46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA382AAB2632D1D9005AEB46 /* AppDelegate.swift */; };
 		FA382AAE2632D1D9005AEB46 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA382AAD2632D1D9005AEB46 /* SceneDelegate.swift */; };
-		FA382AB02632D1D9005AEB46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA382AAF2632D1D9005AEB46 /* ViewController.swift */; };
 		FA382AB32632D1D9005AEB46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA382AB12632D1D9005AEB46 /* Main.storyboard */; };
 		FA382AB52632D1DA005AEB46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA382AB42632D1DA005AEB46 /* Assets.xcassets */; };
 		FA382AB82632D1DA005AEB46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA382AB62632D1DA005AEB46 /* LaunchScreen.storyboard */; };
+		FA382AC12632D2FA005AEB46 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA382AC02632D2FA005AEB46 /* IntroViewController.swift */; };
+		FA382AC72632ED8A005AEB46 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA382AC62632ED8A005AEB46 /* TabBarViewController.swift */; };
+		FA382ACB2632EF47005AEB46 /* GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA382ACA2632EF47005AEB46 /* GradientBackground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FA382AA82632D1D9005AEB46 /* Euphoria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Euphoria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA382AAB2632D1D9005AEB46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA382AAD2632D1D9005AEB46 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FA382AAF2632D1D9005AEB46 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FA382AB22632D1D9005AEB46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA382AB42632D1DA005AEB46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA382AB72632D1DA005AEB46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA382AB92632D1DA005AEB46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA382AC02632D2FA005AEB46 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		FA382AC62632ED8A005AEB46 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		FA382ACA2632EF47005AEB46 /* GradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,25 @@
 		FA382AAA2632D1D9005AEB46 /* Euphoria */ = {
 			isa = PBXGroup;
 			children = (
+				FA382AC52632ED57005AEB46 /* ViewController */,
 				FA382AAB2632D1D9005AEB46 /* AppDelegate.swift */,
 				FA382AAD2632D1D9005AEB46 /* SceneDelegate.swift */,
-				FA382AAF2632D1D9005AEB46 /* ViewController.swift */,
 				FA382AB12632D1D9005AEB46 /* Main.storyboard */,
 				FA382AB42632D1DA005AEB46 /* Assets.xcassets */,
 				FA382AB62632D1DA005AEB46 /* LaunchScreen.storyboard */,
 				FA382AB92632D1DA005AEB46 /* Info.plist */,
 			);
 			path = Euphoria;
+			sourceTree = "<group>";
+		};
+		FA382AC52632ED57005AEB46 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FA382AC02632D2FA005AEB46 /* IntroViewController.swift */,
+				FA382AC62632ED8A005AEB46 /* TabBarViewController.swift */,
+				FA382ACA2632EF47005AEB46 /* GradientBackground.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +151,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA382AB02632D1D9005AEB46 /* ViewController.swift in Sources */,
+				FA382ACB2632EF47005AEB46 /* GradientBackground.swift in Sources */,
+				FA382AC72632ED8A005AEB46 /* TabBarViewController.swift in Sources */,
 				FA382AAC2632D1D9005AEB46 /* AppDelegate.swift in Sources */,
 				FA382AAE2632D1D9005AEB46 /* SceneDelegate.swift in Sources */,
+				FA382AC12632D2FA005AEB46 /* IntroViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
