@@ -44,50 +44,118 @@
             </objects>
             <point key="canvasLocation" x="-217.39130434782609" y="88.392857142857139"/>
         </scene>
-        <!--Item 2-->
+        <!--Settings View Controller-->
+        <scene sceneID="hYd-K4-Elc">
+            <objects>
+                <viewController id="Fzj-M4-a23" customClass="SettingsViewController" customModule="Euphoria" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zxa-M1-AoU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="cVA-9z-oRw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="settings_icon" id="C1c-wW-oax"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VVi-bt-X6K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="761" y="853"/>
+        </scene>
+        <!--Popular View Controller-->
         <scene sceneID="4RT-6F-cxf">
             <objects>
-                <viewController id="EM5-G7-Oye" sceneMemberID="viewController">
+                <viewController id="EM5-G7-Oye" customClass="PopularViewController" customModule="Euphoria" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zd7-4z-eHI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="TwX-p8-s0m"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="XhA-cy-WA5"/>
+                    <tabBarItem key="tabBarItem" title="" image="popular_icon" id="XhA-cy-WA5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JWI-7f-QFB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1655" y="392"/>
+            <point key="canvasLocation" x="1654" y="415"/>
         </scene>
-        <!--Item 1-->
+        <!--Favorite View Controller-->
+        <scene sceneID="mso-Ju-f2F">
+            <objects>
+                <viewController id="SSf-Ye-zk3" customClass="FavoriteViewController" customModule="Euphoria" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YFo-4v-gak">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Grs-PG-KLC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="fav_icon" id="wch-ab-GDD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Zn-gf-tku" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2409" y="658"/>
+        </scene>
+        <!--Player View Controller-->
+        <scene sceneID="4Ix-cY-jgI">
+            <objects>
+                <viewController id="mqV-Uo-24U" customClass="PlayerViewController" customModule="Euphoria" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3jj-xD-Qgy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="54T-Kv-2TA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="player_icon" id="gfL-cR-t2p"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Chi-2A-iqH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2378" y="-585"/>
+        </scene>
+        <!--Search View Controller-->
         <scene sceneID="VT7-Td-jch">
             <objects>
-                <viewController id="DuJ-XR-a1n" sceneMemberID="viewController">
+                <viewController id="DuJ-XR-a1n" customClass="SearchViewController" customModule="Euphoria" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DZn-Sg-TAP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Og-iK-aFR">
+                                <rect key="frame" x="25" y="76" width="134" height="48.5"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="42"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="HJB-dm-v7S"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HJB-dm-v7S" firstAttribute="trailing" secondItem="4Og-iK-aFR" secondAttribute="trailing" constant="255" id="Ezk-w2-j3V"/>
+                            <constraint firstItem="HJB-dm-v7S" firstAttribute="bottom" secondItem="4Og-iK-aFR" secondAttribute="bottom" constant="688.5" id="SYr-Xv-IdA"/>
+                            <constraint firstItem="4Og-iK-aFR" firstAttribute="leading" secondItem="HJB-dm-v7S" secondAttribute="leading" constant="25" id="aSb-0P-SJP"/>
+                            <constraint firstItem="4Og-iK-aFR" firstAttribute="top" secondItem="HJB-dm-v7S" secondAttribute="top" constant="32" id="i7h-xE-DDs"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="rvL-7j-7kX"/>
+                    <tabBarItem key="tabBarItem" title="" image="search_icon" largeContentSizeImage="magnifyingglass" catalog="system" id="rvL-7j-7kX">
+                        <color key="badgeColor" red="0.99422556159999997" green="0.5874098539" blue="0.69803935289999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B8B-ku-XKA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1655" y="-214"/>
+            <point key="canvasLocation" x="1654" y="-271"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="FV7-NT-gF2">
             <objects>
                 <tabBarController storyboardIdentifier="TabBarViewController" id="cXw-lt-zBu" customClass="TabBarViewController" customModule="Euphoria" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bFT-FU-p0q">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="centered" itemSpacing="20" itemWidth="50" id="bFT-FU-p0q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.99422556159999997" green="0.5874098539" blue="0.69803935289999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="selectedImageTintColor" red="0.99422556159999997" green="0.5874098539" blue="0.69803935289999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="DuJ-XR-a1n" kind="relationship" relationship="viewControllers" id="ian-Lm-h7z"/>
                         <segue destination="EM5-G7-Oye" kind="relationship" relationship="viewControllers" id="6Np-mP-7jc"/>
+                        <segue destination="SSf-Ye-zk3" kind="relationship" relationship="viewControllers" id="A7R-i7-MCt"/>
+                        <segue destination="mqV-Uo-24U" kind="relationship" relationship="viewControllers" id="bTa-dl-DPh"/>
+                        <segue destination="Fzj-M4-a23" kind="relationship" relationship="viewControllers" id="AWJ-Pq-r5S"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Xo-E1-eWw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -96,7 +164,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="fav_icon" width="35" height="35"/>
         <image name="logo" width="512" height="512"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="player_icon" width="35" height="35"/>
+        <image name="popular_icon" width="35" height="35"/>
+        <image name="search_icon" width="35" height="35"/>
+        <image name="settings_icon" width="35" height="35"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

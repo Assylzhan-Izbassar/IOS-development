@@ -15,7 +15,7 @@ class TabBarViewController: UITabBarController {
         
         // to make the cornerRadius of customTabBarView
         view.backgroundColor = .white
-        view.layer.cornerRadius = 20
+        view.layer.cornerRadius = 35.0
         view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         view.clipsToBounds = true
      

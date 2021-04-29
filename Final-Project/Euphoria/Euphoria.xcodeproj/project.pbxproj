@@ -15,6 +15,11 @@
 		FA382AC12632D2FA005AEB46 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA382AC02632D2FA005AEB46 /* IntroViewController.swift */; };
 		FA382AC72632ED8A005AEB46 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA382AC62632ED8A005AEB46 /* TabBarViewController.swift */; };
 		FA382ACB2632EF47005AEB46 /* GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA382ACA2632EF47005AEB46 /* GradientBackground.swift */; };
+		FA5B81D1263B0B5E0046F48A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5B81D0263B0B5E0046F48A /* SearchViewController.swift */; };
+		FA5B81D4263B14A10046F48A /* PopularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5B81D3263B14A10046F48A /* PopularViewController.swift */; };
+		FA5B81D7263B14D90046F48A /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5B81D6263B14D90046F48A /* FavoriteViewController.swift */; };
+		FA5B81DA263B154B0046F48A /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5B81D9263B154B0046F48A /* PlayerViewController.swift */; };
+		FA5B81DD263B15700046F48A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5B81DC263B15700046F48A /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		FA382AC02632D2FA005AEB46 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		FA382AC62632ED8A005AEB46 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		FA382ACA2632EF47005AEB46 /* GradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackground.swift; sourceTree = "<group>"; };
+		FA5B81D0263B0B5E0046F48A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		FA5B81D3263B14A10046F48A /* PopularViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularViewController.swift; sourceTree = "<group>"; };
+		FA5B81D6263B14D90046F48A /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		FA5B81D9263B154B0046F48A /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		FA5B81DC263B15700046F48A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +87,11 @@
 				FA382AC02632D2FA005AEB46 /* IntroViewController.swift */,
 				FA382AC62632ED8A005AEB46 /* TabBarViewController.swift */,
 				FA382ACA2632EF47005AEB46 /* GradientBackground.swift */,
+				FA5B81D0263B0B5E0046F48A /* SearchViewController.swift */,
+				FA5B81D3263B14A10046F48A /* PopularViewController.swift */,
+				FA5B81D6263B14D90046F48A /* FavoriteViewController.swift */,
+				FA5B81D9263B154B0046F48A /* PlayerViewController.swift */,
+				FA5B81DC263B15700046F48A /* SettingsViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -151,10 +166,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA5B81D1263B0B5E0046F48A /* SearchViewController.swift in Sources */,
 				FA382ACB2632EF47005AEB46 /* GradientBackground.swift in Sources */,
 				FA382AC72632ED8A005AEB46 /* TabBarViewController.swift in Sources */,
+				FA5B81DD263B15700046F48A /* SettingsViewController.swift in Sources */,
 				FA382AAC2632D1D9005AEB46 /* AppDelegate.swift in Sources */,
+				FA5B81D4263B14A10046F48A /* PopularViewController.swift in Sources */,
+				FA5B81DA263B154B0046F48A /* PlayerViewController.swift in Sources */,
 				FA382AAE2632D1D9005AEB46 /* SceneDelegate.swift in Sources */,
+				FA5B81D7263B14D90046F48A /* FavoriteViewController.swift in Sources */,
 				FA382AC12632D2FA005AEB46 /* IntroViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
